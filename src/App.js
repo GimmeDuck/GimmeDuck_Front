@@ -5,10 +5,12 @@ import Home from './screens/Home';
 import Introduction from './screens/Introduction';
 import Market from './screens/Market';
 import Tutorial from './screens/Tutorial';
+import NavBarElements from './components/NavBarElements';
 
 function App() {
   return (
     <Router>
+      <NavBarElements />
       <Routes>
         <Route path = "/" element = { <Home />} />
         <Route path = "/Introduction" element = { <Introduction />} />
