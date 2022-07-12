@@ -6,6 +6,7 @@ import Introduction from './screens/Introduction';
 import Market from './screens/Market';
 import Tutorial from './screens/Tutorial';
 import NavBarElements from './components/NavBarElements';
+import Buyegg from './screens/Buyegg';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path = "/Tutorial" element = { <Tutorial />} />
         <Route path = "/History" element = { <History />} />
         <Route path = "/Market" element = { <Market />} />
+
+        <Route path = "/Buyegg" element = { <Buyegg />} />
       </Routes>
     </Router>
   );
