@@ -7,6 +7,8 @@ import Market from './screens/Market';
 import Tutorial from './screens/Tutorial';
 import NavBarElements from './components/NavBarElements';
 import Buyegg from './screens/Buyegg';
+import Custom from './screens/Custom';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path = "/Market" element = { <Market />} />
 
         <Route path = "/Buyegg" element = { <Buyegg />} />
+        <Route path = "/Custom" element = { <Custom />} />
       </Routes>
     </Router>
   );
