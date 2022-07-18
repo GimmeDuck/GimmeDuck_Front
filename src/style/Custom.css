@@ -10,4 +10,20 @@
     background-color: rgb(38,38,38);
     padding: 25px;
     border-radius: 15px;
+    position: relative;
+}
+
+.cusbutton{
+    background-color: rgb(191,144,0);
+    color: white;
+    padding:5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    border-radius: 8px;
+    position: absolute;
+    bottom:0;
+    right:0;
+    margin:15px;
+    width: fit-content;
 }
