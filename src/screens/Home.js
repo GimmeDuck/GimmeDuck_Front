@@ -18,10 +18,15 @@ const Home = () => {
             '팬덤'이름으로 믿음직한 기부도 하고, <br/>
             블록체인에 나의 기부 내역을 남깁니다<br/>
           </p>
-          <img classname='img' src='img/home.PNG'/>
+          <div className='img'>
+            <img src='img/home.PNG'/>
+          </div>
         </div>
-        <div onClick= {buyBtn} className='button'>
+        <button onClick= {buyBtn} className='button'>
           알 구매하러 가기
+        </button>
+        <div className='img'>
+          <img src='img/chart.png'/>
         </div>
     </div>
     
