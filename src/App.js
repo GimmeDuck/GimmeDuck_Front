@@ -7,12 +7,8 @@ import Market from './screens/Market';
 import Tutorial from './screens/Tutorial';
 import NavBarElements from './components/NavBarElements';
 import Buyegg from './screens/Buyegg';
-<<<<<<< HEAD
 import Custom from './screens/Custom';
-
-=======
 import Donate from './screens/Donate';
->>>>>>> a897ecc8cba266826e67408762792b619f5e6b1d
 
 function App() {
   return (
@@ -26,11 +22,8 @@ function App() {
         <Route path = "/Market" element = { <Market />} />
 
         <Route path = "/Buyegg" element = { <Buyegg />} />
-<<<<<<< HEAD
         <Route path = "/Custom" element = { <Custom />} />
-=======
         <Route path = "/Donate" element = {< Donate/>}/>
->>>>>>> a897ecc8cba266826e67408762792b619f5e6b1d
       </Routes>
     </Router>
   );
