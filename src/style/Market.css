@@ -1,4 +1,4 @@
-.medal{
+.medal_section{
     width: 100%;
     height :50vh;
     display: flex;
@@ -9,23 +9,39 @@
     padding-right: 20%;
 }
 
+
 .second{
     width : 10vw;
-    height :10vw;
-
-    vertical-align: middle;
-    text-align: center;
-    padding: auto;
+    height :50vh;
+    display: flex;
+    align-items: center;
 }
 
 .first{
     width : 15vw;
-    height :15vw;
-
-    vertical-align : middle;
-    text-align: center;
+    height :50vh;
+    display: flex;
+    align-items: center;
 }
+.rapper{
+    
+    vertical-align: middle;
+    text-align: center;
 
+}
 .img{
     width: 100%;
+}
+
+.medal{
+    width : 30%;
+    padding-bottom: 10%;
+}
+
+.nickname{
+    color: white;
+}
+
+.klay{
+    color : white;
 }
