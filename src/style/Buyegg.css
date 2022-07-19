@@ -1,0 +1,87 @@
+
+.eggset{
+    width: 50%;
+}
+
+.text1{
+    color: white;
+    line-height:35px;
+    width: 30%;
+}
+
+
+.Frame{
+    width: 100%;
+    display: flex;
+}
+
+.Rightbox{
+    background-color:rgb(26, 25, 25);
+    border-radius: 5%;
+    width:90%;
+    height:10%;
+    margin:2%;
+    display: flex;
+    align-items: center;
+    margin-top: 6%;
+    justify-content: center;
+}
+
+.Rightbox2{
+    background-color:rgb(26, 25, 25);
+    border-radius: 5%;
+    width:90%;
+    height:40%;
+    margin:2%;
+    align-items: center;
+    margin-top: 6%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.Rightbox3{
+    background-color:rgb(26, 25, 25);
+    border-radius: 5%;
+    width:90%;
+    height:23%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction:row;
+}
+
+.button1{
+    background-color: rgb(32, 65, 122);
+    color: white;
+    padding:12px;
+    font-size: 15px;
+    border-radius: 8px;
+    width:60%;
+    height: 45%;
+    margin:5%;
+    margin-right: 2%;
+    
+}
+
+.combobox{
+    width: 70%;
+    height: 10%;
+    background-color: darkgray;
+    color: gray;
+    border-radius: 8px;
+    margin: 2%;
+}
+
+.input{
+    background-color: darkgray;
+    color: gray;
+    border-radius: 8px;
+    height: 30%;
+}
+.modal{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #eee;
+    width: 50%;
+}
