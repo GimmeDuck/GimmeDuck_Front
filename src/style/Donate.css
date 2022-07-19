@@ -3,6 +3,7 @@
     height: 100vh;
     background: black;
     display: flex;
+    flex-direction: column;
     justify-content:center;
     align-items: center;
 }
@@ -15,25 +16,56 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    vertical-align: middle;
 }
 
 .donate_rapper_title{
+    margin: 2% 0% 0% 0%;
+    width: 100%;
     color:wheat;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content :center;
+}
+
+.donate_title_balloon{
+    width : 10%
 }
 
 .donate_rapper_imgrap{
+    flex: 1;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
 .donate_rapper_nft{
-    width: 35%;
-    border-radius: 7%;
+    width: 40%;
+    border-radius: 10%;
 }
 
 .donate_rapper_img{
-    width: 35%;
-    border-radius: 7%;
+    width: 40%;
+    border-radius: 10%;
+}
+
+.donate_button_rapper{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    margin: 0% 10% 0% 0%;
+}
+
+.donate_home_button{
+    width: 7%;
+    height : 65%;
+    background-color: rgb(191,144,0);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 10px;
 }
