@@ -15,25 +15,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    vertical-align: middle;
 }
 
 .donate_rapper_title{
+    margin: 2% 0% 0% 0%;
+    width: 100%;
     color:wheat;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content :center;
+}
+
+.donate_title_balloon{
+    width : 10%
 }
 
 .donate_rapper_imgrap{
+    flex: 1;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
 .donate_rapper_nft{
-    width: 35%;
-    border-radius: 7%;
+    width: 40%;
+    border-radius: 10%;
 }
 
 .donate_rapper_img{
-    width: 35%;
-    border-radius: 7%;
+    width: 40%;
+    border-radius: 10%;
 }
