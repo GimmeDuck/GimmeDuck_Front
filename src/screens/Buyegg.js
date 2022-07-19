@@ -2,8 +2,6 @@ import React from "react";
 import "../style/Buyegg.css";
 
 const Buyegg = () => {
-  let [modal, setModal] = useState(false);
-
   function customBtn(e) {
     window.location.href = "/Custom";
   }
