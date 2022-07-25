@@ -3,7 +3,6 @@ import '../style/Custom.css'
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 
-
 const Custom = () => {
 
     const cardRef = useRef();
@@ -14,7 +13,7 @@ const Custom = () => {
             saveAs(blob, "duckling.png");
             console.log(blob.stream());
         });
-        window.location.href = "/Donate"
+        setTimeout(() => window.location.href = "/Donate", 500);
     }
     
   return (
