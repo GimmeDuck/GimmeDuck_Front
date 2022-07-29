@@ -1,11 +1,26 @@
 import React from "react";
 import "../style/Buyegg.css";
-import "../screen_js/Buyegg_js"
+import * as KlipAPI from "../screen_js/Buyegg_js";
+import Modal from 'react-modal';
+import { useState } from 'react';
+import {QRCodeSVG} from "qrcode.react";
 
 const Buyegg = () => {
   function customBtn(e) {
     window.location.href = "/Custom";
   }
+function modalOpen() {
+  KlipAPI.getAddress(setQrvalue_auth, async (address) => {
+    setMyAddress(address);
+  });
+  setModalIsOpen(true);
+}
+const DEFAULT_QR_CODE = "DEFAULT";
+const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
+
+const [modalIsOpen, setModalIsOpen] = useState(false);
+const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
+const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
 
   return (
     <>
@@ -14,7 +29,11 @@ const Buyegg = () => {
           <img src="img/eggset.png" className="eggset"></img>
           <div style={{ width: "50%" }}>
             <div className="Rightbox">
-              <button className="button1">Klip 지갑연동</button>
+            <button className="button1" onClick={()=> modalOpen()} >Klip 지갑연동</button>
+              <Modal className = "buyegg_popup" isOpen={modalIsOpen}>
+                <QRCodeSVG value={qrvalue_auth}/>
+                <button onClick={()=> setModalIsOpen(false)}>X</button>
+              </Modal>
               <div className="text1">알 ____ 개</div>
             </div>
             <div className="Rightbox2">

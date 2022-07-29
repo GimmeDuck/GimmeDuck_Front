@@ -34,7 +34,6 @@ export const getAddress = (setQrvalue, callback) => {
                 console.log(res.data);
                 callback(res.data.result.klaytn_address);
                 clearInterval(timerId);
-                setQrvalue("DEFAULT");
               }
             });
         }, 1000);
