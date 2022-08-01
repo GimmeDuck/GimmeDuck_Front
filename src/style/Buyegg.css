@@ -79,12 +79,15 @@
     border-radius: 8px;
     height: 30%;
 }
-.modal{
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #eee;
-    width: 50%;
-}
+
 .buyegg_popup{
-    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ReactModal__Overlay--after-open{
+    margin: 10% 30%;
+    border-radius: 5%;
 }
