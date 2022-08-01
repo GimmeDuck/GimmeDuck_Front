@@ -91,3 +91,19 @@
     margin: 10% 30%;
     border-radius: 5%;
 }
+
+.buyegg_modal_close{
+    
+}
+.close{
+    display:inline-block;
+    transform: translate(-50%, -50%);
+}
+.close:hover{
+    cursor: pointer;
+}
+
+.close:after {
+    display: inline-block;
+    content: "\00d7";
+}

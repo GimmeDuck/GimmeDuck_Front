@@ -21,6 +21,7 @@ function send_modalOpen(){
   send_setModalIsOpen(true);
 }
 
+
 const DEFAULT_QR_CODE = "DEFAULT";
 const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
 
@@ -40,7 +41,7 @@ const [qrvalue_send, setQrvalue_send] = useState(DEFAULT_QR_CODE);
             <button className="button1" onClick={()=> wallet_modalOpen()} >Klip 지갑연동</button>
               <Modal className = "buyegg_popup" isOpen={auth_modalIsOpen}>
                 <QRCodeSVG value={qrvalue_auth}/>
-                <button onClick={()=> auth_setModalIsOpen(false)}>X</button>
+                <div className="close" onClick={()=> auth_setModalIsOpen(false)}></div>
               </Modal>
               <div className="text1">알 ____ 개</div>
             </div>
@@ -63,7 +64,7 @@ const [qrvalue_send, setQrvalue_send] = useState(DEFAULT_QR_CODE);
                 <button className="button1" onClick={()=>send_modalOpen()}>Klip 지갑으로 구매</button>
                   <Modal className = "buyegg_popup" isOpen={send_modalIsOpen}>
                     <QRCodeSVG value={qrvalue_send}/>
-                    <button onClick={()=> send_setModalIsOpen(false)}>X</button>
+                    <button className = "buyegg_modal_close" onClick={()=> send_setModalIsOpen(false)}>X</button>
                   </Modal>
                 <button
                   onClick={customBtn}
