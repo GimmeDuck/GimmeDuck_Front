@@ -41,7 +41,7 @@ export const getAddress = (setQrvalue, callback) => {
   };
 
   //klay 전송
-  export const send_klay = (setQrvalue, setMyAddress, txhash) => {
+  export const send_klay = (setQrvalue, setMyAddress) => {
     axios
       .post(A2P_API_PREPARE_URL, {
         bapp: {
@@ -64,11 +64,8 @@ export const getAddress = (setQrvalue, callback) => {
             )
             .then((res) => {
               if (res.data.result) {
-                console.log(res.data);
-                console.log(res.data.result);
-                txhash(JSON.stringify(res.data.result.tx_hash));
+
                 clearInterval(timerId);
-                setQrvalue("DEFAULT");
               };
             });
         }, 1000);

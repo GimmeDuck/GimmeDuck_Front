@@ -9,18 +9,27 @@ const Buyegg = () => {
   function customBtn(e) {
     window.location.href = "/Custom";
   }
-function modalOpen() {
+function wallet_modalOpen() {
   KlipAPI.getAddress(setQrvalue_auth, async (address) => {
     setMyAddress(address);
   });
-  setModalIsOpen(true);
+  auth_setModalIsOpen(true);
 }
+
+function send_modalOpen(){
+  KlipAPI.send_klay(setQrvalue_send, setMyAddress);
+  send_setModalIsOpen(true);
+}
+
+
 const DEFAULT_QR_CODE = "DEFAULT";
 const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
 
-const [modalIsOpen, setModalIsOpen] = useState(false);
+const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
+const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
 const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
 const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
+const [qrvalue_send, setQrvalue_send] = useState(DEFAULT_QR_CODE);
 
   return (
     <>
@@ -29,10 +38,10 @@ const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
           <img src="img/eggset.png" className="eggset"></img>
           <div style={{ width: "50%" }}>
             <div className="Rightbox">
-            <button className="button1" onClick={()=> modalOpen()} >Klip 지갑연동</button>
-              <Modal className = "buyegg_popup" isOpen={modalIsOpen}>
+            <button className="button1" onClick={()=> wallet_modalOpen()} >Klip 지갑연동</button>
+              <Modal className = "buyegg_popup" isOpen={auth_modalIsOpen}>
                 <QRCodeSVG value={qrvalue_auth}/>
-                <button onClick={()=> setModalIsOpen(false)}>X</button>
+                <div className="close" onClick={()=> auth_setModalIsOpen(false)}></div>
               </Modal>
               <div className="text1">알 ____ 개</div>
             </div>
@@ -52,10 +61,11 @@ const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
                 <option value="1개">1개</option>
               </select>
               <div className="Rightbox3">
-                <button className="button1" onClick={() => {}}>
-                  Klip 지갑으로 구매
-                </button>
-
+                <button className="button1" onClick={()=>send_modalOpen()}>Klip 지갑으로 구매</button>
+                  <Modal className = "buyegg_popup" isOpen={send_modalIsOpen}>
+                    <QRCodeSVG value={qrvalue_send}/>
+                    <button className = "buyegg_modal_close" onClick={()=> send_setModalIsOpen(false)}>X</button>
+                  </Modal>
                 <button
                   onClick={customBtn}
                   className="button1"
