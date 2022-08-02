@@ -81,10 +81,7 @@
 }
 
 .buyegg_popup{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 100%;
 }
 
 .ReactModal__Overlay--after-open{
@@ -92,12 +89,11 @@
     border-radius: 5%;
 }
 
-.buyegg_modal_close{
-    
-}
 .close{
-    display:inline-block;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: flex-end;
+    height: 10%;
+
 }
 .close:hover{
     cursor: pointer;
@@ -106,4 +102,12 @@
 .close:after {
     display: inline-block;
     content: "\00d7";
+    font-size: 50px;
+    width: 10%;
+}
+.qrcode{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
