@@ -79,9 +79,35 @@
     border-radius: 8px;
     height: 30%;
 }
-.modal{
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #eee;
-    width: 50%;
+
+.buyegg_popup{
+    height: 100%;
+}
+
+.ReactModal__Overlay--after-open{
+    margin: 10% 30%;
+    border-radius: 5%;
+}
+
+.close{
+    display: flex;
+    justify-content: flex-end;
+    height: 10%;
+
+}
+.close:hover{
+    cursor: pointer;
+}
+
+.close:after {
+    display: inline-block;
+    content: "\00d7";
+    font-size: 50px;
+    width: 10%;
+}
+.qrcode{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
