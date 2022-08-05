@@ -1,35 +1,34 @@
 import React from "react";
 import "../style/Buyegg.css";
 import * as KlipAPI from "../screen_js/Buyegg_js";
-import Modal from 'react-modal';
-import { useState } from 'react';
-import {QRCodeSVG} from "qrcode.react";
+import Modal from "react-modal";
+import { useState } from "react";
+import { QRCodeSVG } from "qrcode.react";
 
 const Buyegg = () => {
   function customBtn(e) {
     window.location.href = "/Custom";
   }
-function wallet_modalOpen() {
-  KlipAPI.getAddress(setQrvalue_auth, async (address) => {
-    setMyAddress(address);
-  });
-  auth_setModalIsOpen(true);
-}
+  function wallet_modalOpen() {
+    KlipAPI.getAddress(setQrvalue_auth, async (address) => {
+      setMyAddress(address);
+    });
+    auth_setModalIsOpen(true);
+  }
 
-function send_modalOpen(){
-  KlipAPI.send_klay(setQrvalue_send, setMyAddress);
-  send_setModalIsOpen(true);
-}
+  function send_modalOpen() {
+    KlipAPI.send_klay(setQrvalue_send, setMyAddress);
+    send_setModalIsOpen(true);
+  }
 
+  const DEFAULT_QR_CODE = "DEFAULT";
+  const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
 
-const DEFAULT_QR_CODE = "DEFAULT";
-const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
-
-const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
-const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
-const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
-const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
-const [qrvalue_send, setQrvalue_send] = useState(DEFAULT_QR_CODE);
+  const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
+  const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
+  const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
+  const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
+  const [qrvalue_send, setQrvalue_send] = useState(DEFAULT_QR_CODE);
 
   return (
     <>
@@ -38,10 +37,15 @@ const [qrvalue_send, setQrvalue_send] = useState(DEFAULT_QR_CODE);
           <img src="img/eggset.png" className="eggset"></img>
           <div style={{ width: "50%" }}>
             <div className="Rightbox">
-            <button className="button1" onClick={()=> wallet_modalOpen()} >Klip 지갑연동</button>
-              <Modal className = "buyegg_popup" isOpen={auth_modalIsOpen}>
-                <QRCodeSVG className="qrcode" value={qrvalue_auth}/>
-                <div className="close" onClick={()=> auth_setModalIsOpen(false)}></div>
+              <button className="button1" onClick={() => wallet_modalOpen()}>
+                Klip 지갑연동
+              </button>
+              <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
+                <QRCodeSVG className="qrcode" value={qrvalue_auth} />
+                <div
+                  className="close"
+                  onClick={() => auth_setModalIsOpen(false)}
+                ></div>
               </Modal>
               <div className="text1">알 ____ 개</div>
             </div>
@@ -61,11 +65,16 @@ const [qrvalue_send, setQrvalue_send] = useState(DEFAULT_QR_CODE);
                 <option value="1개">1개</option>
               </select>
               <div className="Rightbox3">
-                <button className="button1" onClick={()=>send_modalOpen()}>Klip 지갑으로 구매</button>
-                  <Modal className = "buyegg_popup" isOpen={send_modalIsOpen}>
-                    <QRCodeSVG className="qrcode" value={qrvalue_send}/>
-                    <div className="close" onClick={()=> send_setModalIsOpen(false)}></div>
-                  </Modal>
+                <button className="button1" onClick={() => send_modalOpen()}>
+                  Klip 지갑으로 구매
+                </button>
+                <Modal className="buyegg_popup" isOpen={send_modalIsOpen}>
+                  <QRCodeSVG className="qrcode" value={qrvalue_send} />
+                  <div
+                    className="close"
+                    onClick={() => send_setModalIsOpen(false)}
+                  ></div>
+                </Modal>
                 <button
                   onClick={customBtn}
                   className="button1"
