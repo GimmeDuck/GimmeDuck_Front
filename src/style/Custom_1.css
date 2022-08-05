@@ -1,0 +1,108 @@
+.FullScreen{
+    width:100vw;
+    height: 100vh;
+}
+.main-Div {
+    width: 80vmax;
+    height: 45vmax;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    margin-left: 6%;
+    background-color: rgb(53,53,53);
+    
+
+}
+
+.Back {
+    position: relative;
+    margin: 4vmax;
+    width: 45%;
+    border-radius: 10px;
+}
+
+.Character {
+    position: absolute;
+    margin: 4vmax;
+    width: 45%;
+    height: 80%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.Character-1 {
+    position: absolute;
+    margin: 5%;
+    width: 45%;
+    border-radius: 10px;
+}
+
+
+
+.RightPanel {
+    position: absolute;
+    width: 45%;
+    overflow-x: scroll;
+    height: 80%;
+    background-color: rgb(70, 70, 70);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px;
+    margin-left: 43vmax;
+     margin-top: 4vmax;
+     
+}
+
+.SideBtnText{
+            background-Color: rgb(32, 65, 112);
+            border-Radius: 1vmax;
+            float: right;
+            width: 50%;
+            height: 50%;
+            font-Size:1vmax;
+    color: white;
+}
+
+.SideBtn {
+   
+    right: 0;
+    margin-top: 1vmax;
+    margin-right: 4vmax;
+    width: 20vmax;
+    height: 11vmax;
+    position: absolute;
+    border-radius: 10px;
+
+
+}
+
+
+.Card {
+    background-color: white;
+    border-radius: 10px;
+    width: 15vmax;
+    margin: 1vmax;
+    opacity: 90%;
+}
+
+.nftBtn{
+    width: 15vmax;
+    border:0px;
+    height: 3vmax;
+    background-color: rgb(191,144,0);
+    border-radius: 8px;
+    position: absolute;
+    margin-top: 51%;
+    margin-left: 80%;
+    color: white;
+}
+
+
+
+
+
+
+
+
