@@ -25,7 +25,7 @@ const Custom = () => {
             <br/>
             <span style={{color:'lightgoldenrodyellow'}}># 희소성이 높은 아이템이 포함될 수 있습니다!</span> 
             <div style={{backgroundColor:'red'}}>
-                <button className='cusbutton'>랜덤으로 발행</button>
+                <button className='cusbutton' >랜덤으로 발행</button>
             </div>
         </div>
         
