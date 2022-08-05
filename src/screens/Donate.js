@@ -1,6 +1,5 @@
 import React from 'react';
 import '../style/Donate.css';
-import {QRCodeSVG} from "qrcode.react";
 
 const Donate = () => {
 
