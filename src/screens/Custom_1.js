@@ -208,53 +208,32 @@ const Custom_1 = () => {
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
       <div class="main-Div" >
         {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character"  ref={cardRef} >
-          <img
-            src={BackSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
+        <div className="Character"  >
+          <img src={BackSelect}/>
         </div>
         {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img
-            src={BodySelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
+        <div className="Character-1" ref={cardRef} >
+          <img src={BodySelect}/>
         </div>
         {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img
-            src={HairSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
+        <div className="Character-1" >
+          <img src={HairSelect}/>
         </div>
         {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">
-          <img
-            src={EyeSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
+          <img src={EyeSelect}/>
         </div>
         {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">
-          <img
-            src={EggSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
+          <img src={EggSelect}/>
         </div>
         {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">
-          <img
-            src={MouthSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
+          <img src={MouthSelect}/>
         </div>
         {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">
-          <img
-            src={IdolSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
+          <img src={IdolSelect}/>
         </div>
 
         {/* ㅣㅣㅣㅣ우측패널ㅣㅣㅣㅣㅣㅣㅣ */}
