@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import "../style/Custom_1.css";
+import domtoimage from "dom-to-image";
+import { saveAs } from "file-saver";
 
 //const Back_Mint = require("../custom_Img/Back/Back_Mint.png");
 
@@ -71,9 +73,17 @@ const Custom_1 = () => {
   const [IdolVisible, setIdolVisible] = React.useState(false);
   const [BackVisible, setBackVisible] = React.useState(false);
 
-  function NFTBtn(e) {
-    window.location.href = "/Donate";
-  }
+
+  const cardRef = useRef();
+
+  const NFTBtn = () => {
+    const card = cardRef.current;
+    domtoimage.toBlob(card).then((blob) => {
+      saveAs(blob, "duckling.png");
+      console.log(blob.stream());
+    });
+    setTimeout(() => (window.location.href = "/Donate"), 500);
+  };
 
   return (
     <div
@@ -196,9 +206,9 @@ const Custom_1 = () => {
       </div>
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
-      <div class="main-Div">
+      <div class="main-Div" >
         {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character">
+        <div className="Character"  ref={cardRef} >
           <img
             src={BackSelect}
             style={{ width: "100%", height: "100%", objectFit: "contain" }}

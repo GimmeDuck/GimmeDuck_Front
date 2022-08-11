@@ -1,19 +1,22 @@
 import React, { useRef } from "react";
 import "../style/Custom.css";
-import domtoimage from "dom-to-image";
-import { saveAs } from "file-saver";
+
 
 const Custom = () => {
-  const cardRef = useRef();
+//   const cardRef = useRef();
 
-  const mintBtn = () => {
-    const card = cardRef.current;
-    domtoimage.toBlob(card).then((blob) => {
-      saveAs(blob, "duckling.png");
-      console.log(blob.stream());
-    });
-    setTimeout(() => (window.location.href = "/Custom_1"), 500);
-  };
+//   const mintBtn = () => {
+//     const card = cardRef.current;
+//     domtoimage.toBlob(card).then((blob) => {
+//       saveAs(blob, "duckling.png");
+//       console.log(blob.stream());
+//     });
+//     setTimeout(() => (window.location.href = "/Custom_1"), 500);
+//   };
+
+    const mintBtn = () => {
+        window.location.href = "/Custom_1";
+    }
 
   return (
     <div
@@ -49,7 +52,7 @@ const Custom = () => {
         </span>
         <div className="cusbox">
           <img
-            ref={cardRef}
+            //ref={cardRef}
             src="img/1.png"
             style={{ width: "30%", height: "100%", objectFit: "contain" }}
           />
