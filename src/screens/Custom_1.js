@@ -1,6 +1,12 @@
 import React, { useState, useRef } from "react";
 import "../style/Custom_1.css";
 
+//caver
+import execute_func from '../screen_js/caver.js';
+import { Buffer } from "buffer";
+var global = global || window;
+global.Buffer = global.Buffer || require("buffer").Buffer;
+
 //const Back_Mint = require("../custom_Img/Back/Back_Mint.png");
 
 const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
@@ -73,6 +79,7 @@ const Custom_1 = () => {
 
   function NFTBtn(e) {
     window.location.href = "/Donate";
+    execute_func();
   }
 
   return (
