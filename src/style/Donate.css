@@ -47,8 +47,29 @@
 }
 
 .donate_rapper_img{
-    width: 40%;
+    width: 45%;
     border-radius: 10%;
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.donate_rapper_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    font-size: 12px;
+}
+
+#donate_rapper_img {
+    width:40%;
+    position: absolute;
+    filter: grayscale(100%);
+    top: 80%;
+    right: 35%;
+    transform: translate(-0%, -35%);
 }
 
 .donate_button_rapper{

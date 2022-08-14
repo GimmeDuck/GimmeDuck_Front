@@ -106,6 +106,7 @@ const Custom_1 = () => {
      .then(function (dataUrl) {
        saveAs(dataUrl, 'my-node.png');
      });
+     setTimeout(() => (window.location.href = "/Donate"), 500);
    }
 
   return (
@@ -231,33 +232,35 @@ const Custom_1 = () => {
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
       <div id="CharDown" className="main-Div" >
         <div ref={cardRef}>
-          {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character"  >
-            <img src={BackSelect}/>
-          </div>
-          {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1" >
-            <img src={BodySelect}/>
-          </div>
-          {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1" >
-            <img src={HairSelect}/>
-          </div>
-          {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
-            <img src={EyeSelect}/>
-          </div>
-          {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
-            <img src={EggSelect}/>
-          </div>
-          {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
-            <img src={MouthSelect}/>
-          </div>
-          {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
-            <img src={IdolSelect}/>
+          <div>
+            {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
+            <div className="Character"  >
+              <img src={BackSelect}/>
+            </div>
+            {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
+            <div className="Character-1" >
+              <img src={BodySelect}/>
+            </div>
+            {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
+            <div className="Character-1" >
+              <img src={HairSelect}/>
+            </div>
+            {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
+            <div className="Character-1">
+              <img src={EyeSelect}/>
+            </div>
+            {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
+            <div className="Character-1">
+              <img src={EggSelect}/>
+            </div>
+            {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
+            <div className="Character-1">
+              <img src={MouthSelect}/>
+            </div>
+            {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
+            <div className="Character-1">
+              <img src={IdolSelect}/>
+            </div>
           </div>
         </div>
 
