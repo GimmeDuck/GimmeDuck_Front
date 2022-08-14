@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import "../style/Custom_1.css";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
+import html2canvas from 'html2canvas';
 
 //const Back_Mint = require("../custom_Img/Back/Back_Mint.png");
 
@@ -74,15 +75,26 @@ const Custom_1 = () => {
   const [BackVisible, setBackVisible] = React.useState(false);
 
 
-  const cardRef = useRef();
+   const cardRef = useRef();
 
-  const NFTBtn = () => {
-    const card = cardRef.current;
-    domtoimage.toBlob(card).then((blob) => {
-      saveAs(blob, "duckling.png");
-      console.log(blob.stream());
+  // const NFTBtn = () => {
+  //   const card = cardRef.current;
+  //   domtoimage.toBlob(card).then((blob) => {
+  //     saveAs(blob, "duckling.png");
+  //     console.log(blob.stream());
+  //   });
+  //   //setTimeout(() => (window.location.href = "/Donate"), 500);
+  // };
+
+  const NFTBtn = (el, filename) => {
+    html2canvas(el).then((canvas) => {
+      const image = canvas.toDataURL('image/png', 1);
+      const link = window.document.createElement('a');
+      link.style = 'display:none;';
+      link.download = filename + '.png';
+      link.href = image;
+      link.click();
     });
-    //setTimeout(() => (window.location.href = "/Donate"), 500);
   };
 
   return (
@@ -207,33 +219,35 @@ const Custom_1 = () => {
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
       <div className="main-Div" >
-        {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
-        <div ref={cardRef} className="Character"  >
-          <img src={BackSelect}/>
-        </div>
-        {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1" >
-          <img src={BodySelect}/>
-        </div>
-        {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1" >
-          <img src={HairSelect}/>
-        </div>
-        {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img src={EyeSelect}/>
-        </div>
-        {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img src={EggSelect}/>
-        </div>
-        {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img src={MouthSelect}/>
-        </div>
-        {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img src={IdolSelect}/>
+        <div ref={cardRef}>
+          {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character"  >
+            <img src={BackSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1" >
+            <img src={BodySelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1" >
+            <img src={HairSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={EyeSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={EggSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={MouthSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={IdolSelect}/>
+          </div>
         </div>
 
         {/* ㅣㅣㅣㅣ우측패널ㅣㅣㅣㅣㅣㅣㅣ */}
@@ -559,7 +573,7 @@ const Custom_1 = () => {
           </div>
         )}
 
-        <button className="nftBtn" onClick={NFTBtn}>
+        <button className="nftBtn" onClick={NFTBtn(cardRef,"Duckling")}>
           NFT 발행
         </button>
       </div>
