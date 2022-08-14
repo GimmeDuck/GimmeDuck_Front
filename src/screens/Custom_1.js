@@ -87,14 +87,16 @@ const Custom_1 = () => {
   // };
 
   const NFTBtn = (el, filename) => {
-    html2canvas(el).then((canvas) => {
+    html2canvas(el, { allowTaint: true }).then((canvas) => {
       const image = canvas.toDataURL('image/png', 1);
       const link = window.document.createElement('a');
       link.style = 'display:none;';
-      link.download = filename + '.png';
+      link.download = filename;
       link.href = image;
       link.click();
-    });
+    }).catch(e => {
+      console.log(e);
+  });
   };
 
   return (
@@ -219,7 +221,7 @@ const Custom_1 = () => {
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
       <div className="main-Div" >
-        <div ref={cardRef}>
+        <div id="CharDown" ref={cardRef}>
           {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character"  >
             <img src={BackSelect}/>
@@ -573,7 +575,7 @@ const Custom_1 = () => {
           </div>
         )}
 
-        <button className="nftBtn" onClick={NFTBtn(cardRef,"Duckling")}>
+        <button className="nftBtn" onClick={() => NFTBtn(document.getElementById("CharDown"),"Duckling.png")}>
           NFT 발행
         </button>
       </div>
