@@ -82,7 +82,7 @@ const Custom_1 = () => {
       saveAs(blob, "duckling.png");
       console.log(blob.stream());
     });
-    setTimeout(() => (window.location.href = "/Donate"), 500);
+    //setTimeout(() => (window.location.href = "/Donate"), 500);
   };
 
   return (
@@ -206,13 +206,13 @@ const Custom_1 = () => {
       </div>
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
-      <div class="main-Div" >
+      <div ref={cardRef} class="main-Div" >
         {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character"  >
           <img src={BackSelect}/>
         </div>
         {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1" ref={cardRef} >
+        <div className="Character-1" >
           <img src={BodySelect}/>
         </div>
         {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
