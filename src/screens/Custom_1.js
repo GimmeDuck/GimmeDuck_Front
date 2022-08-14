@@ -3,6 +3,7 @@ import "../style/Custom_1.css";
 import domtoimage from "dom-to-image";
 import { saveAs } from "file-saver";
 import html2canvas from 'html2canvas';
+import * as htmlToImage from 'html-to-image';
 
 //const Back_Mint = require("../custom_Img/Back/Back_Mint.png");
 
@@ -86,18 +87,26 @@ const Custom_1 = () => {
   //   //setTimeout(() => (window.location.href = "/Donate"), 500);
   // };
 
-  const NFTBtn = (el, filename) => {
-    html2canvas(el, { allowTaint: true }).then((canvas) => {
-      const image = canvas.toDataURL('image/png', 1);
-      const link = window.document.createElement('a');
-      link.style = 'display:none;';
-      link.download = filename;
-      link.href = image;
-      link.click();
-    }).catch(e => {
-      console.log(e);
-  });
-  };
+  // const NFTBtn = (el, filename) => {
+  //   html2canvas(el, { allowTaint: true }).then((canvas) => {
+      
+  //     const image = canvas.toDataURL('image/png', 1);
+  //     const link = window.document.createElement('a');
+  //     link.style = 'display:none;';
+  //     link.download = filename;
+  //     link.href = image;
+  //     link.click();
+  //   }).catch(e => {
+  //     console.log(e);
+  // });
+  // };
+
+  const NFTBtn = (id) =>{
+    htmlToImage.toPng(document.getElementById(id))
+     .then(function (dataUrl) {
+       saveAs(dataUrl, 'my-node.png');
+     });
+   }
 
   return (
     <div
@@ -220,8 +229,8 @@ const Custom_1 = () => {
       </div>
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
-      <div className="main-Div" >
-        <div id="CharDown" ref={cardRef}>
+      <div id="CharDown" className="main-Div" >
+        <div ref={cardRef}>
           {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character"  >
             <img src={BackSelect}/>
@@ -341,7 +350,7 @@ const Custom_1 = () => {
             <div>
               <img
                 src={Hair.Hair_Blue}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setHairSelect(Hair.Hair_Blue);
                 }}
@@ -575,7 +584,7 @@ const Custom_1 = () => {
           </div>
         )}
 
-        <button className="nftBtn" onClick={() => NFTBtn(document.getElementById("CharDown"),"Duckling.png")}>
+        <button className="nftBtn" onClick={() => NFTBtn("CharDown")}>
           NFT 발행
         </button>
       </div>
