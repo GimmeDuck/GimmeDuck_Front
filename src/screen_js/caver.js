@@ -42,7 +42,9 @@ function execute_func(){
         value : caver.utils.toPeb('1','KLAY')
     }).then(function(receipt){
         console.log(receipt);
+        window.location.href = "/Donate";
     });
+
 }
 
 export default execute_func;

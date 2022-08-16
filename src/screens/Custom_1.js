@@ -78,7 +78,6 @@ const Custom_1 = () => {
   const [BackVisible, setBackVisible] = React.useState(false);
 
   function NFTBtn(e) {
-    window.location.href = "/Donate";
     execute_func();
   }
 
