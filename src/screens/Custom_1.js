@@ -5,6 +5,8 @@ import { saveAs } from "file-saver";
 import html2canvas from 'html2canvas';
 import * as htmlToImage from 'html-to-image';
 
+import exportAsImage from "../utils/exportAsImage";
+
 //const Back_Mint = require("../custom_Img/Back/Back_Mint.png");
 
 const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
@@ -75,9 +77,6 @@ const Custom_1 = () => {
   const [IdolVisible, setIdolVisible] = React.useState(false);
   const [BackVisible, setBackVisible] = React.useState(false);
 
-
-   const cardRef = useRef();
-
   // const NFTBtn = () => {
   //   const card = cardRef.current;
   //   domtoimage.toBlob(card).then((blob) => {
@@ -87,8 +86,8 @@ const Custom_1 = () => {
   //   //setTimeout(() => (window.location.href = "/Donate"), 500);
   // };
 
-  // const NFTBtn = (el, filename) => {
-  //   html2canvas(el, { allowTaint: true }).then((canvas) => {
+  // const NFTBtn = (id) => {
+  //   html2canvas(document.getElementById(id), { allowTaint: true }).then(canvas => {
       
   //     const image = canvas.toDataURL('image/png', 1);
   //     const link = window.document.createElement('a');
@@ -101,13 +100,13 @@ const Custom_1 = () => {
   // });
   // };
 
-  const NFTBtn = (id) =>{
-    htmlToImage.toPng(document.getElementById(id))
-     .then(function (dataUrl) {
-       saveAs(dataUrl, 'my-node.png');
-     });
-     setTimeout(() => (window.location.href = "/Donate"), 500);
-   }
+  // const NFTBtn = (id) =>{
+  //   htmlToImage.toPng(document.getElementById(id))
+  //    .then(function (dataUrl) {
+  //      saveAs(dataUrl, 'my-node.png');
+  //    });
+  //    setTimeout(() => (window.location.href = "/Donate"), 500);
+  //  }
 
   return (
     <div
@@ -231,7 +230,7 @@ const Custom_1 = () => {
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
       <div className="main-Div" >
-        <div ref={cardRef} id="CharDown">
+        <div ref={exportRef}>
           <div>
             {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
             <div className="Character"  >
@@ -587,7 +586,7 @@ const Custom_1 = () => {
           </div>
         )}
 
-        <button className="nftBtn" onClick={() => NFTBtn("CharDown")}>
+        <button className="nftBtn" onClick={() => exportAsImage(exportRef.current, "test")}>
           NFT 발행
         </button>
       </div>
