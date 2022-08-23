@@ -236,31 +236,38 @@ const Custom_1 = () => {
           <div>
             {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
             <div className="Character"  >
-              <img src={BackSelect}/>
+              <img src={Back_Zebra} />
+              {/* <img src={BackSelect}/> */}
             </div>
             {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
             <div className="Character-1" >
-              <img src={BodySelect}/>
+              {/* <img src={BodySelect}/> */}
+              <img src={Body_White} />
             </div>
             {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
             <div className="Character-1" >
-              <img src={HairSelect}/>
+              {/* <img src={HairSelect}/> */}
+              <img src={Hair_Blue}/>
             </div>
             {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
             <div className="Character-1">
-              <img src={EyeSelect}/>
+              {/* <img src={EyeSelect}/> */}
+              <img src={Eye_Glasses}/>
             </div>
             {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
             <div className="Character-1">
-              <img src={EggSelect}/>
+              {/* <img src={EggSelect}/> */}
+              <img src={Egg_White}/>
             </div>
             {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
             <div className="Character-1">
-              <img src={MouthSelect}/>
+              {/* <img src={MouthSelect}/> */}
+              <img src={Mouth_Blue}/>
             </div>
             {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
             <div className="Character-1">
-              <img src={IdolSelect}/>
+              {/* <img src={IdolSelect}/> */}
+              <img src={Idol_Aespa}/>
             </div>
           </div>
         </div>
@@ -588,7 +595,7 @@ const Custom_1 = () => {
           </div>
         )}
 
-        <button className="nftBtn" onClick={() => exportAsImage(exportRef.current, "test")}>
+        <button className="nftBtn" onClick={() => exportAsImage(exportRef.current, "test.png")}>
           NFT 발행
         </button>
       </div>
