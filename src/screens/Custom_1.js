@@ -1,13 +1,7 @@
 import React, { useState, useRef } from "react";
 import "../style/Custom_1.css";
-import domtoimage from "dom-to-image";
-import { saveAs } from "file-saver";
-import html2canvas from 'html2canvas';
-import * as htmlToImage from 'html-to-image';
 
 import exportAsImage from "../utils/exportAsImage";
-
-//const Back_Mint = require("../custom_Img/Back/Back_Mint.png");
 
 const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
 const Body_Blue = require("../custom_Img/Body/Body_Blue.png");
@@ -262,7 +256,7 @@ const Custom_1 = () => {
             <img src={IdolSelect}/>
           </div>
         </div>
-        
+
         {/* ㅣㅣㅣㅣ우측패널ㅣㅣㅣㅣㅣㅣㅣ */}
         {/* ㅣㅣㅣㅣBodyPanelㅣㅣㅣㅣㅣㅣㅣ */}
         {BodyVisible && (

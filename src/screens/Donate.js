@@ -19,7 +19,7 @@ const Donate = () => {
         </div>
 
         <div className = 'donate_rapper_imgrap'>
-          <img className='donate_rapper_nft' src = 'img/1.png'/>
+          <img className='donate_rapper_nft' src = {localStorage.getItem("imgURL")}/>
           <div className='donate_rapper_img' >
             <img src = 'img/기부증서양식.png'/>
             <div className = 'donate_rapper_text'>

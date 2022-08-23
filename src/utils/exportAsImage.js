@@ -9,6 +9,9 @@ const exportAsImage = async (element, imageFileName) => {
     console.log(canvas);   // -> width가 0인 문제
     console.log(image);  // -> data 값이 비어있는 문제 
     downloadImage(image, imageFileName);
+    localStorage.setItem("imgURL", image);  // localStorage로 이미지 url 임시 저장 후 완성 페이지에서 이미지 연동
+
+    window.location.href = "/Donate";
 };
 
 const downloadImage = (blob, fileName) => {
