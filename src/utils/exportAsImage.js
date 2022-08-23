@@ -1,9 +1,13 @@
 import html2canvas from "html2canvas";
 
 const exportAsImage = async (element, imageFileName) => {
-    const canvas = await html2canvas(element);
+    const canvas = await html2canvas(element, {width : 380,
+        height:380});  //  -> width, height 값 지정으로 문제 해결 
     const image = canvas.toDataURL("image/png", 1.0);
     // download the image
+    console.log("This is result.");
+    console.log(canvas);   // -> width가 0인 문제
+    console.log(image);  // -> data 값이 비어있는 문제 
     downloadImage(image, imageFileName);
 };
 

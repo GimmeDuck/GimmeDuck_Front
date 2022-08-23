@@ -1,6 +1,6 @@
 .FullScreen{
     width:100vw;
-    height: 100vh;
+    height:100vh;
 }
 .main-Div {
     width: 80vmax;
@@ -15,14 +15,18 @@
 
 }
 
-.Back {
+img {
+    padding: 0px;
+}
+/* .Back {
     position: relative;
     margin: 4vmax;
     width: 45%;
     border-radius: 10px;
-}
+} */
 
-.Character {
+
+#Character {
     position: absolute;
     margin: 4vmax;
     width: 45%;
@@ -33,15 +37,13 @@
 
 .Character-1 {
     position: absolute;
-    margin: 5%;
-    width: 45%;
-    border-radius: 10px;
+    width: 100%;
 }
 
-.Character img, .Character-1 img {
-    width: "100%";
-    height: "100%";
-    object-fit: "contain"; 
+.Character-1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
 }
 
 

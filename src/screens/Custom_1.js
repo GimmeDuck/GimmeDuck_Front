@@ -232,46 +232,37 @@ const Custom_1 = () => {
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
       <div className="main-Div" >
-        <div ref={exportRef}>
-          <div>
-            {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
-            <div className="Character"  >
-              <img src={Back_Zebra} />
-              {/* <img src={BackSelect}/> */}
-            </div>
-            {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
-            <div className="Character-1" >
-              {/* <img src={BodySelect}/> */}
-              <img src={Body_White} />
-            </div>
-            {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
-            <div className="Character-1" >
-              {/* <img src={HairSelect}/> */}
-              <img src={Hair_Blue}/>
-            </div>
-            {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
-            <div className="Character-1">
-              {/* <img src={EyeSelect}/> */}
-              <img src={Eye_Glasses}/>
-            </div>
-            {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
-            <div className="Character-1">
-              {/* <img src={EggSelect}/> */}
-              <img src={Egg_White}/>
-            </div>
-            {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
-            <div className="Character-1">
-              {/* <img src={MouthSelect}/> */}
-              <img src={Mouth_Blue}/>
-            </div>
-            {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
-            <div className="Character-1">
-              {/* <img src={IdolSelect}/> */}
-              <img src={Idol_Aespa}/>
-            </div>
+        <div id="Character" ref={exportRef}>
+          {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1"  >
+            <img src={BackSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1" >
+            <img src={BodySelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1" >
+            <img src={HairSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={EyeSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={EggSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={MouthSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={IdolSelect}/>
           </div>
         </div>
-
+        
         {/* ㅣㅣㅣㅣ우측패널ㅣㅣㅣㅣㅣㅣㅣ */}
         {/* ㅣㅣㅣㅣBodyPanelㅣㅣㅣㅣㅣㅣㅣ */}
         {BodyVisible && (
