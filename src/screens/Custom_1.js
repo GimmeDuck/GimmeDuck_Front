@@ -230,8 +230,8 @@ const Custom_1 = () => {
       </div>
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
-      <div id="CharDown" className="main-Div" >
-        <div ref={cardRef}>
+      <div className="main-Div" >
+        <div ref={cardRef} id="CharDown">
           <div>
             {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
             <div className="Character"  >
