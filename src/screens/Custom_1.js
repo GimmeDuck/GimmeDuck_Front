@@ -108,6 +108,8 @@ const Custom_1 = () => {
   //    setTimeout(() => (window.location.href = "/Donate"), 500);
   //  }
 
+  const exportRef = useRef();
+
   return (
     <div
       style={{
