@@ -2,6 +2,10 @@ import React, { useState, useRef } from "react";
 import "../style/Custom_1.css";
 
 import exportAsImage from "../utils/exportAsImage";
+//caver
+import execute_func from '../screen_js/caver.js';
+var global = global || window;
+global.Buffer = global.Buffer || require("buffer").Buffer;
 
 const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
 const Body_Blue = require("../custom_Img/Body/Body_Blue.png");
@@ -71,38 +75,12 @@ const Custom_1 = () => {
   const [IdolVisible, setIdolVisible] = React.useState(false);
   const [BackVisible, setBackVisible] = React.useState(false);
 
-  // const NFTBtn = () => {
-  //   const card = cardRef.current;
-  //   domtoimage.toBlob(card).then((blob) => {
-  //     saveAs(blob, "duckling.png");
-  //     console.log(blob.stream());
-  //   });
-  //   //setTimeout(() => (window.location.href = "/Donate"), 500);
-  // };
-
-  // const NFTBtn = (id) => {
-  //   html2canvas(document.getElementById(id), { allowTaint: true }).then(canvas => {
-      
-  //     const image = canvas.toDataURL('image/png', 1);
-  //     const link = window.document.createElement('a');
-  //     link.style = 'display:none;';
-  //     link.download = filename;
-  //     link.href = image;
-  //     link.click();
-  //   }).catch(e => {
-  //     console.log(e);
-  // });
-  // };
-
-  // const NFTBtn = (id) =>{
-  //   htmlToImage.toPng(document.getElementById(id))
-  //    .then(function (dataUrl) {
-  //      saveAs(dataUrl, 'my-node.png');
-  //    });
-  //    setTimeout(() => (window.location.href = "/Donate"), 500);
-  //  }
-
   const exportRef = useRef();
+
+  function NFTBtn(e) {
+    exportAsImage(exportRef.current, "test.png");
+    execute_func();
+  }
 
   return (
     <div
@@ -580,7 +558,7 @@ const Custom_1 = () => {
           </div>
         )}
 
-        <button className="nftBtn" onClick={() => exportAsImage(exportRef.current, "test.png")}>
+        <button className="nftBtn" onClick={() => NFTBtn}>
           NFT 발행
         </button>
       </div>
