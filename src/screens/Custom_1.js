@@ -558,7 +558,7 @@ const Custom_1 = () => {
           </div>
         )}
 
-        <button className="nftBtn" onClick={() => NFTBtn}>
+        <button className="nftBtn" onClick={() => NFTBtn()}>
           NFT 발행
         </button>
       </div>
