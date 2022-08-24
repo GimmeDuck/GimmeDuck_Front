@@ -2,6 +2,7 @@
   "name": "gimmeduck_front",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
@@ -35,6 +36,7 @@
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
     "html2canvas": "^1.4.1",
+    "http-proxy-middleware": "^2.0.6",
     "https-browserify": "^1.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
@@ -56,6 +58,7 @@
     "react-modal": "^3.15.1",
     "react-refresh": "^0.11.0",
     "react-router-dom": "^6.3.0",
+    "recharts": "^2.1.13",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.3.0",
