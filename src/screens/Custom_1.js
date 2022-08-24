@@ -1,13 +1,11 @@
 import React, { useState, useRef } from "react";
 import "../style/Custom_1.css";
 
+import exportAsImage from "../utils/exportAsImage";
 //caver
 import execute_func from '../screen_js/caver.js';
-import { Buffer } from "buffer";
 var global = global || window;
 global.Buffer = global.Buffer || require("buffer").Buffer;
-
-//const Back_Mint = require("../custom_Img/Back/Back_Mint.png");
 
 const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
 const Body_Blue = require("../custom_Img/Body/Body_Blue.png");
@@ -77,7 +75,10 @@ const Custom_1 = () => {
   const [IdolVisible, setIdolVisible] = React.useState(false);
   const [BackVisible, setBackVisible] = React.useState(false);
 
+  const exportRef = useRef();
+
   function NFTBtn(e) {
+    exportAsImage(exportRef.current, "test.png");
     execute_func();
   }
 
@@ -92,7 +93,7 @@ const Custom_1 = () => {
       <div>//</div>
       <div>//</div>
       <div
-        class="SideBtn"
+        className="SideBtn"
         onClick={() => {
           setBodyVisible(true);
           setHairVisible(false);
@@ -103,11 +104,11 @@ const Custom_1 = () => {
           setBackVisible(false);
         }}
       >
-        <button class="SideBtnText">Body</button>
+        <button className="SideBtnText">Body</button>
       </div>
 
       <div
-        class="SideBtn"
+        className="SideBtn"
         style={{ marginTop: "7vmax" }}
         onClick={() => {
           setBodyVisible(false);
@@ -119,11 +120,11 @@ const Custom_1 = () => {
           setBackVisible(false);
         }}
       >
-        <button class="SideBtnText">Hair</button>
+        <button className="SideBtnText">Hair</button>
       </div>
 
       <div
-        class="SideBtn"
+        className="SideBtn"
         style={{ marginTop: "13vmax" }}
         onClick={() => {
           setBodyVisible(false);
@@ -135,11 +136,11 @@ const Custom_1 = () => {
           setBackVisible(false);
         }}
       >
-        <button class="SideBtnText">Eye</button>
+        <button className="SideBtnText">Eye</button>
       </div>
 
       <div
-        class="SideBtn"
+        className="SideBtn"
         style={{ marginTop: "19vmax" }}
         onClick={() => {
           setBodyVisible(false);
@@ -151,10 +152,10 @@ const Custom_1 = () => {
           setBackVisible(false);
         }}
       >
-        <button class="SideBtnText">Mouth</button>
+        <button className="SideBtnText">Mouth</button>
       </div>
       <div
-        class="SideBtn"
+        className="SideBtn"
         style={{ marginTop: "25vmax" }}
         onClick={() => {
           setBodyVisible(false);
@@ -166,11 +167,11 @@ const Custom_1 = () => {
           setBackVisible(false);
         }}
       >
-        <button class="SideBtnText">Egg</button>
+        <button className="SideBtnText">Egg</button>
       </div>
 
       <div
-        class="SideBtn"
+        className="SideBtn"
         style={{ marginTop: "31vmax" }}
         onClick={() => {
           setBodyVisible(false);
@@ -182,11 +183,11 @@ const Custom_1 = () => {
           setBackVisible(false);
         }}
       >
-        <button class="SideBtnText">Idol</button>
+        <button className="SideBtnText">Idol</button>
       </div>
 
       <div
-        class="SideBtn"
+        className="SideBtn"
         style={{ marginTop: "37vmax" }}
         onClick={() => {
           setBodyVisible(false);
@@ -198,98 +199,79 @@ const Custom_1 = () => {
           setBackVisible(true);
         }}
       >
-        <button class="SideBtnText">back</button>
+        <button className="SideBtnText">back</button>
       </div>
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
-      <div class="main-Div">
-        {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character">
-          <img
-            src={BackSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
-        </div>
-        {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img
-            src={BodySelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
-        </div>
-        {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img
-            src={HairSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
-        </div>
-        {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img
-            src={EyeSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
-        </div>
-        {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img
-            src={EggSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
-        </div>
-        {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img
-            src={MouthSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
-        </div>
-        {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1">
-          <img
-            src={IdolSelect}
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
+      <div className="main-Div" >
+        <div id="Character" ref={exportRef}>
+          {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1"  >
+            <img src={BackSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1" >
+            <img src={BodySelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1" >
+            <img src={HairSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={EyeSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={EggSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={MouthSelect}/>
+          </div>
+          {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={IdolSelect}/>
+          </div>
         </div>
 
         {/* ㅣㅣㅣㅣ우측패널ㅣㅣㅣㅣㅣㅣㅣ */}
         {/* ㅣㅣㅣㅣBodyPanelㅣㅣㅣㅣㅣㅣㅣ */}
         {BodyVisible && (
-          <div class="RightPanel">
+          <div className="RightPanel">
             {/* ㅣㅣㅣㅣ오른쪽ㅣㅣㅣㅣㅣㅣㅣ */}
             <div>
               <img
                 src={Body.Body_Black}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_Black);
                 }}
               />
               <img
                 src={Body.Body_White}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_White);
                 }}
               />
               <img
                 src={Body.Body_Blue}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_Blue);
                 }}
               />
               <img
                 src={Body.Body_Black}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_Black);
                 }}
               />
               <img
                 src={Body.Body_White}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_White);
                 }}
@@ -299,35 +281,35 @@ const Custom_1 = () => {
             <div>
               <img
                 src={Body.Body_Blue}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_Blue);
                 }}
               />
               <img
                 src={Body.Body_Yellow}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_Yellow);
                 }}
               />
               <img
                 src={Body.Body_Black}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_Black);
                 }}
               />
               <img
                 src={Body.Body_Blue}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_Blue);
                 }}
               />
               <img
                 src={Body.Body_Yellow}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_Yellow);
                 }}
@@ -338,25 +320,25 @@ const Custom_1 = () => {
 
         {/* ㅣㅣㅣㅣHairPanelㅣㅣㅣㅣㅣㅣㅣ */}
         {HairVisible && (
-          <div class="RightPanel">
+          <div className="RightPanel">
             <div>
               <img
                 src={Hair.Hair_Blue}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setHairSelect(Hair.Hair_Blue);
                 }}
               />
               <img
                 src={Hair.Hair_Puka}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setHairSelect(Hair.Hair_Puka);
                 }}
               />
               <img
                 src={Hair.Hair_Blue}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setHairSelect(Hair.Hair_Blue);
                 }}
@@ -365,7 +347,7 @@ const Custom_1 = () => {
             <div>
               <img
                 src={Hair.Hair_Short}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setHairSelect(Hair.Hair_Short);
                 }}
@@ -373,14 +355,14 @@ const Custom_1 = () => {
 
               <img
                 src={Hair.Hair_Short_green}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setHairSelect(Hair.Hair_Short_green);
                 }}
               />
               <img
                 src={Hair.Hair_Puka}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setHairSelect(Hair.Hair_Puka);
                 }}
@@ -391,18 +373,18 @@ const Custom_1 = () => {
 
         {/* ㅣㅣㅣㅣEyePanelㅣㅣㅣㅣㅣㅣㅣ */}
         {EyeVisible && (
-          <div class="RightPanel">
+          <div className="RightPanel">
             <div>
               <img
                 src={Eye.Eye_Arch}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setEyeSelect(Eye.Eye_Arch);
                 }}
               />
               <img
                 src={Eye.Eye_Circle}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setEyeSelect(Eye.Eye_Circle);
                 }}
@@ -411,14 +393,14 @@ const Custom_1 = () => {
             <div>
               <img
                 src={Eye.Eye_Glasses}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setEyeSelect(Eye.Eye_Glasses);
                 }}
               />
               <img
                 src={Eye.Eye_Triangle}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setEyeSelect(Eye.Eye_Triangle);
                 }}
@@ -429,18 +411,18 @@ const Custom_1 = () => {
 
         {/* ㅣㅣㅣㅣMouthPanelㅣㅣㅣㅣㅣㅣㅣ */}
         {MouthVisible && (
-          <div class="RightPanel">
+          <div className="RightPanel">
             <div>
               <img
                 src={Mouth.Mouth_Blue}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setMouthSelect(Mouth.Mouth_Blue);
                 }}
               />
               <img
                 src={Mouth.Mouth_Yellow}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setMouthSelect(Mouth.Mouth_Yellow);
                 }}
@@ -449,14 +431,14 @@ const Custom_1 = () => {
             <div>
               <img
                 src={Mouth.Mouth_Pink}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setMouthSelect(Mouth.Mouth_Pink);
                 }}
               />
               <img
                 src={Mouth.Mouth_Red}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setMouthSelect(Mouth.Mouth_Red);
                 }}
@@ -466,18 +448,18 @@ const Custom_1 = () => {
         )}
         {/* ㅣㅣㅣㅣEggPanelㅣㅣㅣㅣㅣㅣㅣ */}
         {EggVisible && (
-          <div class="RightPanel">
+          <div className="RightPanel">
             <div>
               <img
                 src={Egg.Egg_Mint}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setEggSelect(Egg.Egg_Mint);
                 }}
               />
               <img
                 src={Egg.Egg_Pink}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setEggSelect(Egg.Egg_Pink);
                 }}
@@ -486,14 +468,14 @@ const Custom_1 = () => {
             <div>
               <img
                 src={Egg.Egg_PurPle}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setEggSelect(Egg.Egg_PurPle);
                 }}
               />
               <img
                 src={Egg.Egg_White}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setEggSelect(Egg.Egg_White);
                 }}
@@ -503,18 +485,18 @@ const Custom_1 = () => {
         )}
         {/* ㅣㅣㅣㅣIdolPanelㅣㅣㅣㅣㅣㅣㅣ */}
         {IdolVisible && (
-          <div class="RightPanel">
+          <div className="RightPanel">
             <div>
               <img
                 src={Idol.Idol_Aespa}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Aespa);
                 }}
               />
               <img
                 src={Idol.Idol_Bts}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Bts);
                 }}
@@ -523,14 +505,14 @@ const Custom_1 = () => {
             <div>
               <img
                 src={Idol.Idol_Ive}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Ive);
                 }}
               />
               <img
                 src={Idol.Idol_Nct}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Nct);
                 }}
@@ -540,18 +522,18 @@ const Custom_1 = () => {
         )}
         {/* ㅣㅣㅣㅣbackPanelㅣㅣㅣㅣㅣㅣㅣ */}
         {BackVisible && (
-          <div class="RightPanel">
+          <div className="RightPanel">
             <div>
               <img
                 src={Back.Back_Mint}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBackSelect(Back.Back_Mint);
                 }}
               />
               <img
                 src={Back.Back_Pink}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBackSelect(Back.Back_Pink);
                 }}
@@ -560,14 +542,14 @@ const Custom_1 = () => {
             <div>
               <img
                 src={Back.Back_Rainbow}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBackSelect(Back.Back_Rainbow);
                 }}
               />
               <img
                 src={Back.Back_Zebra}
-                class="Card"
+                className="Card"
                 onClick={() => {
                   setBackSelect(Back.Back_Zebra);
                 }}
@@ -576,7 +558,7 @@ const Custom_1 = () => {
           </div>
         )}
 
-        <button class="nftBtn" onClick={NFTBtn}>
+        <button className="nftBtn" onClick={() => NFTBtn}>
           NFT 발행
         </button>
       </div>
