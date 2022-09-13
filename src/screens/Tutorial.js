@@ -1,8 +1,12 @@
 import React from 'react'
+import '../style/Tutorial.css';
 
 const Tutorial = () => {
   return (
-    <div>Tutorial</div>
+    <div style={{backgroundColor:"black", height:"100vh", color:"white"}}>
+      Tutorial
+      
+    </div>
   )
 }
 
