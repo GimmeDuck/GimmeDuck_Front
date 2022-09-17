@@ -1,26 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../style/Buyegg.css";
 import * as KlipAPI from "../screen_js/Buyegg_js";
 import Modal from "react-modal";
 import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
+import axios from "axios";
+
 
 const Buyegg = () => {
-  function customBtn(e) {
-    window.location.href = "/Custom";
-  }
-  function wallet_modalOpen() {
-    KlipAPI.getAddress(setQrvalue_auth, async (address) => {
-      setMyAddress(address);
-    });
-    auth_setModalIsOpen(true);
-  }
-
-  function send_modalOpen() {
-    KlipAPI.send_klay(setQrvalue_send, setMyAddress);
-    send_setModalIsOpen(true);
-  }
-
+  
   const DEFAULT_QR_CODE = "DEFAULT";
   const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
 
@@ -29,6 +17,33 @@ const Buyegg = () => {
   const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
   const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
   const [qrvalue_send, setQrvalue_send] = useState(DEFAULT_QR_CODE);
+  const [egg,setEgg] = useState(0);
+
+  function customBtn(e) {
+    window.location.href = "/Custom";
+  }
+  function wallet_modalOpen() {
+    KlipAPI.getAddress(setQrvalue_auth, async (address) => {
+      setMyAddress(address)
+    });
+    auth_setModalIsOpen(true);
+   
+  }
+
+    useEffect(()=>{
+      if(myAddress !== DEFAULT_ADDRESS){
+      axios.post('/login', {address : myAddress})
+      .then(response => { console.log(response.data.egg);})
+      }
+    },[myAddress]);
+  
+  
+
+  function send_modalOpen() {
+    KlipAPI.send_klay(setQrvalue_send, setMyAddress);
+    send_setModalIsOpen(true);
+  }
+
 
   return (
     <>
@@ -47,7 +62,7 @@ const Buyegg = () => {
                   onClick={() => auth_setModalIsOpen(false)}
                 ></div>
               </Modal>
-              <div className="text1">알 ____ 개</div>
+              <div className="text1">알 {egg} 개</div>
             </div>
             <div className="Rightbox2">
               <select className="combobox">
