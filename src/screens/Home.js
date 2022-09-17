@@ -1,5 +1,7 @@
 import React from "react";
 import "../style/Home.css";
+import Barcht from "../components/charts/ChartBar.js";
+import PieCht from "../components/charts/ChartPie.js";
 
 const Home = () => {
   function buyBtn(e) {
@@ -12,7 +14,11 @@ const Home = () => {
 
   return (
     <div
-      style={{ backgroundColor: "black", paddingTop: 70, textAlign: "center" }}
+      style={{
+        backgroundColor: "black",
+        paddingTop: 70,
+        textAlign: "center",
+      }}
     >
       <button onClick={customBtn}>커스터마이징창</button>
       <div className="text">
@@ -31,6 +37,13 @@ const Home = () => {
       <button onClick={buyBtn} className="button">
         알 구매하러 가기
       </button>
+      <div className="chartBox">
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <p style={{ color: "gray" }}>현재 팬덤 기부 현황</p>
+        </div>
+        <Barcht />
+        <PieCht />
+      </div>
     </div>
   );
 };
