@@ -38,7 +38,7 @@ function execute_func(){
         from : '0x38596eD0dceaC58632bCf8BD92B5af3854d6A768', 
         gasPrice : parseInt(caver.klay.gasPriceAt("latest"), 16),
         gas : '3000000',
-        value : caver.utils.toPeb('1','KLAY')
+        value : caver.utils.toPeb('0.1','KLAY')
     }).then(function(receipt){
         console.log(receipt);
         window.location.href = "/Donate";

@@ -29,9 +29,9 @@ export const getAddress = (setQrvalue, callback) => {
             )
             .then((res) => {
               if (res.data.result) {
-                console.log(`[Result] ${JSON.stringify(res.data.result)}`);
-                console.log(res.data.result);
-                console.log(res.data);
+                // console.log(`[Result] ${JSON.stringify(res.data.result)}`);
+                // console.log(res.data.result);
+                // console.log(res.data);
                 callback(res.data.result.klaytn_address);
                 clearInterval(timerId);
               }

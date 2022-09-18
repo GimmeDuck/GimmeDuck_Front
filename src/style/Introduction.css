@@ -1,0 +1,16 @@
+#poster_div{
+    padding : 5% 15% 5%;
+    background-color: black;
+}
+#poster_img{
+    width : 100%;
+}
+
+.slider_div{
+    background-color: black;
+    padding: 4%;
+}
+
+.slick-dots{
+    background-color: white;
+}

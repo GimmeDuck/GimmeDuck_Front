@@ -11,7 +11,13 @@ import Custom from "./screens/Custom";
 import Donate from "./screens/Donate";
 import Custom_1 from "./screens/Custom_1";
 
+import axios from "axios";
+import { useEffect } from 'react';
+
+
 function App() {
+
+
   return (
     <Router>
       <NavBarElements />
