@@ -21,3 +21,17 @@ img{
     font-size: 15px;
     border-radius: 8px;
 }
+
+
+
+.chartBox{
+    background-color: rgb(37, 37, 36);
+    margin:20%;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    width: 60%;
+    height: 600px;
+    padding: 5%;
+    padding-top: 2%;
+
+}
