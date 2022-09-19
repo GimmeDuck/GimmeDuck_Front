@@ -1,0 +1,23 @@
+.Back{
+  background-color: rgb(0, 0, 0);
+  color: "red";
+  padding: "10%";
+}
+
+.ChartBox{
+  background-color: rgb(0, 0, 0);
+  margin-left: 20%;
+  margin-bottom: 0px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 3.5%;
+
+}
+
+.font{
+  color: rgb(158, 158, 158);
+  
+  margin-left:30%;
+}
