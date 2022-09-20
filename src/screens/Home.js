@@ -8,10 +8,6 @@ const Home = () => {
     window.location.href = "/Buyegg";
   }
 
-  function customBtn(e) {
-    window.location.href = "/Custom";
-  }
-
   return (
     <div
       style={{
@@ -20,7 +16,6 @@ const Home = () => {
         textAlign: "center",
       }}
     >
-      <button onClick={customBtn}>커스터마이징창</button>
       <div className="text">
         <h1 style={{ fontWeight: 700 }}>나만의 NFT 제작하고 기부하자!</h1>
         <p>
