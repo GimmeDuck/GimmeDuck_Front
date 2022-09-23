@@ -86,7 +86,7 @@ const Custom_1 = () => {
 
   function NFTBtn(e) {
     exportAsImage(exportRef.current, "test.png");
-    execute_func();
+    //execute_func();
   }
 
   return (

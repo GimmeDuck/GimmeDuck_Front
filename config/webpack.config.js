@@ -301,7 +301,10 @@ module.exports = function (webpackEnv) {
         https: require.resolve('https-browserify'),
         url: require.resolve("url/"),
         buffer : require.resolve("buffer/"),
-      },
+        path: require.resolve("path-browserify"),
+        tty: require.resolve("tty-browserify"),
+        zlib: require.resolve("browserify-zlib")
+            },
       // This allows you to set a fallback for where webpack should look for modules.
       // We placed these paths second because we want `node_modules` to "win"
       // if there are any conflicts. This matches Node resolution mechanism.
