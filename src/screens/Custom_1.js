@@ -1,9 +1,10 @@
 import React, { useState, useRef } from "react";
 import "../style/Custom_1.css";
+import Modal from "../components/Modal";
 
 import exportAsImage from "../utils/exportAsImage";
 //caver
-import execute_func from '../screen_js/caver.js';
+import execute_func from "../screen_js/caver.js";
 var global = global || window;
 global.Buffer = global.Buffer || require("buffer").Buffer;
 
@@ -50,7 +51,8 @@ const Idol_Aespa = require("../custom_Img/Idol/Idol_Aespa.png");
 const Idol_Bts = require("../custom_Img/Idol/Idol_Bts.png");
 const Idol_Ive = require("../custom_Img/Idol/Idol_Ive.png");
 const Idol_Nct = require("../custom_Img/Idol/Idol_Nct.png");
-const Idol = { Idol_Aespa, Idol_Bts, Idol_Ive, Idol_Nct };
+const Idol_Plus = require("../custom_Img/Idol/Idol_Plus.png");
+const Idol = { Idol_Aespa, Idol_Bts, Idol_Ive, Idol_Nct, Idol_Plus };
 
 const Back_Mint = require("../custom_Img/Back/Back_Mint.png");
 const Back_Pink = require("../custom_Img/Back/Back_Pink.png");
@@ -74,6 +76,11 @@ const Custom_1 = () => {
   const [EggVisible, setEggVisible] = React.useState(false);
   const [IdolVisible, setIdolVisible] = React.useState(false);
   const [BackVisible, setBackVisible] = React.useState(false);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const modalClose = () => {
+    setModalOpen(!modalOpen);
+  };
 
   const exportRef = useRef();
 
@@ -203,35 +210,35 @@ const Custom_1 = () => {
       </div>
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
-      <div className="main-Div" >
+      <div className="main-Div">
         <div id="Character" ref={exportRef}>
           {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1"  >
-            <img src={BackSelect}/>
+          <div className="Character-1">
+            <img src={BackSelect} />
           </div>
           {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1" >
-            <img src={BodySelect}/>
+          <div className="Character-1">
+            <img src={BodySelect} />
           </div>
           {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1" >
-            <img src={HairSelect}/>
+          <div className="Character-1">
+            <img src={HairSelect} />
           </div>
           {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1">
-            <img src={EyeSelect}/>
+            <img src={EyeSelect} />
           </div>
           {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1">
-            <img src={EggSelect}/>
+            <img src={EggSelect} />
           </div>
           {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1">
-            <img src={MouthSelect}/>
+            <img src={MouthSelect} />
           </div>
           {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1">
-            <img src={IdolSelect}/>
+            <img src={IdolSelect} />
           </div>
         </div>
 
@@ -517,6 +524,8 @@ const Custom_1 = () => {
                   setIdolSelect(Idol.Idol_Nct);
                 }}
               />
+              <img src={Idol.Idol_Plus} className="Card" onClick={modalClose} />
+              {modalOpen && <Modal modalClose={modalClose}></Modal>}
             </div>
           </div>
         )}
