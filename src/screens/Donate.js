@@ -1,7 +1,14 @@
 import React from 'react';
 import '../style/Donate.css';
+import start from "../utils/ipfsUpload";
+
 
 const Donate = () => {
+
+
+  const image = localStorage.getItem("imgURL");
+  console.log(image);
+  // start(image);
 
   function homeBtn(e) {
     window.location.href = "/"
@@ -19,9 +26,9 @@ const Donate = () => {
         </div>
 
         <div className = 'donate_rapper_imgrap'>
-          <img className='donate_rapper_nft' src = {localStorage.getItem("imgURL")}/>
+          <img className='donate_rapper_nft' src = {image}/>
           <div className='donate_rapper_img' >
-            <img src = 'img/기부증서양식.png'/>
+            <img src = 'img/donateComplete.png'/>
             <div className = 'donate_rapper_text'>
               <div style={{fontSize:"30px"}}>DIVE</div><br/>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20KLAY<br/><br/>
