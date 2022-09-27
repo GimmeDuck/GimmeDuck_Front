@@ -5,7 +5,6 @@ import Modal from "react-modal";
 import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import axios from "axios";
-import start from "../utils/ipfsUpload";
 
 
 const Buyegg = () => {
