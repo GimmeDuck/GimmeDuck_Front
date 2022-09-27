@@ -1,14 +1,16 @@
 import React from 'react';
 import '../style/Donate.css';
-import start from "../utils/ipfsUpload";
+import axios from 'axios';
 
 
 const Donate = () => {
 
 
-  const image = localStorage.getItem("imgURL");
-  console.log(image);
-  // start(image);
+  const img = localStorage.getItem("imgURL");
+  console.log(img);
+  axios.post('/test', {image : img})
+      .then(response => { console.log(response.data);})
+    
 
   function homeBtn(e) {
     window.location.href = "/"
@@ -26,7 +28,7 @@ const Donate = () => {
         </div>
 
         <div className = 'donate_rapper_imgrap'>
-          <img className='donate_rapper_nft' src = {image}/>
+          <img className='donate_rapper_nft' src = {img}/>
           <div className='donate_rapper_img' >
             <img src = 'img/donateComplete.png'/>
             <div className = 'donate_rapper_text'>
