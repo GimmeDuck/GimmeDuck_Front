@@ -5,12 +5,9 @@ import axios from 'axios';
 
 const Donate = () => {
 
-
   const img = localStorage.getItem("imgURL");
-  console.log(img);
   axios.post('/test', {image : img})
       .then(response => { console.log(response.data);})
-    
 
   function homeBtn(e) {
     window.location.href = "/"
