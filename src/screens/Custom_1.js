@@ -1,12 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../style/Custom_1.css";
 import Modal from "../components/Modal";
-
 import exportAsImage from "../utils/exportAsImage";
 //caver
 import execute_func from "../screen_js/caver.js";
 var global = global || window;
 global.Buffer = global.Buffer || require("buffer").Buffer;
+
+let CvsImgUrl = "default";
+
+export function CvsImg(url) {
+  CvsImgUrl = url;
+}
 
 const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
 const Body_Blue = require("../custom_Img/Body/Body_Blue.png");
@@ -41,7 +46,7 @@ const Mouth_Pink = require("../custom_Img/Mouth/Mouth_Pink.png");
 const Mouth_Yellow = require("../custom_Img/Mouth/Mouth_Yellow.png");
 const Mouth = { Mouth_Blue, Mouth_Pink, Mouth_Red, Mouth_Yellow };
 
-const Egg_Mint = require("../custom_Img/Egg/Egg_Mint.png");
+var Egg_Mint = require("../custom_Img/Egg/Egg_Mint.png");
 const Egg_Pink = require("../custom_Img/Egg/Egg_Pink.png");
 const Egg_PurPle = require("../custom_Img/Egg/Egg_Purple.png");
 const Egg_White = require("../custom_Img/Egg/Egg_White.png");
@@ -78,11 +83,39 @@ const Custom_1 = () => {
   const [BackVisible, setBackVisible] = React.useState(false);
 
   const [modalOpen, setModalOpen] = useState(false);
+
+  const [IdolCvs, SetIdolCvs] = useState("Character-1");
+
   const modalClose = () => {
     setModalOpen(!modalOpen);
+    if (modalOpen == true) {
+      //CvsImgUrl != "default"
+      // console.log(modalOpen);
+      // console.log(CvsImgUrl);
+      setCvs(true);
+    }
   };
 
+  useEffect(() => {
+    if (IdolSelect == CvsImgUrl) {
+      console.log(true);
+      SetIdolCvs("Character-1-Cvs");
+    } else {
+      console.log(false);
+      SetIdolCvs("Character-1");
+    }
+  });
+
+  // if (IdolSelect == CvsImgUrl) {
+  //   console.log(true);
+  //   SetIdolCvs("Character-1-Cvs");
+  // } else {
+  //   console.log(false);
+  //   SetIdolCvs("Character-1");
+  // }
+
   const exportRef = useRef();
+  const [Cvs, setCvs] = useState(false);
 
   function NFTBtn(e) {
     exportAsImage(exportRef.current, "test.png");
@@ -237,7 +270,7 @@ const Custom_1 = () => {
             <img src={MouthSelect} />
           </div>
           {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
+          <div className={IdolCvs}>
             <img src={IdolSelect} />
           </div>
         </div>
@@ -508,6 +541,13 @@ const Custom_1 = () => {
                   setIdolSelect(Idol.Idol_Bts);
                 }}
               />
+              <img
+                src={Idol.Idol_Bts}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_Bts);
+                }}
+              />
             </div>
             <div>
               <img
@@ -524,6 +564,16 @@ const Custom_1 = () => {
                   setIdolSelect(Idol.Idol_Nct);
                 }}
               />
+
+              {Cvs && (
+                <img
+                  src={CvsImgUrl}
+                  className="Card"
+                  onClick={() => {
+                    setIdolSelect(CvsImgUrl);
+                  }}
+                />
+              )}
               <img src={Idol.Idol_Plus} className="Card" onClick={modalClose} />
               {modalOpen && <Modal modalClose={modalClose}></Modal>}
             </div>

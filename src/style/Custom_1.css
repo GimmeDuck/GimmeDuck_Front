@@ -40,6 +40,15 @@ img {
     width: 100%;
 }
 
+.Character-1-Cvs {
+    position: absolute;
+    width:100px;
+    margin-top: 20%;
+    margin-left: 20%;
+    background-color: rebeccapurple;
+
+}
+
 .Character-1 img {
     width: 100%;
     height: 100%;
@@ -106,7 +115,6 @@ img {
     margin-left: 80%;
     color: white;
 }
-
 
 
 
