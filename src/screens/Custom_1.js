@@ -83,37 +83,26 @@ const Custom_1 = () => {
   const [BackVisible, setBackVisible] = React.useState(false);
 
   const [modalOpen, setModalOpen] = useState(false);
-
-  const [IdolCvs, SetIdolCvs] = useState("Character-1");
-
+  //모달 열고 닫음
   const modalClose = () => {
     setModalOpen(!modalOpen);
     if (modalOpen == true) {
-      //CvsImgUrl != "default"
-      // console.log(modalOpen);
-      // console.log(CvsImgUrl);
       setCvs(true);
     }
   };
 
+  //Idol 기본 스타일은 character-1으로
+  const [IdolCvs, SetIdolCvs] = useState("Character-1");
+  const [canvasSelect, SetCanvasSelect] = useState(false);
+
+  //그림판 그림 선택됐을 때 Idol style 바꿔줌
   useEffect(() => {
-    if (IdolSelect == CvsImgUrl) {
-      console.log(true);
+    if (canvasSelect == true) {
       SetIdolCvs("Character-1-Cvs");
     } else {
-      console.log(false);
       SetIdolCvs("Character-1");
     }
   });
-
-  // if (IdolSelect == CvsImgUrl) {
-  //   console.log(true);
-  //   SetIdolCvs("Character-1-Cvs");
-  // } else {
-  //   console.log(false);
-  //   SetIdolCvs("Character-1");
-  // }
-
   const exportRef = useRef();
   const [Cvs, setCvs] = useState(false);
 
@@ -265,13 +254,14 @@ const Custom_1 = () => {
           <div className="Character-1">
             <img src={EggSelect} />
           </div>
-          {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
-            <img src={MouthSelect} />
-          </div>
+
           {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
           <div className={IdolCvs}>
             <img src={IdolSelect} />
+          </div>
+          {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1">
+            <img src={MouthSelect} />
           </div>
         </div>
 
@@ -532,6 +522,7 @@ const Custom_1 = () => {
                 className="Card"
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Aespa);
+                  SetCanvasSelect(false);
                 }}
               />
               <img
@@ -539,6 +530,7 @@ const Custom_1 = () => {
                 className="Card"
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Bts);
+                  SetCanvasSelect(false);
                 }}
               />
               <img
@@ -546,6 +538,7 @@ const Custom_1 = () => {
                 className="Card"
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Bts);
+                  SetCanvasSelect(false);
                 }}
               />
             </div>
@@ -555,6 +548,7 @@ const Custom_1 = () => {
                 className="Card"
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Ive);
+                  SetCanvasSelect(false);
                 }}
               />
               <img
@@ -562,18 +556,22 @@ const Custom_1 = () => {
                 className="Card"
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Nct);
+                  SetCanvasSelect(false);
                 }}
               />
-
+              {/* 추가된 그림판 사진 */}
               {Cvs && (
                 <img
                   src={CvsImgUrl}
                   className="Card"
+                  style={{ height: "40%" }}
                   onClick={() => {
                     setIdolSelect(CvsImgUrl);
+                    SetCanvasSelect(true);
                   }}
                 />
               )}
+              {/* 그림판 여는 곳 */}
               <img src={Idol.Idol_Plus} className="Card" onClick={modalClose} />
               {modalOpen && <Modal modalClose={modalClose}></Modal>}
             </div>

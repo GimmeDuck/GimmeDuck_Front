@@ -42,10 +42,9 @@ img {
 
 .Character-1-Cvs {
     position: absolute;
-    width:100px;
-    margin-top: 20%;
-    margin-left: 20%;
-    background-color: rebeccapurple;
+    width:31%;
+    margin-top: 48%;
+    margin-left: 53%;
 
 }
 
@@ -60,7 +59,9 @@ img {
 .RightPanel {
     position: absolute;
     width: 45%;
-    overflow-x: scroll;
+    overflow-x: hidden;
+    
+    overflow-y: auto;
     height: 80%;
     background-color: rgb(70, 70, 70);
     border-radius: 10px;
