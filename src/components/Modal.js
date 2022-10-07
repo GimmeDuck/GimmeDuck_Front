@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import "../style/Modal.css";
 import { ReactPainter } from "react-painter";
-import { resolve } from "url";
 import * as Custom from "../screens/Custom_1.js";
 const Egg_Mint = require("../custom_Img/Egg/Egg_Mint.png");
 
 var imgsrc = "blob:http://localhost:3000/15cdf288-d653-4713-842c-4a380e348bc4";
-
+var canvas, context;
 const Modal = ({ modalClose }) => {
   const [Cvs, setCvs] = useState(false);
 
@@ -37,10 +36,10 @@ const Modal = ({ modalClose }) => {
             }
           }}
           render={({
+            getCanvasProps,
             triggerSave,
             canvas,
             setColor,
-            forceReRender,
             setLineWidth,
           }) => (
             // 캔버스
@@ -108,9 +107,6 @@ const Modal = ({ modalClose }) => {
                   onChange={(e) => setColor(e.target.value)}
                 />
 
-                <button className="modal__button" onClick={forceReRender}>
-                  Rerender
-                </button>
                 <button
                   className="modal__button"
                   onClick={() => {
@@ -118,6 +114,9 @@ const Modal = ({ modalClose }) => {
                   }}
                 >
                   Save
+                </button>
+                <button className="modal__button" onClick={() => {}}>
+                  Restart
                 </button>
                 <input
                   type="range"
