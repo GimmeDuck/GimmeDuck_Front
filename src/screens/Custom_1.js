@@ -91,8 +91,8 @@ const Custom_1 = () => {
     }
   };
 
-  //Idol 기본 스타일은 character-1으로
-  const [IdolCvs, SetIdolCvs] = useState("Character-1");
+  //Idol 기본 스타일은 Character-1-card으로
+  const [IdolCvs, SetIdolCvs] = useState("Character-1-card");
   const [canvasSelect, SetCanvasSelect] = useState(false);
 
   //그림판 그림 선택됐을 때 Idol style 바꿔줌
@@ -100,7 +100,7 @@ const Custom_1 = () => {
     if (canvasSelect == true) {
       SetIdolCvs("Character-1-Cvs");
     } else {
-      SetIdolCvs("Character-1");
+      SetIdolCvs("Character-1-card");
     }
   });
   const exportRef = useRef();
@@ -110,148 +110,151 @@ const Custom_1 = () => {
     exportAsImage(exportRef.current, "test.png");
     //execute_func();
   }
-
+  // 여기부터 시작///////////////////////////////////////////////////////
   return (
     <div
       style={{
         backgroundColor: "black",
-        height: "100vmax",
+        height: "92vh",
+        display: "flex",
+        flexDirection: "row-reverse",
+        justifyContent: "center",
+        alignItems: "center",
+        paddingTop: "2%",
       }}
     >
       {/* ㅣㅣㅣㅣ오른쪽 버튼ㅣㅣㅣㅣㅣㅣㅣ */}
-      <div>//</div>
-      <div>//</div>
       <div
-        className="SideBtn"
-        onClick={() => {
-          setBodyVisible(true);
-          setHairVisible(false);
-          setEyeVisible(false);
-          setMouthVisible(false);
-          setEggVisible(false);
-          setIdolVisible(false);
-          setBackVisible(false);
-        }}
+        class="btn-group-vertical"
+        style={{ width: "10%", height: "35vmax" }}
       >
-        <button className="SideBtnText">Body</button>
-      </div>
+        <button
+          className="SideBtnText"
+          onClick={() => {
+            setBodyVisible(true);
+            setHairVisible(false);
+            setEyeVisible(false);
+            setMouthVisible(false);
+            setEggVisible(false);
+            setIdolVisible(false);
+            setBackVisible(false);
+          }}
+        >
+          Body
+        </button>
 
-      <div
-        className="SideBtn"
-        style={{ marginTop: "7vmax" }}
-        onClick={() => {
-          setBodyVisible(false);
-          setHairVisible(true);
-          setEyeVisible(false);
-          setMouthVisible(false);
-          setEggVisible(false);
-          setIdolVisible(false);
-          setBackVisible(false);
-        }}
-      >
-        <button className="SideBtnText">Hair</button>
-      </div>
+        <button
+          className="SideBtnText"
+          onClick={() => {
+            setBodyVisible(false);
+            setHairVisible(true);
+            setEyeVisible(false);
+            setMouthVisible(false);
+            setEggVisible(false);
+            setIdolVisible(false);
+            setBackVisible(false);
+          }}
+        >
+          Hair
+        </button>
 
-      <div
-        className="SideBtn"
-        style={{ marginTop: "13vmax" }}
-        onClick={() => {
-          setBodyVisible(false);
-          setHairVisible(false);
-          setEyeVisible(true);
-          setMouthVisible(false);
-          setEggVisible(false);
-          setIdolVisible(false);
-          setBackVisible(false);
-        }}
-      >
-        <button className="SideBtnText">Eye</button>
-      </div>
+        <button
+          className="SideBtnText"
+          onClick={() => {
+            setBodyVisible(false);
+            setHairVisible(false);
+            setEyeVisible(true);
+            setMouthVisible(false);
+            setEggVisible(false);
+            setIdolVisible(false);
+            setBackVisible(false);
+          }}
+        >
+          Eye
+        </button>
 
-      <div
-        className="SideBtn"
-        style={{ marginTop: "19vmax" }}
-        onClick={() => {
-          setBodyVisible(false);
-          setHairVisible(false);
-          setEyeVisible(false);
-          setMouthVisible(true);
-          setEggVisible(false);
-          setIdolVisible(false);
-          setBackVisible(false);
-        }}
-      >
-        <button className="SideBtnText">Mouth</button>
-      </div>
-      <div
-        className="SideBtn"
-        style={{ marginTop: "25vmax" }}
-        onClick={() => {
-          setBodyVisible(false);
-          setHairVisible(false);
-          setEyeVisible(false);
-          setMouthVisible(false);
-          setEggVisible(true);
-          setIdolVisible(false);
-          setBackVisible(false);
-        }}
-      >
-        <button className="SideBtnText">Egg</button>
-      </div>
+        <button
+          className="SideBtnText"
+          onClick={() => {
+            setBodyVisible(false);
+            setHairVisible(false);
+            setEyeVisible(false);
+            setMouthVisible(true);
+            setEggVisible(false);
+            setIdolVisible(false);
+            setBackVisible(false);
+          }}
+        >
+          Mouth
+        </button>
 
-      <div
-        className="SideBtn"
-        style={{ marginTop: "31vmax" }}
-        onClick={() => {
-          setBodyVisible(false);
-          setHairVisible(false);
-          setEyeVisible(false);
-          setMouthVisible(false);
-          setEggVisible(false);
-          setIdolVisible(true);
-          setBackVisible(false);
-        }}
-      >
-        <button className="SideBtnText">Idol</button>
-      </div>
+        <button
+          className="SideBtnText"
+          onClick={() => {
+            setBodyVisible(false);
+            setHairVisible(false);
+            setEyeVisible(false);
+            setMouthVisible(false);
+            setEggVisible(true);
+            setIdolVisible(false);
+            setBackVisible(false);
+          }}
+        >
+          Egg
+        </button>
 
-      <div
-        className="SideBtn"
-        style={{ marginTop: "37vmax" }}
-        onClick={() => {
-          setBodyVisible(false);
-          setHairVisible(false);
-          setEyeVisible(false);
-          setMouthVisible(false);
-          setEggVisible(false);
-          setIdolVisible(false);
-          setBackVisible(true);
-        }}
-      >
-        <button className="SideBtnText">back</button>
+        <button
+          className="SideBtnText"
+          onClick={() => {
+            setBodyVisible(false);
+            setHairVisible(false);
+            setEyeVisible(false);
+            setMouthVisible(false);
+            setEggVisible(false);
+            setIdolVisible(true);
+            setBackVisible(false);
+          }}
+        >
+          Idol
+        </button>
+
+        <button
+          className="SideBtnText"
+          onClick={() => {
+            setBodyVisible(false);
+            setHairVisible(false);
+            setEyeVisible(false);
+            setMouthVisible(false);
+            setEggVisible(false);
+            setIdolVisible(false);
+            setBackVisible(true);
+          }}
+        >
+          back
+        </button>
       </div>
 
       {/* ㅣㅣㅣㅣ캐릭터ㅣㅣㅣㅣㅣㅣㅣ */}
       <div className="main-Div">
-        <div id="Character" ref={exportRef}>
+        <div class="Character_back" ref={exportRef}>
           {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
+          <div className="Character-1-card">
             <img src={BackSelect} />
           </div>
           {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
+          <div className="Character-1-card">
             <img src={BodySelect} />
           </div>
           {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
+          <div className="Character-1-card">
             <img src={HairSelect} />
           </div>
           {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
+          <div className="Character-1-card">
             <img src={EyeSelect} />
           </div>
           {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
+          <div className="Character-1-card">
             <img src={EggSelect} />
           </div>
 
@@ -260,17 +263,51 @@ const Custom_1 = () => {
             <img src={IdolSelect} />
           </div>
           {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1">
+          <div className="Character-1-card">
             <img src={MouthSelect} />
           </div>
         </div>
 
-        {/* ㅣㅣㅣㅣ우측패널ㅣㅣㅣㅣㅣㅣㅣ */}
+        {/* ㅣㅣㅣㅣ우측선택창ㅣㅣㅣㅣㅣㅣㅣ */}
         {/* ㅣㅣㅣㅣBodyPanelㅣㅣㅣㅣㅣㅣㅣ */}
         {BodyVisible && (
           <div className="RightPanel">
-            {/* ㅣㅣㅣㅣ오른쪽ㅣㅣㅣㅣㅣㅣㅣ */}
             <div>
+              <img
+                src={Body.Body_Black}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.Body_Black);
+                }}
+              />
+              <img
+                src={Body.Body_White}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.Body_White);
+                }}
+              />
+              <img
+                src={Body.Body_Blue}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.Body_Blue);
+                }}
+              />
+              <img
+                src={Body.Body_Yellow}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.Body_Yellow);
+                }}
+              />
+              <img
+                src={Body.Body_White}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.Body_White);
+                }}
+              />
               <img
                 src={Body.Body_Black}
                 className="Card"
@@ -297,51 +334,6 @@ const Custom_1 = () => {
                 className="Card"
                 onClick={() => {
                   setBodySelect(Body.Body_Black);
-                }}
-              />
-              <img
-                src={Body.Body_White}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_White);
-                }}
-              />
-            </div>
-            {/* ㅣㅣㅣㅣ왼쪽ㅣㅣㅣㅣㅣㅣㅣ */}
-            <div>
-              <img
-                src={Body.Body_Blue}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_Blue);
-                }}
-              />
-              <img
-                src={Body.Body_Yellow}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_Yellow);
-                }}
-              />
-              <img
-                src={Body.Body_Black}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_Black);
-                }}
-              />
-              <img
-                src={Body.Body_Blue}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_Blue);
-                }}
-              />
-              <img
-                src={Body.Body_Yellow}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_Yellow);
                 }}
               />
             </div>
@@ -373,8 +365,6 @@ const Custom_1 = () => {
                   setHairSelect(Hair.Hair_Blue);
                 }}
               />
-            </div>
-            <div>
               <img
                 src={Hair.Hair_Short}
                 className="Card"
@@ -395,6 +385,27 @@ const Custom_1 = () => {
                 className="Card"
                 onClick={() => {
                   setHairSelect(Hair.Hair_Puka);
+                }}
+              />
+              <img
+                src={Hair.Hair_Puka}
+                className="Card"
+                onClick={() => {
+                  setHairSelect(Hair.Hair_Puka);
+                }}
+              />
+              <img
+                src={Hair.Hair_Blue}
+                className="Card"
+                onClick={() => {
+                  setHairSelect(Hair.Hair_Blue);
+                }}
+              />
+              <img
+                src={Hair.Hair_Short}
+                className="Card"
+                onClick={() => {
+                  setHairSelect(Hair.Hair_Short);
                 }}
               />
             </div>
@@ -419,13 +430,46 @@ const Custom_1 = () => {
                   setEyeSelect(Eye.Eye_Circle);
                 }}
               />
-            </div>
-            <div>
               <img
                 src={Eye.Eye_Glasses}
                 className="Card"
                 onClick={() => {
                   setEyeSelect(Eye.Eye_Glasses);
+                }}
+              />
+              <img
+                src={Eye.Eye_Triangle}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.Eye_Triangle);
+                }}
+              />{" "}
+              <img
+                src={Eye.Eye_Arch}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.Eye_Arch);
+                }}
+              />
+              <img
+                src={Eye.Eye_Circle}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.Eye_Circle);
+                }}
+              />
+              <img
+                src={Eye.Eye_Glasses}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.Eye_Glasses);
+                }}
+              />
+              <img
+                src={Eye.Eye_Triangle}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.Eye_Triangle);
                 }}
               />
               <img
@@ -457,13 +501,46 @@ const Custom_1 = () => {
                   setMouthSelect(Mouth.Mouth_Yellow);
                 }}
               />
-            </div>
-            <div>
               <img
                 src={Mouth.Mouth_Pink}
                 className="Card"
                 onClick={() => {
                   setMouthSelect(Mouth.Mouth_Pink);
+                }}
+              />
+              <img
+                src={Mouth.Mouth_Red}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.Mouth_Red);
+                }}
+              />
+              <img
+                src={Mouth.Mouth_Blue}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.Mouth_Blue);
+                }}
+              />
+              <img
+                src={Mouth.Mouth_Yellow}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.Mouth_Yellow);
+                }}
+              />
+              <img
+                src={Mouth.Mouth_Pink}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.Mouth_Pink);
+                }}
+              />
+              <img
+                src={Mouth.Mouth_Red}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.Mouth_Red);
                 }}
               />
               <img
@@ -494,13 +571,46 @@ const Custom_1 = () => {
                   setEggSelect(Egg.Egg_Pink);
                 }}
               />
-            </div>
-            <div>
               <img
                 src={Egg.Egg_PurPle}
                 className="Card"
                 onClick={() => {
                   setEggSelect(Egg.Egg_PurPle);
+                }}
+              />
+              <img
+                src={Egg.Egg_White}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.Egg_White);
+                }}
+              />
+              <img
+                src={Egg.Egg_Mint}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.Egg_Mint);
+                }}
+              />
+              <img
+                src={Egg.Egg_Pink}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.Egg_Pink);
+                }}
+              />
+              <img
+                src={Egg.Egg_PurPle}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.Egg_PurPle);
+                }}
+              />
+              <img
+                src={Egg.Egg_White}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.Egg_White);
                 }}
               />
               <img
@@ -541,8 +651,6 @@ const Custom_1 = () => {
                   SetCanvasSelect(false);
                 }}
               />
-            </div>
-            <div>
               <img
                 src={Idol.Idol_Ive}
                 className="Card"
@@ -564,7 +672,7 @@ const Custom_1 = () => {
                 <img
                   src={CvsImgUrl}
                   className="Card"
-                  style={{ height: "40%" }}
+                  style={{ height: "11vmax" }}
                   onClick={() => {
                     setIdolSelect(CvsImgUrl);
                     SetCanvasSelect(true);
@@ -594,9 +702,7 @@ const Custom_1 = () => {
                 onClick={() => {
                   setBackSelect(Back.Back_Pink);
                 }}
-              />
-            </div>
-            <div>
+              />{" "}
               <img
                 src={Back.Back_Rainbow}
                 className="Card"
@@ -611,13 +717,65 @@ const Custom_1 = () => {
                   setBackSelect(Back.Back_Zebra);
                 }}
               />
+              <img
+                src={Back.Back_Mint}
+                className="Card"
+                onClick={() => {
+                  setBackSelect(Back.Back_Mint);
+                }}
+              />
+              <img
+                src={Back.Back_Pink}
+                className="Card"
+                onClick={() => {
+                  setBackSelect(Back.Back_Pink);
+                }}
+              />
+              <img
+                src={Back.Back_Rainbow}
+                className="Card"
+                onClick={() => {
+                  setBackSelect(Back.Back_Rainbow);
+                }}
+              />
+              <img
+                src={Back.Back_Zebra}
+                className="Card"
+                onClick={() => {
+                  setBackSelect(Back.Back_Zebra);
+                }}
+              />{" "}
+              <img
+                src={Back.Back_Rainbow}
+                className="Card"
+                onClick={() => {
+                  setBackSelect(Back.Back_Rainbow);
+                }}
+              />
             </div>
           </div>
         )}
-
-        <button className="nftBtn" onClick={() => NFTBtn()}>
-          NFT 발행
-        </button>
+        <div
+          id="하단 버튼"
+          style={{
+            marginLeft: "56%",
+            marginTop: "33.5%",
+            position: "absolute",
+            display: "flex",
+            flexDirection: "row",
+          }}
+        >
+          <select className="combo">
+            <option value="steak">팬덤 선택</option>
+            <option value="에스파">에스파</option>
+            <option value="레드벨벳">레드벨벳</option>
+            <option value="레드벨벳">규방</option>
+            <option value="레드벨벳">숭이</option>
+          </select>
+          <button className="nftBtn" onClick={() => NFTBtn()}>
+            NFT 발행
+          </button>
+        </div>
       </div>
     </div>
   );
