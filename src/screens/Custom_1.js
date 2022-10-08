@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "../style/Custom_1.css";
 import Modal from "../components/Modal";
 import exportAsImage from "../utils/exportAsImage";
+import * as Donate from "../screens/Donate.js";
 //caver
 import execute_func from "../screen_js/caver.js";
 var global = global || window;
@@ -107,7 +108,9 @@ const Custom_1 = () => {
   const [Cvs, setCvs] = useState(false);
 
   function NFTBtn(e) {
+    Donate.Fandom("규방");
     exportAsImage(exportRef.current, "test.png");
+
     //execute_func();
   }
   // 여기부터 시작///////////////////////////////////////////////////////

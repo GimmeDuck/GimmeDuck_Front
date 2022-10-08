@@ -1,5 +1,7 @@
-import React from 'react';
-import { Navbar, Container, Nav} from 'react-bootstrap';
+import React from "react";
+import { Navbar, Container, Nav } from "react-bootstrap";
+
+//    <Navbar scrolling dark expand="md" fixed="top" >
 
 const NavBarElements = () => {
   return (
@@ -19,6 +21,6 @@ const NavBarElements = () => {
       </Container>
     </Navbar>
   );
-}
+};
 
-export default NavBarElements
+export default NavBarElements;

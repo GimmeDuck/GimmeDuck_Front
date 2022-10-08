@@ -10,11 +10,12 @@
 
 .modalbox{
     width: 50%;
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(31, 31, 31);
     border-radius:5px ;
     height: 80%;
     position:absolute;
     top:8%;
+    opacity: 90%;
 }
 
 .modal__button{

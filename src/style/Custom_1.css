@@ -26,8 +26,7 @@ img {
 
 
 .Character_back {
-    width: 36%;
-    background-color: rgb(37, 37, 37);
+    width: 31%;
     border-radius: 10px;
 }
 
@@ -40,14 +39,14 @@ img {
 
 .Character-1-card {
     position: absolute;
-    width:30%
+    width:25%
 }
 
 .Character-1-Cvs {
     position: absolute;
-    width:10%;
-    margin-top: 14%;
-    margin-left: 15.8%;
+    width:8.5%;
+    margin-top: 12%;
+    margin-left: 14%;
 }
 
 .Character-1 img {
