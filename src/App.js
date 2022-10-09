@@ -11,10 +11,7 @@ import Custom from "./screens/Custom";
 import Donate from "./screens/Donate";
 import Custom_1 from "./screens/Custom_1";
 import Random from "./screens/Random";
-
-
-import axios from "axios";
-import { useEffect } from 'react';
+import RandomNFT from "./screens/RandomNFT";
 
 
 function App() {
@@ -35,6 +32,7 @@ function App() {
         <Route path="/Custom_1" element={<Custom_1 />} />
         <Route path="/Donate" element={<Donate />} />
         <Route path="/Random" element={<Random />} />
+        <Route path="/RandomNFT" element={<RandomNFT />} />
       </Routes>
     </Router>
   );
