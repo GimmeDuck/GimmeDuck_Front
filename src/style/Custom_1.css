@@ -15,9 +15,6 @@
 
 }
 
-img {
-    padding: 0px;
-}
 /* .Back {
     position: relative;
     margin: 4vmax;
@@ -40,6 +37,14 @@ img {
     width: 100%;
 }
 
+.Character-1-Cvs {
+    position: absolute;
+    width:31%;
+    margin-top: 48%;
+    margin-left: 53%;
+
+}
+
 .Character-1 img {
     width: 100%;
     height: 100%;
@@ -51,7 +56,9 @@ img {
 .RightPanel {
     position: absolute;
     width: 45%;
-    overflow-x: scroll;
+    overflow-x: hidden;
+    
+    overflow-y: auto;
     height: 80%;
     background-color: rgb(70, 70, 70);
     border-radius: 10px;
@@ -106,7 +113,6 @@ img {
     margin-left: 80%;
     color: white;
 }
-
 
 
 
