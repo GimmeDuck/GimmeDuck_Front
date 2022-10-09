@@ -1,33 +1,54 @@
-.title{
-    color:lightgoldenrodyellow;
-    font-weight: bold;
-    font-size: 30px;
+#Custom_background {
+    background-color: black;
+    color: white;
+    padding-top: 70px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
-.box{
+#Custom_container1 {
+    position:relative;
+    margin-top: 30px;
+    width:85%;
+}
+#Custom_container2 {
+    position:relative;
+    margin-top: 30px;
+    width:85%;
+}
+
+.Custom_title{
+    position:absolute;
+    top:0;
+    left:15px;
+    color:lightgoldenrodyellow;
+    font-weight: bold;
+    font-size: 25px;
+    z-index: 1;
+}
+
+.Custom_box{
     font-size:15px;
     line-height:30px;
     background-color: rgb(38,38,38);
     padding: 25px;
     border-radius: 15px;
     position: relative;
+    margin-top:20px;
 }
 
-.cusbutton{
+.Custom_button{
     background-color: rgb(191,144,0);
     color: white;
-    padding:5px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding:5px 20px 5px 20px;
     font-size: 15px;
     border-radius: 8px;
+    border: 0px;
     position: absolute;
     bottom:0;
     right:0;
     margin:15px;
-    width: fit-content;
 }
 
-.cusbox {
-    
-}
+
