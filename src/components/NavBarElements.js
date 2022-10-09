@@ -5,7 +5,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 
 const NavBarElements = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar expand="md" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="/">GIMME-DUCK</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
