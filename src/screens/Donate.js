@@ -1,13 +1,30 @@
-import React from 'react';
+import React , {useState} from 'react';
 import '../style/Donate.css';
 import axios from 'axios';
+import execute_func from "../screen_js/caver.js";
+import * as KlipAPI from "../screen_js/Buyegg_js";
+import Modal from "react-modal";
+import { QRCodeSVG } from "qrcode.react";
+
 
 
 const Donate = () => {
 
+  const DEFAULT_QR_CODE = "DEFAULT";
+  const [qrvalue_execute, setQrvalue_execute] = useState(DEFAULT_QR_CODE);
+  const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
+
   const img = localStorage.getItem("imgURL");
-  axios.post('/test', {image : img})
-      .then(response => { console.log(response.data);})
+
+  function test(){
+    axios.post('/test', {image : img})
+    .then(response => { 
+      console.log(response.data);
+      KlipAPI.execute_Contract(setQrvalue_execute, "0x38596eD0dceaC58632bCf8BD92B5af3854d6A768", response.data);
+      send_setModalIsOpen(true);
+    })
+  }
+  
 
   function homeBtn(e) {
     window.location.href = "/"
@@ -17,7 +34,13 @@ const Donate = () => {
     <div className='donate'>
 
       <div className='donate_rapper'>
-
+      <Modal className="buyegg_popup" isOpen={send_modalIsOpen}>
+        <QRCodeSVG className="qrcode" value={qrvalue_execute} />
+        <div
+          className="close"
+          onClick={() => send_setModalIsOpen(false)}
+        ></div>
+      </Modal>
         <div className='donate_rapper_title'>
           <img className='donate_title_balloon'src='img/balloons.png' />
           <h3 style={{fontWeight:700, fontSize:35}}>나만의 김희덕 탄생</h3>
@@ -46,6 +69,9 @@ const Donate = () => {
       <div className='donate_button_rapper'>
         <button onClick= {homeBtn} className='donate_home_button'>
           홈
+        </button>
+        <button onClick= {test} className='donate_home_button'>
+          테스트중
         </button>
       </div>
       

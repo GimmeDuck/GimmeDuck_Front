@@ -1,10 +1,11 @@
 import axios from "axios";
+import React , {useState} from 'react';
 import MINTABI from "../abi/mintABI.json";
 const A2P_API_PREPARE_URL = "https://a2a-api.klipwallet.com/v2/a2a/prepare";
 const APP_NAME = "GIMMEDUCK";
-const to = '0x38596eD0dceaC58632bCf8BD92B5af3854d6A768';
-const amount = '0.1';
-
+const to = "0xcb27E1473A45f033A591Eee0E9c72C0379B5260d";
+const amount = "0.001";
+const abi = '{ "constant": false,"inputs": [{"internalType": "address","name": "user","type": "address"},{"internalType": "string","name": "_newBaseURI","type": "string"}],"name": "publicMint","outputs": [],"payable": true,"stateMutability": "payable","type": "function"}';
 
 const getKlipAccessUrl = (request_key) => {
   return `https://klipwallet.com/?target=/a2a?request_key=${request_key}`;
@@ -29,7 +30,7 @@ export const getAddress = (setQrvalue, callback) => {
             )
             .then((res) => {
               if (res.data.result) {
-                // console.log(`[Result] ${JSON.stringify(res.data.result)}`);
+                 console.log(`[Result] ${JSON.stringify(res.data.result)}`);
                 // console.log(res.data.result);
                 // console.log(res.data);
                 callback(res.data.result.klaytn_address);
@@ -49,8 +50,8 @@ export const getAddress = (setQrvalue, callback) => {
         },
         transaction: {
           from : setMyAddress, // optional, user 지갑주소
-          to : to,  //GIMMEDUCK 지갑주소
-          amount : amount, //0.1klay로 설정
+          to : "",  //GIMMEDUCK 지갑주소
+          amount : amount, //0.001klay로 설정
         },
         type : "send_klay",
       })
@@ -75,3 +76,39 @@ export const getAddress = (setQrvalue, callback) => {
       });
 };
 
+
+//컨트랙 실행
+export const execute_Contract = (setQrvalue, user, baseURI) => {
+  axios
+  .post(A2P_API_PREPARE_URL , {
+    bapp : {
+      name: APP_NAME,
+    },
+    type : "execute_contract",
+    transaction : {
+      to: to, // contract address
+      value: "1000000000000000", // 단위는 peb.
+      abi: abi,
+      params:`[\"${user}\", \"${baseURI}\"]`,
+    },
+  })
+  .then((response)=>{
+    console.log(response);
+    const { request_key } = response.data;
+    setQrvalue(getKlipAccessUrl(request_key));
+    let timerId = setInterval(() => {
+      axios
+        .get(
+          `https://a2a-api.klipwallet.com/v2/a2a/result?request_key=${request_key}`
+        )
+        .then((res) => {
+          if (res.data.result) {
+            clearInterval(timerId);
+          };
+        });
+    }, 1000);
+  })
+  .catch((err)=>{
+    console.log(err);
+  });
+};
