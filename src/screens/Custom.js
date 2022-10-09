@@ -1,69 +1,70 @@
 import React, { useRef } from "react";
 import "../style/Custom.css";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
 
 const Custom = () => {
-//   const cardRef = useRef();
-
-//   const mintBtn = () => {
-//     const card = cardRef.current;
-//     domtoimage.toBlob(card).then((blob) => {
-//       saveAs(blob, "duckling.png");
-//       console.log(blob.stream());
-//     });
-//     setTimeout(() => (window.location.href = "/Custom_1"), 500);
-//   };
 
   const randomBtn = () => {
-    window.location.href = "/Random";
+    window.location.href = "/RandomNFT";
   }
 
-    const mintBtn = () => {
+    const customBtn = () => {
         window.location.href = "/Custom_1";
     }
+  
+    const settings = {
+      dots: false,
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 2000,
+      autoplaySpeed: 2000,
+      cssEase: "linear",
+      arrows: false
+    };
+
 
   return (
-    <div
-      style={{
-        backgroundColor: "black",
-        color: "white",
-        paddingTop: "70px",
-        paddingLeft: "50px",
-        paddingRight: "50px",
-      }}
-    >
-      <div className="title"> 랜덤으로 발행 </div>
-      <div className="box">
-        직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
-        <br />
-        <span style={{ color: "lightgoldenrodyellow" }}>
-          # 희소성이 높은 아이템이 포함될 수 있습니다!
-        </span>
-        <div style={{ backgroundColor: "red" }}>
-          <button className="cusbutton" onClick={randomBtn}>랜덤으로 발행</button>
-        </div>
-      </div>
+    <div id="Custom_background">
+      <Slider {...settings}>
+        <div><img src="img/1.png"  className='slideItem'/></div>
+        <div ><img src="img/2.png" className='slideItem'/></div>
+        <div ><img src="img/3.png" className='slideItem'/></div>
+        <div ><img src="img/4.png" className='slideItem'/></div>
+        <div ><img src="img/5.png" className='slideItem'/></div>
+      </Slider>
 
-      <div className="title" style={{ marginTop: "30px" }}>
-        {" "}
-        커스터마이징하여 발행{" "}
-      </div>
-      <div className="box">
-        직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
-        <br />
-        <span style={{ color: "lightgoldenrodyellow" }}>
-          # 희소성이 높은 아이템이 포함될 수 있습니다!
-        </span>
-        <div className="cusbox">
-          <img
-            //ref={cardRef}
-            src="img/1.png"
-            style={{ width: "30%", height: "100%", objectFit: "contain" }}
-          />
+      <div id="Custom_container1">
+        <div className="Custom_title"> 랜덤으로 발행 </div>
+        <div className="Custom_box">
+          직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
+          <br />
+          <span style={{ color: "lightgoldenrodyellow" }}>
+            # 희소성이 높은 아이템이 포함될 수 있습니다!
+          </span>
+          <div>
+            <button className="Custom_button" onClick={randomBtn}>랜덤으로 발행</button>
+          </div>
         </div>
-        <button className="cusbutton" onClick={mintBtn}>
-          나만의 NFT 발행
-        </button>
+      </div>
+      
+      <div id="Custom_container2">
+        <div className="Custom_title">
+          커스터마이징하여 발행
+        </div>
+        <div className="Custom_box">
+          직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
+          <br />
+          <span style={{ color: "lightgoldenrodyellow" }}>
+            # 희소성이 높은 아이템이 포함될 수 있습니다!
+          </span>
+          <button className="Custom_button" onClick={customBtn}>
+            나만의 NFT 발행
+          </button>
+        </div>
       </div>
     </div>
   );

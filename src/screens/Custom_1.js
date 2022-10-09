@@ -94,14 +94,17 @@ const Custom_1 = () => {
 
   //Idol 기본 스타일은 Character-1-card으로
   const [IdolCvs, SetIdolCvs] = useState("Character-1-card");
+  const [IdolCvsSize, SetIdolCvsSize] = useState("380px");
   const [canvasSelect, SetCanvasSelect] = useState(false);
 
   //그림판 그림 선택됐을 때 Idol style 바꿔줌
   useEffect(() => {
     if (canvasSelect == true) {
       SetIdolCvs("Character-1-Cvs");
+      SetIdolCvsSize("125px");
     } else {
       SetIdolCvs("Character-1-card");
+      SetIdolCvsSize("380px");
     }
   });
   const exportRef = useRef();
@@ -242,32 +245,32 @@ const Custom_1 = () => {
         <div class="Character_back" ref={exportRef}>
           {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
-            <img src={BackSelect} />
+            <img style={{ width: "380px" }} src={BackSelect} />
           </div>
           {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
-            <img src={BodySelect} />
+            <img style={{ width: "380px" }} src={BodySelect} />
           </div>
           {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
-            <img src={HairSelect} />
+            <img style={{ width: "380px" }} src={HairSelect} />
           </div>
           {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
-            <img src={EyeSelect} />
+            <img style={{ width: "380px" }} src={EyeSelect} />
           </div>
           {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
-            <img src={EggSelect} />
+            <img style={{ width: "380px" }} src={EggSelect} />
           </div>
 
           {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
           <div className={IdolCvs}>
-            <img src={IdolSelect} />
+            <img style={{ width: IdolCvsSize }} src={IdolSelect} />
           </div>
           {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
-            <img src={MouthSelect} />
+            <img style={{ width: "380px" }} src={MouthSelect} />
           </div>
         </div>
 
@@ -446,7 +449,7 @@ const Custom_1 = () => {
                 onClick={() => {
                   setEyeSelect(Eye.Eye_Triangle);
                 }}
-              />{" "}
+              />
               <img
                 src={Eye.Eye_Arch}
                 className="Card"
@@ -705,7 +708,7 @@ const Custom_1 = () => {
                 onClick={() => {
                   setBackSelect(Back.Back_Pink);
                 }}
-              />{" "}
+              />
               <img
                 src={Back.Back_Rainbow}
                 className="Card"
@@ -747,7 +750,7 @@ const Custom_1 = () => {
                 onClick={() => {
                   setBackSelect(Back.Back_Zebra);
                 }}
-              />{" "}
+              />
               <img
                 src={Back.Back_Rainbow}
                 className="Card"
@@ -762,7 +765,7 @@ const Custom_1 = () => {
           id="하단 버튼"
           style={{
             marginLeft: "56%",
-            marginTop: "33.5%",
+            marginTop: "36%",
             position: "absolute",
             display: "flex",
             flexDirection: "row",

@@ -4,7 +4,7 @@
 }
 .main-Div {
     width: 90%;
-    height: 37vmax;
+    height: 40vmax;
     display: flex;
     flex-direction: row;
     border-radius: 10px;
@@ -26,8 +26,12 @@ img {
 
 
 .Character_back {
-    width: 31%;
+    width: 380px;
+    height: 380px;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3%;
 }
 
 .Character_back::after {
@@ -45,8 +49,8 @@ img {
 .Character-1-Cvs {
     position: absolute;
     width:8.5%;
-    margin-top: 12%;
-    margin-left: 14%;
+    margin-top: 180px;
+    margin-left: 210px;
 }
 
 .Character-1 img {
@@ -121,7 +125,6 @@ img {
     font-size:0.8vmax;
     border-radius: 8px;
 }
-
 
 
 
