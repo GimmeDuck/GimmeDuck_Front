@@ -35,39 +35,58 @@ const Donate = () => {
   };
 
   return (
-    <div className="donate">
-      <div className="donate_rapper_title">
-        <div className="donate_text">
-          <div className="donate_fandom_name">DIVE</div>
-          <div
-            className="donate_fandom_content"
-            style={{ fontSize: "1.3vmax", marginTop: "0" }}
-          >
-            20KLAY
-          </div>
-          <div className="donate_fandom_content">
-            팬들이 참여하는 따뜻한 나눔은
-            <br /> <br />
-            소외된 이웃에게 행복과 희망을 가져다주며
-            <br /> <br />
-            더 나아가 우리 모두가 함께하는 세상을
-            <br /> <br />
-            만드는데에 참여하셨습니다
-            <br /> <br />
-            이에 감사의 마음을 담아 <br /> <br />이 증서를 드립니다
-          </div>
-          <div
-            className="donate_fandom_content"
-            style={{
-              fontSize: "0.9vmax",
-              color: "white",
-              marginTop: "5vmax",
-              textAlign: "right",
-            }}
-          >
-            기미덕 드림
-            <br />
-            {today()}
+    <div className="donate_back">
+      <img src="img/albumSlide2.png" className="slide_back1" />
+      <img
+        src="img/albumSlide2.png"
+        className="slide_back2"
+        style={{ marginTop: "11%" }}
+      />
+      <img
+        src="img/albumSlide1.png"
+        className="slide_back1"
+        style={{ marginTop: "22.2%" }}
+      />
+      <img
+        src="img/albumSlide1.png"
+        className="slide_back2"
+        style={{ marginTop: "33.1%" }}
+      />
+      <div className="donate">
+        <div className="donate_rapper_title">
+          <div className="donate_text">
+            <div className="donate_fandom_name">DIVE</div>
+            <div
+              className="donate_fandom_content"
+              style={{ fontSize: "1.3vmax", marginTop: "0" }}
+            >
+              20KLAY
+            </div>
+            <div className="donate_fandom_content">
+              팬들이 참여하는 따뜻한 나눔은
+              <br /> <br />
+              소외된 이웃에게 행복과 희망을 가져다주며
+              <br /> <br />
+              더 나아가 우리 모두가 함께하는 세상을
+              <br /> <br />
+              만드는데에 참여하셨습니다
+              <br /> <br />
+              이에 감사의 마음을 담아 <br /> <br />이 증서를 드립니다
+            </div>
+            <div
+              className="donate_fandom_content"
+              style={{
+                fontSize: "0.7vmax",
+                color: "rgb(172, 160, 140)",
+                fontWeight: "700",
+                marginTop: "5vmax",
+                textAlign: "right",
+              }}
+            >
+              기미덕 드림
+              <br />
+              {today()}
+            </div>
           </div>
         </div>
       </div>
@@ -75,48 +94,6 @@ const Donate = () => {
       <button onClick={homeBtn} className="donate_home_button">
         TO HOME
       </button>
-
-      {/* <div className="donate_rapper">
-        <div className="donate_rapper_title">
-          <img className="donate_title_balloon" src="img/balloons.png" />
-          <h3 style={{ fontWeight: 700, fontSize: 30 }}>나만의 김희덕 탄생</h3>
-          <img className="donate_title_balloon" src="img/balloons.png" />
-        </div>
-
-        <div className="donate_rapper_imgrap">
-          <img className="donate_rapper_nft" src={img} />
-          <div className="donate_rapper_img">
-            <img src="img/donateComplete.png" />
-            <div className="donate_rapper_text">
-              <div style={{ fontSize: "30px" }}>DIVE</div>
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20KLAY
-              <br />
-              <br />
-              팬들이 참여하는 따뜻한 나눔은
-              <br />
-              소외된 이웃에게 행복과 희망을 가져다주며
-              <br />
-              더 나아가 우리 모두가 함께하는 세상을
-              <br />
-              만드는데에 참여하셨습니다
-              <br />
-              이에 감사의 마음을 담아 <br />
-              이 증서를 드립니다
-              <br />
-              <br />
-              <br />
-              <br />
-            </div>
-            <img src="img/eggset.png" id="donate_rapper_img" />
-          </div>
-        </div>
-      </div>
-      <div className="donate_button_rapper">
-        <button onClick={homeBtn} className="donate_home_button">
-          홈
-        </button>
-      </div> */}
     </div>
   );
 };
