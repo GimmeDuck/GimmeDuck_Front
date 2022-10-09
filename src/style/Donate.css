@@ -1,18 +1,20 @@
 .donate{
-    width: 100%;
-    height: 100vh;
-    background: black;
+    width: 100vw;
+    height: 92vh;
+    
+    background-image: url(../../public/img/donate_back.png);
+    
+  background-repeat: no-repeat;
+  background-size: cover;
     display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
+    flex-direction: row-reverse;
 }
 
 .donate_rapper{
     width : 65%;
     height : 75vh;
-    background: #282828;
-    border-radius: 5%;
+    background: #292929;
+    border-radius: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,31 +22,107 @@
 }
 
 .donate_rapper_title{
-    margin: 2% 0% 0% 0%;
-    width: 100%;
-    color:wheat;
+    width:40%;
+    height: 100%;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content :center;
+    background-color: rgb(75, 75, 75);
+    
+    opacity: 50%;
+    animation-duration: 1s;
+    animation-name: slidein;
 }
 
+@keyframes slidein {
+    from {
+      margin-left: 0%;
+      width: 0%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 40%;
+    }
+  }
+
+.donate_rapper_nft{
+    width: 25%;
+    border-radius: 3%;
+    position: absolute;
+    right: 55%;
+    top:25%;
+    opacity: 90%;
+    animation-duration: 3s;
+    animation-name: showslow;
+}
+
+
+@keyframes showslow {
+    from {
+      opacity: 0%;
+    }
+  
+    to {
+      opacity: 100%;
+    }
+  }
+.donate_text{
+    font-size: 5vmax;
+    margin:2vmax;
+    margin-left: 17%;
+    margin-right: 15%;
+}
+
+.donate_fandom_name{
+    font-size: 7vmax;
+    text-align: left;
+    
+    font-weight: 700;
+    
+    color:rgb(255, 233, 194);
+    margin-bottom: 1vmax;
+}
+
+
+.donate_fandom_content{
+    font-size: 0.8vmax;
+    margin-top: 3vmax;
+    
+    text-align: left;
+    
+    
+    color:rgb(254, 249, 234);
+}
+
+.donate_home_button{
+    position: absolute;
+    width: 5vmax;
+    height : 2vmax;
+    background-color: rgb(30, 30, 30);
+    color: rgb(130, 130, 130);
+    font-size: 0.9vmax;
+    border-radius: 30%;
+    border: none;
+    right: 65.5%;
+    bottom: 5%;
+} 
+
+
+
+/* 
 .donate_title_balloon{
-    width : 10%
+    width : 5%
 }
 
 .donate_rapper_imgrap{
-    flex: 1;
-    width: 100%;
+    width: 80%;
+    height: 70%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: aquamarine;
 }
 
-.donate_rapper_nft{
-    width: 40%;
-    border-radius: 10%;
-}
+
 
 .donate_rapper_img{
     width: 45%;
@@ -55,12 +133,7 @@
 }
 
 .donate_rapper_text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: max-content;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 #donate_rapper_img {
@@ -89,4 +162,4 @@
     font-size: 20px;
     font-weight: 700;
     border-radius: 10px;
-}
+} */
