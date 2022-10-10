@@ -41,10 +41,9 @@ const Egg_White = require("../custom_Img/Egg/Egg_White.png");
 const Egg = [ Egg_Mint, Egg_Pink, Egg_PurPle, Egg_White ];
 
 const Idol_Aespa = require("../custom_Img/Idol/Idol_Aespa.png");
-const Idol_Bts = require("../custom_Img/Idol/Idol_Bts.png");
-const Idol_Ive = require("../custom_Img/Idol/Idol_Ive.png");
-const Idol_Nct = require("../custom_Img/Idol/Idol_Nct.png");
-const Idol = [ Idol_Aespa, Idol_Bts, Idol_Ive, Idol_Nct ];
+const Idol_BTS = require("../custom_Img/Idol/Idol_Bts.png");
+const Idol_IVE = require("../custom_Img/Idol/Idol_Ive.png");
+const Idol_NCT = require("../custom_Img/Idol/Idol_Nct.png");
 
 const Back_Mint = require("../custom_Img/Back/Back_Mint.png");
 const Back_Pink = require("../custom_Img/Back/Back_Pink.png");
@@ -54,6 +53,11 @@ const Back = [ Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra ];
 
 const Random = () => {
     const getRandom = (min, max) => Math.floor(Math.random() * (max - min) + min);
+
+    // 이전 페이지에서 선택한 아이돌 받아오기
+  const search = window.location.search; // returns the URL query String
+  const params = new URLSearchParams(search); 
+  const Idol = "img/Idol_"+params.get('idol')+".png"; 
 
   return (
     <div>
@@ -84,7 +88,7 @@ const Random = () => {
           </div>
           {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1">
-            <img src={Idol[getRandom(0, 4)]}/>
+            <img src={Idol}/>
           </div>
         </div>
 
