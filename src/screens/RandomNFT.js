@@ -51,7 +51,7 @@ function RandomNFT() {
          }).then(result => {
             // 만약 Promise리턴을 받으면,
             if (result.isConfirmed) { 
-                window.location.href = "/Random";
+                window.location.href = `/Random?idol=${idol}`;
             }
          });
     }
