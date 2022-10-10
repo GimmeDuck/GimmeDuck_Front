@@ -12,7 +12,7 @@
 .slide_back1{
     height: 25%;
     position: absolute;
-    animation: slide1 500s linear infinite;
+    animation: slide1 300s linear infinite;
 }
 @keyframes slide1 {
     0% {
@@ -29,7 +29,7 @@
   .slide_back2{
     height: 25%;
     position: absolute;
-    animation: slide2 500s linear infinite;
+    animation: slide2 300s linear infinite;
 }
 @keyframes slide2 {
     0% {
