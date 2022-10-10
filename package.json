@@ -76,6 +76,7 @@
     "source-map-loader": "^3.0.0",
     "stream-http": "^3.2.0",
     "style-loader": "^3.3.1",
+    "sweetalert2": "^11.4.38",
     "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
     "tty-browserify": "^0.0.1",

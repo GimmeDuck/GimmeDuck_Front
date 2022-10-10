@@ -6,7 +6,7 @@ const Caver = require('caver-js');
 //클레이튼 바오밥 네트워크 연결
 const caver = new Caver('https://api.baobab.klaytn.net:8651/');
 
-//클레이튼 메인넷 네트워크 연결
+//클레이튼 메인넷 네트워크 연결 ---------------------> 메인넷 연결을 어떻게 하는지 찾아야 함ㅜㅜㅠㅠㅠ
 const caverMain = new Caver('');
 
 //GIMMEDUCK 지갑 주소 등록

@@ -1,9 +1,11 @@
-import React from 'react';
-import { Navbar, Container, Nav} from 'react-bootstrap';
+import React from "react";
+import { Navbar, Container, Nav } from "react-bootstrap";
+
+//    <Navbar scrolling dark expand="md" fixed="top" >
 
 const NavBarElements = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar expand="md" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="/">GIMME-DUCK</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -19,6 +21,6 @@ const NavBarElements = () => {
       </Container>
     </Navbar>
   );
-}
+};
 
-export default NavBarElements
+export default NavBarElements;
