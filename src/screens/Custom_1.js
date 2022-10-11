@@ -776,11 +776,11 @@ const Custom_1 = () => {
           }}
         >
           <select className="combo">
-            <option value="steak">팬덤 선택</option>
-            <option value="에스파">에스파</option>
-            <option value="레드벨벳">레드벨벳</option>
-            <option value="레드벨벳">규방</option>
-            <option value="레드벨벳">숭이</option>
+            <option value="steak">영역 선택</option>
+            <option value="어린이">어린이 복지</option>
+            <option value="노인">노인 복지</option>
+            <option value="장애인">장애인 복지</option>
+            <option value="환경">환경 복지</option>
           </select>
           <button className="nftBtn" onClick={() => NFTBtn()}>
             NFT 발행
