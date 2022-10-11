@@ -36,7 +36,6 @@ img {
 
 .Character_back::after {
     content: "";
-    display: block;
     padding-bottom: 100%;
 }
 
