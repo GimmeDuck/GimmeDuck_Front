@@ -10,7 +10,7 @@ const exportAsImage = async (element, imageFileName, idol, part) => {
   downloadImage(image, imageFileName);
   localStorage.setItem("imgURL", image); // localStorage로 이미지 url 임시 저장 후 완성 페이지에서 이미지 연동
 
-  window.location.href = `/Donate?idol=${idol}&part=${part}`;
+  //window.location.href = `/Donate?idol=${idol}&part=${part}`; --------------테스트 위해서 잠깐 주석처리------------
 };
 
 const downloadImage = (blob, fileName) => {

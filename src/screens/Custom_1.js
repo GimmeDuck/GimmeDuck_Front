@@ -1,9 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../style/Custom_1.css";
-import Modal from "../components/Modal";
+import CustomModal from "../components/Modal";
 import exportAsImage from "../utils/exportAsImage";
 //caver
 import execute_func from "../screen_js/caver.js";
+
+//민팅 실험중 ------------------------------------------------------------------
+import axios from "axios";
+import {giveMinterRole} from "../screen_js/caver.js";
+import * as KlipAPI from "../screen_js/Buyegg_js";
+import Modal from "react-modal";
+import { QRCodeSVG } from "qrcode.react";
+
+
 var global = global || window;
 global.Buffer = global.Buffer || require("buffer").Buffer;
 
@@ -113,9 +122,58 @@ const Custom_1 = () => {
   const exportRef = useRef();
   const [Cvs, setCvs] = useState(false);
 
+
+
+  //민팅 실험중-----------------------------------------------------------------
+  
+  const img = localStorage.getItem("imgURL");
+
+  const DEFAULT_QR_CODE = "DEFAULT";
+  const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
+  const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
+  const [qrvalue_execute, setQrvalue_execute] = useState(DEFAULT_QR_CODE);
+  const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
+  const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
+  const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
+
+  function test(){
+    let ipfsHash;
+    axios.post('/test', {image : img})
+    .then(response => { 
+      console.log(response.data);
+      ipfsHash = response.data;
+      KlipAPI.getAddress(setQrvalue_auth, async (address) => {
+        setMyAddress(address)
+        
+      });
+      console.log(myAddress);
+      auth_setModalIsOpen(true);
+
+
+      // let timerId = setInterval(()=>{
+      //   if(myAddress!==DEFAULT_ADDRESS){
+      //     giveMinterRole(myAddress)
+      //     KlipAPI.execute_Contract(setQrvalue_execute, "0x38596eD0dceaC58632bCf8BD92B5af3854d6A768",ipfsHash);
+      //     send_setModalIsOpen(true);
+
+      //     clearInterval(timerId);
+      //   }
+      // },1000);
+    })
+  }
+
+  //녹화용-----------------------------------
+  function close(){
+    auth_setModalIsOpen(false);
+    window.location.href = `/Donate?idol=${idol}&part=${part}`;
+  }
+
   function NFTBtn(e) {
-    exportAsImage(exportRef.current, "test.png", idol, part);
+    
+    exportAsImage(exportRef.current, "test.png",idol, part);     //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
+
     //execute_func();
+    test();
   }
 
   const changePart = () => {
@@ -656,6 +714,14 @@ const Custom_1 = () => {
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Bts);
                   SetCanvasSelect(false);
+                }}
+              />
+              <img
+                src={Idol.Idol_Bts}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_Bts);
+                  SetCanvasSelect(false);
                   setIdol("BTS");
                 }}
               />
@@ -691,7 +757,7 @@ const Custom_1 = () => {
               )}
               {/* 그림판 여는 곳 */}
               <img src={Idol.Idol_Plus} className="Card" onClick={modalClose} />
-              {modalOpen && <Modal modalClose={modalClose}></Modal>}
+              {modalOpen && <CustomModal modalClose={modalClose}></CustomModal>}
             </div>
           </div>
         )}
@@ -785,6 +851,20 @@ const Custom_1 = () => {
           <button className="nftBtn" onClick={() => NFTBtn()}>
             NFT 발행
           </button>
+          <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
+            <QRCodeSVG className="qrcode" value={qrvalue_auth} />
+            <div
+              className="close"
+              onClick={close}
+            ></div>
+          </Modal>
+          <Modal className="buyegg_popup" isOpen={send_modalIsOpen}>
+            <QRCodeSVG className="qrcode" value={qrvalue_execute} />
+            <div
+              className="close"
+              onClick={() => send_setModalIsOpen(false)}
+            ></div>
+          </Modal>
         </div>
       </div>
     </div>

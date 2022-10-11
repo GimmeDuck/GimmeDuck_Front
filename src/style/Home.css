@@ -1,3 +1,9 @@
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+
+*{
+    font-family: 'NanumSquare', sans-serif;
+}
+
 .text{
     text-align: center;
     color: white;
@@ -11,7 +17,7 @@
     padding: 20px;
 }
 
-.button{
+.home_button{
     background-color: rgb(191,144,0);
     color: white;
     padding:12px;
@@ -20,8 +26,9 @@
     margin-top: 40px;
     font-size: 15px;
     border-radius: 8px;
-}
 
+   
+}
 
 
 .chartBox{

@@ -6,7 +6,7 @@ const Egg_Mint = require("../custom_Img/Egg/Egg_Mint.png");
 
 var imgsrc = "blob:http://localhost:3000/15cdf288-d653-4713-842c-4a380e348bc4";
 var canvas, context;
-const Modal = ({ modalClose }) => {
+const CustomModal = ({ modalClose }) => {
   const [Cvs, setCvs] = useState(false);
 
   return (
@@ -131,4 +131,4 @@ const Modal = ({ modalClose }) => {
   );
 };
 
-export default Modal;
+export default CustomModal;

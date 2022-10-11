@@ -1,13 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import "../style/Donate.css";
 import axios from "axios";
 
+import {giveMinterRole} from "../screen_js/caver.js";
+import * as KlipAPI from "../screen_js/Buyegg_js";
+
+
+let name;
+
+//콤보박스에서 가져온 값 여기에 담아야 하는데
+//문제? custom창에서 가져오고 나서 이 페이지가 렌더링 돼서
+//name 변수가 새로 정의 되면서 담긴 값이 날아감 우쨰?
+export function Fandom(paraName) {
+  this.name = paraName;
+  console.log(name);
+}
+
 const Donate = () => {
 
+  const DEFAULT_QR_CODE = "DEFAULT";
+  const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
+  const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
+  const [qrvalue_execute, setQrvalue_execute] = useState(DEFAULT_QR_CODE);
+  const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
+  const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
+  const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
+
+
   const img = localStorage.getItem("imgURL");
-  axios.post("/test", { image: img }).then((response) => {
-    console.log(response.data);
-  });
+
+  function test(){
+    let ipfsHash;
+    axios.post('/test', {image : img})
+    .then(response => { 
+      console.log(response.data);
+      ipfsHash = response.data;
+      KlipAPI.getAddress(setQrvalue_auth, async (address) => {
+        setMyAddress(address)
+      });
+      auth_setModalIsOpen(true);
+      
+      giveMinterRole(myAddress);
+
+      KlipAPI.execute_Contract(setQrvalue_execute, "0x38596eD0dceaC58632bCf8BD92B5af3854d6A768",ipfsHash);
+      send_setModalIsOpen(true);
+    })
+  }
+  
 
   function homeBtn(e) {
     window.location.href = "/";
