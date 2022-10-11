@@ -1,6 +1,6 @@
 import html2canvas from "html2canvas";
 
-const exportAsImage = async (element, imageFileName) => {
+const exportAsImage = async (element, imageFileName, idol, part) => {
   const canvas = await html2canvas(element, { width: 380, height: 380 }); //  -> width, height 값 지정으로 문제 해결
   const image = canvas.toDataURL("image/png", 1.0);
   // download the image
@@ -10,7 +10,11 @@ const exportAsImage = async (element, imageFileName) => {
   downloadImage(image, imageFileName);
   localStorage.setItem("imgURL", image); // localStorage로 이미지 url 임시 저장 후 완성 페이지에서 이미지 연동
 
+<<<<<<< HEAD
   //window.location.href = "/Donate";
+=======
+  window.location.href = `/Donate?idol=${idol}&part=${part}`;
+>>>>>>> 0b79367344160495859463035ed69836132f0684
 };
 
 const downloadImage = (blob, fileName) => {

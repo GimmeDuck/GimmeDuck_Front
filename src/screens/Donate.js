@@ -1,12 +1,6 @@
 import React, { useEffect, useState} from "react";
 import "../style/Donate.css";
 import axios from "axios";
-
-import {giveMinterRole} from "../screen_js/caver.js";
-import * as KlipAPI from "../screen_js/Buyegg_js";
-import Modal from "react-modal";
-import { QRCodeSVG } from "qrcode.react";
-
 let name;
 
 //콤보박스에서 가져온 값 여기에 담아야 하는데
@@ -18,9 +12,7 @@ export function Fandom(paraName) {
 }
 
 const Donate = () => {
-  const [fdm, Setfdm] = useState("fandom");
-  const [full, setFull] = useState(true);
-
+  
   const DEFAULT_QR_CODE = "DEFAULT";
   const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
   const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
@@ -55,6 +47,14 @@ const Donate = () => {
     window.location.href = "/";
   }
 
+
+    // 이전 페이지에서 선택한 아이돌, 영역 받아오기
+    const search = window.location.search; // returns the URL query String
+    const params = new URLSearchParams(search); 
+    const idol = params.get('idol'); 
+    const part = params.get('part'); 
+
+
   const today = () => {
     let now = new Date();
     let year = now.getFullYear();
@@ -86,12 +86,12 @@ const Donate = () => {
       <div className="donate">
         <div className="donate_rapper_title">
           <div className="donate_text">
-            <div className="donate_fandom_name">DIVE</div>
+            <div className="donate_fandom_name">{idol}</div>
             <div
               className="donate_fandom_content"
               style={{ fontSize: "1.3vmax", marginTop: "0" }}
             >
-              20KLAY
+              {part} 영역
             </div>
             <div className="donate_fandom_content">
               팬들이 참여하는 따뜻한 나눔은

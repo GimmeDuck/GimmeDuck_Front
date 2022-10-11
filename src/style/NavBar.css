@@ -1,0 +1,57 @@
+.NavBar_btn{
+    background-color: rgb(32, 65, 122);
+    color: white;
+    padding:8px;
+    font-size: 0.8vmax;
+    border-radius: 8px;
+    border-width: 0px;
+    width:60%;
+    margin-right: 20px;
+}
+
+.NavBar_box{
+    width:40vw;
+    height:10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.NavBar_popup{
+    height: 100%;
+}
+
+.NavBar_qrcode{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.NavBar_close{
+    display: flex;
+    justify-content: flex-end;
+    height: 10%;
+
+}
+.NavBar_close:hover{
+    cursor: pointer;
+}
+
+.NavBar_close:after {
+    display: inline-block;
+    content: "\00d7";
+    font-size: 50px;
+    width: 10%;
+}
+
+.ReactModal__Overlay--after-open{
+    margin: 10% 30%;
+    border-radius: 5%;
+}
+.NavBar_text{
+    color: white;
+    line-height:35px;
+    width: 40%;
+    font-size: 15px;
+}

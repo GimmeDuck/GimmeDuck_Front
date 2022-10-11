@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import "../style/Custom_1.css";
 import CustomModal from "../components/Modal";
 import exportAsImage from "../utils/exportAsImage";
-import * as Donate from "../screens/Donate.js";
 //caver
 import execute_func from "../screen_js/caver.js";
 
@@ -76,6 +75,10 @@ const Back_Zebra = require("../custom_Img/Back/Back_Zebra.png");
 const Back = { Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra };
 
 const Custom_1 = () => {
+
+  const [idol, setIdol] = useState("");
+  const [part, setPart] = useState("");
+
   const [BodySelect, setBodySelect] = useState(Body.Body_White);
   const [HairSelect, setHairSelect] = useState();
   const [EyeSelect, setEyeSelect] = useState();
@@ -167,11 +170,18 @@ const Custom_1 = () => {
 
   function NFTBtn(e) {
     Donate.Fandom("규방");
-    exportAsImage(exportRef.current, "test.png");     //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
+    exportAsImage(exportRef.current, "test.png",idol, part);     //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
 
     //execute_func();
     test();
   }
+
+  const changePart = () => {
+    var e = document.getElementById("Custom1_combo");
+    setPart(e.options[e.selectedIndex].text);
+  }
+
+
   // 여기부터 시작///////////////////////////////////////////////////////
   return (
     <div
@@ -695,6 +705,7 @@ const Custom_1 = () => {
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Aespa);
                   SetCanvasSelect(false);
+                  setIdol("Aespa");
                 }}
               />
               <img
@@ -711,6 +722,7 @@ const Custom_1 = () => {
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Bts);
                   SetCanvasSelect(false);
+                  setIdol("BTS");
                 }}
               />
               <img
@@ -719,6 +731,7 @@ const Custom_1 = () => {
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Ive);
                   SetCanvasSelect(false);
+                  setIdol("IVE");
                 }}
               />
               <img
@@ -727,6 +740,7 @@ const Custom_1 = () => {
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Nct);
                   SetCanvasSelect(false);
+                  setIdol("NCT");
                 }}
               />
               {/* 추가된 그림판 사진 */}
@@ -827,7 +841,7 @@ const Custom_1 = () => {
             flexDirection: "row",
           }}
         >
-          <select className="combo">
+          <select id="Custom1_combo" onChange={() => changePart(this)}>
             <option value="steak">영역 선택</option>
             <option value="어린이">어린이 복지</option>
             <option value="노인">노인 복지</option>
