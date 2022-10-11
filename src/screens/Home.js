@@ -29,13 +29,8 @@ const Home = () => {
           <img src="img/home.PNG" />
         </div>
       </div>
-<<<<<<< HEAD
-      <button onClick={buyBtn} className="home_button">
-        알 구매하러 가기
-=======
       <button onClick={selectNFT} className="button">
         기부하러 가기
->>>>>>> 0b79367344160495859463035ed69836132f0684
       </button>
       <div className="chartBox">
         <div style={{ display: "flex", flexDirection: "row" }}>

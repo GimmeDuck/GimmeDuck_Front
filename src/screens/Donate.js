@@ -1,6 +1,11 @@
 import React, { useEffect, useState} from "react";
 import "../style/Donate.css";
 import axios from "axios";
+
+import {giveMinterRole} from "../screen_js/caver.js";
+import * as KlipAPI from "../screen_js/Buyegg_js";
+
+
 let name;
 
 //콤보박스에서 가져온 값 여기에 담아야 하는데
@@ -12,7 +17,7 @@ export function Fandom(paraName) {
 }
 
 const Donate = () => {
-  
+
   const DEFAULT_QR_CODE = "DEFAULT";
   const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
   const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);

@@ -165,11 +165,11 @@ const Custom_1 = () => {
   //녹화용-----------------------------------
   function close(){
     auth_setModalIsOpen(false);
-    window.location.href = "/Donate";
+    window.location.href = `/Donate?idol=${idol}&part=${part}`;
   }
 
   function NFTBtn(e) {
-    Donate.Fandom("규방");
+    
     exportAsImage(exportRef.current, "test.png",idol, part);     //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
 
     //execute_func();
