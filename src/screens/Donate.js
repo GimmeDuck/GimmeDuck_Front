@@ -1,19 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../style/Donate.css";
 import axios from "axios";
-let name;
-
-//콤보박스에서 가져온 값 여기에 담아야 하는데
-//문제? custom창에서 가져오고 나서 이 페이지가 렌더링 돼서
-//name 변수가 새로 정의 되면서 담긴 값이 날아감 우쨰?
-// export function Fandom(paraName) {
-//   this.name = paraName;
-//   console.log(name);
-// }
 
 const Donate = () => {
-  const [fdm, Setfdm] = useState("fandom");
-  const [full, setFull] = useState(true);
 
   const img = localStorage.getItem("imgURL");
   axios.post("/test", { image: img }).then((response) => {
@@ -23,6 +12,14 @@ const Donate = () => {
   function homeBtn(e) {
     window.location.href = "/";
   }
+
+
+    // 이전 페이지에서 선택한 아이돌, 영역 받아오기
+    const search = window.location.search; // returns the URL query String
+    const params = new URLSearchParams(search); 
+    const idol = params.get('idol'); 
+    const part = params.get('part'); 
+
 
   const today = () => {
     let now = new Date();
@@ -55,12 +52,12 @@ const Donate = () => {
       <div className="donate">
         <div className="donate_rapper_title">
           <div className="donate_text">
-            <div className="donate_fandom_name">DIVE</div>
+            <div className="donate_fandom_name">{idol}</div>
             <div
               className="donate_fandom_content"
               style={{ fontSize: "1.3vmax", marginTop: "0" }}
             >
-              20KLAY
+              {part} 영역
             </div>
             <div className="donate_fandom_content">
               팬들이 참여하는 따뜻한 나눔은
