@@ -67,6 +67,10 @@ const Back_Zebra = require("../custom_Img/Back/Back_Zebra.png");
 const Back = { Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra };
 
 const Custom_1 = () => {
+
+  const [Idol, selectIdol] = useState("");
+  const [part, selectPart] = useState("");
+
   const [BodySelect, setBodySelect] = useState(Body.Body_White);
   const [HairSelect, setHairSelect] = useState();
   const [EyeSelect, setEyeSelect] = useState();
@@ -111,7 +115,7 @@ const Custom_1 = () => {
   const [Cvs, setCvs] = useState(false);
 
   function NFTBtn(e) {
-    Donate.Fandom("규방");
+    //Donate.Fandom("규방");
     exportAsImage(exportRef.current, "test.png");
 
     //execute_func();
