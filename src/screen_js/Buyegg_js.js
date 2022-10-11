@@ -104,6 +104,7 @@ export const execute_Contract = (setQrvalue, user, baseURI) => {
         .then((res) => {
           if (res.data.result) {
             clearInterval(timerId);
+            window.location.href = "/Donate";
           };
         });
     }, 1000);
