@@ -27,7 +27,6 @@ function App() {
         <Route path="/History" element={<History />} />
         <Route path="/Market" element={<Market />} />
 
-        <Route path="/Buyegg" element={<Buyegg />} />
         <Route path="/Custom" element={<Custom />} />
         <Route path="/Custom_1" element={<Custom_1 />} />
         <Route path="/Donate" element={<Donate />} />
