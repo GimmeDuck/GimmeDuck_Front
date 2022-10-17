@@ -137,16 +137,18 @@ const Custom_1 = () => {
   const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
 
   function test(){
+    console.log("test start!!!!!!!!!!!!!!!!!!!!1");
     let ipfsHash;
     axios.post('/test', {image : img})
     .then(response => { 
+      console.log("test ing!!!!!!!!!!!!!!!!!!!!1");
+
       console.log(response.data);
       ipfsHash = response.data;
       KlipAPI.getAddress(setQrvalue_auth, async (address) => {
         setMyAddress(address)
         
       });
-      console.log(myAddress);
       auth_setModalIsOpen(true);
 
 
@@ -171,9 +173,9 @@ const Custom_1 = () => {
   function NFTBtn(e) {
     
     exportAsImage(exportRef.current, "test.png",idol, part);     //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
-
+    window.location.href = `/Donate?idol=${idol}&part=${part}`;
     //execute_func();
-    test();
+    //test();
   }
 
   const changePart = () => {
@@ -740,7 +742,7 @@ const Custom_1 = () => {
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Nct);
                   SetCanvasSelect(false);
-                  setIdol("NCT");
+                  setIdol("NCTzen");
                 }}
               />
               {/* 추가된 그림판 사진 */}
