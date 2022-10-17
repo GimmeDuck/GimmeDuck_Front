@@ -127,12 +127,12 @@ const Custom_1 = () => {
   //민팅 실험중-----------------------------------------------------------------
   
   const img = localStorage.getItem("imgURL");
-
+  let myAddress = "0x00000000000000000000000000000";
   const DEFAULT_QR_CODE = "DEFAULT";
   const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
   const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
   const [qrvalue_execute, setQrvalue_execute] = useState(DEFAULT_QR_CODE);
-  const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
+  //const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
   const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
   const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
 
@@ -143,31 +143,22 @@ const Custom_1 = () => {
       console.log(response.data);
       ipfsHash = response.data;
       KlipAPI.getAddress(setQrvalue_auth, async (address) => {
-        setMyAddress(address)
-        
+        myAddress = address;
       });
-      console.log(myAddress);
       auth_setModalIsOpen(true);
 
-
-      // let timerId = setInterval(()=>{
-      //   if(myAddress!==DEFAULT_ADDRESS){
-      //     giveMinterRole(myAddress)
-      //     KlipAPI.execute_Contract(setQrvalue_execute, "0x38596eD0dceaC58632bCf8BD92B5af3854d6A768",ipfsHash);
-      //     send_setModalIsOpen(true);
-
-      //     clearInterval(timerId);
-      //   }
-      // },1000);
+      
+      let timerId = setInterval(()=>{
+        console.log(myAddress);
+        if(myAddress!==DEFAULT_ADDRESS){
+          KlipAPI.execute_Contract(setQrvalue_execute, myAddress ,ipfsHash);
+          send_setModalIsOpen(true);
+          clearInterval(timerId);
+        }
+      },1000);
     })
   }
 
-  //녹화용-----------------------------------
-  function close(){
-    auth_setModalIsOpen(false);
-    window.location.href = `/Donate?idol=${idol}&part=${part}`;
-    
-  }
 
   function NFTBtn(e) {
     
@@ -856,7 +847,7 @@ const Custom_1 = () => {
             <QRCodeSVG className="qrcode" value={qrvalue_auth} />
             <div
               className="close"
-              onClick={close}
+              onClick={()=>auth_setModalIsOpen(false)}
             ></div>
           </Modal>
           <Modal className="buyegg_popup" isOpen={send_modalIsOpen}>
