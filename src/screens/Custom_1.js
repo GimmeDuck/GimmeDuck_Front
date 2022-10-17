@@ -7,11 +7,10 @@ import execute_func from "../screen_js/caver.js";
 
 //민팅 실험중 ------------------------------------------------------------------
 import axios from "axios";
-import {giveMinterRole} from "../screen_js/caver.js";
+import { giveMinterRole } from "../screen_js/caver.js";
 import * as KlipAPI from "../screen_js/Buyegg_js";
 import Modal from "react-modal";
 import { QRCodeSVG } from "qrcode.react";
-
 
 var global = global || window;
 global.Buffer = global.Buffer || require("buffer").Buffer;
@@ -75,7 +74,6 @@ const Back_Zebra = require("../custom_Img/Back/Back_Zebra.png");
 const Back = { Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra };
 
 const Custom_1 = () => {
-
   const [idol, setIdol] = useState("");
   const [part, setPart] = useState("");
 
@@ -122,10 +120,8 @@ const Custom_1 = () => {
   const exportRef = useRef();
   const [Cvs, setCvs] = useState(false);
 
-
-
   //민팅 실험중-----------------------------------------------------------------
-  
+
   const img = localStorage.getItem("imgURL");
   let myAddress = "0x00000000000000000000000000000";
   const DEFAULT_QR_CODE = "DEFAULT";
@@ -136,10 +132,9 @@ const Custom_1 = () => {
   const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
   const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
 
-  function test(){
+  function test() {
     let ipfsHash;
-    axios.post('/test', {image : img})
-    .then(response => { 
+    axios.post("/test", { image: img }).then((response) => {
       console.log(response.data);
       ipfsHash = response.data;
       KlipAPI.getAddress(setQrvalue_auth, async (address) => {
@@ -161,8 +156,7 @@ const Custom_1 = () => {
 
 
   function NFTBtn(e) {
-    
-    exportAsImage(exportRef.current, "test.png",idol, part);     //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
+    exportAsImage(exportRef.current, "test.png", idol, part); //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
 
     //execute_func();
     test();
@@ -171,8 +165,7 @@ const Custom_1 = () => {
   const changePart = () => {
     var e = document.getElementById("Custom1_combo");
     setPart(e.options[e.selectedIndex].text);
-  }
-
+  };
 
   // 여기부터 시작///////////////////////////////////////////////////////
   return (
