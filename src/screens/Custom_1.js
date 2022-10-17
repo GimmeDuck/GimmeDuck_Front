@@ -168,6 +168,7 @@ const Custom_1 = () => {
   function close(){
     auth_setModalIsOpen(false);
     window.location.href = `/Donate?idol=${idol}&part=${part}`;
+    
   }
 
   function NFTBtn(e) {
