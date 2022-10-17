@@ -1,11 +1,20 @@
-import React from 'react'
-import '../style/Market.css'
-
+import React from "react";
+import "../style/Market.css";
+import Market_js from "../screen_js/Market_js";
 const Market = () => {
   return (
     <>
-      <div className='medal_section'>
-
+      <div className="medal_section">
+        <button
+          id="load_button"
+          onClick={() => {
+            Market_js;
+          }}
+        >
+          {" "}
+          눌러봥
+        </button>
+        {/* 
         <div className='second'>
           <div className='rapper'>
             <img className='medal' src = 'img/silver-medal.png'/>
@@ -32,11 +41,10 @@ const Market = () => {
             <p className='nickname'>NCT_jahyun</p>
             <p className='klay'>250 Klay</p>
           </div>
-        </div>
-        
+        </div> */}
       </div>
 
-      <div style={{ height: '70vh' }}>
+      {/* <div style={{ height: '70vh' }}>
         <iframe
           src="https://testnets.opensea.io/collection/gimmeduck-token"
           width="100%"
@@ -44,10 +52,9 @@ const Market = () => {
           frameborder="0"
           allowfullscreen
         ></iframe>
-      </div>
+      </div> */}
     </>
+  );
+};
 
-  )
-}
-
-export default Market
+export default Market;
