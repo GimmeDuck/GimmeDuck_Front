@@ -122,7 +122,7 @@ const Custom_1 = () => {
 
   //민팅 실험중-----------------------------------------------------------------
 
-  const img = localStorage.getItem("imgURL");
+  let img = localStorage.getItem("imgURL");
   let myAddress = "0x00000000000000000000000000000";
   const DEFAULT_QR_CODE = "DEFAULT";
   const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
@@ -131,6 +131,8 @@ const Custom_1 = () => {
   //const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
   const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
   const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
+  // const [imgsaved, SetImgsaved] = useState(false);
+  var imgsaved=false;
 
   function test() {
     let ipfsHash;
@@ -144,22 +146,31 @@ const Custom_1 = () => {
 
       
       let timerId = setInterval(()=>{
-        console.log(myAddress);
+        // console.log(ipfsHash);
         if(myAddress!==DEFAULT_ADDRESS){
           KlipAPI.execute_Contract(setQrvalue_execute, myAddress ,ipfsHash);
           send_setModalIsOpen(true);
           clearInterval(timerId);
         }
       },1000);
+
     })
   }
 
 
   function NFTBtn(e) {
-    exportAsImage(exportRef.current, "test.png", idol, part); //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
+    exportAsImage(exportRef.current, "test.png", idol, part).then(()=>{
+      imgsaved=true;
+      img= localStorage.getItem("imgURL");
+      console.log("저장"+imgsaved)
+    }).then(()=>{
+      test();
+      console.log("발행"+imgsaved)
+    }) //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
 
     //execute_func();
-    test();
+      
+    
   }
 
   const changePart = () => {
