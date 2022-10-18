@@ -2,12 +2,33 @@ import React from "react";
 import "../style/Market.css";
 // import Market_js from "../screen_js/Market_js"; 이거 없애면 market_js 창 완성 안돼서 오류남
 const Market = () => {
+  var axios = require("axios").default;
+
+  var options = {
+    method: "GET",
+    url: "https://th-api.klaytnapi.com/v2/contract/nft/0xe2f757796478b4ee139589a84d0f9f153f6ac9b1/token",
+    headers: {
+      "Content-Type": "application/json",
+      "x-chain-id": "1001",
+      Authorization:
+        "Basic S0FTS0k4QVhDTkdPWDI5NTZSNVJFRTBEOkthcjczNmxSZnFkaHBxUGZCM1Y1dUF2N2I5QWlLWnJpYllVZndCSTA=",
+    },
+  };
+
   return (
     <>
       <div className="medal_section">
         <button
           id="load_button"
           onClick={() => {
+            axios
+              .request(options)
+              .then(function (response) {
+                console.log(response.data);
+              })
+              .catch(function (error) {
+                console.error(error);
+              });
             // Market_js;이거 없애면 market_js 창 완성 안돼서 오류남
           }}
         >
