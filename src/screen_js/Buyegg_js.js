@@ -3,7 +3,7 @@ import React , {useState} from 'react';
 import MINTABI from "../abi/mintABI.json";
 const A2P_API_PREPARE_URL = "https://a2a-api.klipwallet.com/v2/a2a/prepare";
 const APP_NAME = "GIMMEDUCK";
-const to = "0xbD786cB9eCcD0C285c4e843d7c261c823262F225";  //컨트랙 주소
+const to = "0x319d5B92DE3f496dAA7F6dDbda9E1b4BE8feff6F";  //컨트랙 주소
 const amount = "0.001";
 const abi = '{ "constant": false, "inputs": [{"internalType": "address", "name": "user","type": "address"},{"internalType": "string","name":"_newBaseURI","type": "string"}],"name": "publicMint","outputs": [],"payable": true,"stateMutability": "payable","type": "function"}';
 
