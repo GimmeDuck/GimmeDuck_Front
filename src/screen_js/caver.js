@@ -14,7 +14,7 @@ let accountMain = caverMain.klay.accounts.createWithAccountKey(kaikas_key.kaikas
 caverMain.klay.accounts.wallet.add(accountMain);
 
 //GIMMEDUCK 지갑 주소 등록
-let account = caver.klay.accounts.createWithAccountKey('0x38596eD0dceaC58632bCf8BD92B5af3854d6A768', '0xf1d92ecda4d008025f094823827513dfd167eb9283b2f08be81bd06f9f2ac1e3')
+let account = caver.klay.accounts.createWithAccountKey(kaikas_key.kaikas_address, kaikas_key.kaikas_private_key);
 caver.klay.accounts.wallet.add(account)
 
 //smartcontract 실행

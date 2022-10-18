@@ -45,3 +45,16 @@
 .klay{
     color : white;
 }
+
+
+.Market_card {
+    border: 5px solid red;
+    padding: 15px;
+    margin-top:15px;
+    color: white;
+}
+
+.Market_cardtext {
+    font-size: 20px;
+    color: white;
+}
