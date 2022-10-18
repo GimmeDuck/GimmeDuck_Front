@@ -40,10 +40,10 @@ const Donate = () => {
       });
       auth_setModalIsOpen(true);
       
-      giveMinterRole(myAddress);
+      // giveMinterRole(myAddress);
 
-      KlipAPI.execute_Contract(setQrvalue_execute, "0x38596eD0dceaC58632bCf8BD92B5af3854d6A768",ipfsHash);
-      send_setModalIsOpen(true);
+      // KlipAPI.execute_Contract(setQrvalue_execute, "0x38596eD0dceaC58632bCf8BD92B5af3854d6A768",ipfsHash);
+      // send_setModalIsOpen(true);
     })
   }
   
