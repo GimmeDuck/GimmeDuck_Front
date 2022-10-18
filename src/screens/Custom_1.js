@@ -148,7 +148,7 @@ const Custom_1 = () => {
       let timerId = setInterval(()=>{
         // console.log(ipfsHash);
         if(myAddress!==DEFAULT_ADDRESS){
-          KlipAPI.execute_Contract(setQrvalue_execute, myAddress ,ipfsHash);
+          KlipAPI.execute_Contract(setQrvalue_execute, myAddress ,ipfsHash,idol, part);
           send_setModalIsOpen(true);
           clearInterval(timerId);
         }

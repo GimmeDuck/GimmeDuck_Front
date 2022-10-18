@@ -78,7 +78,7 @@ export const getAddress = (setQrvalue, callback) => {
 
 
 //컨트랙 실행
-export const execute_Contract = (setQrvalue, user, baseURI) => {
+export const execute_Contract = (setQrvalue, user, baseURI,idol,part) => {
   axios
   .post(A2P_API_PREPARE_URL , {
     bapp : {
@@ -103,8 +103,23 @@ export const execute_Contract = (setQrvalue, user, baseURI) => {
         )
         .then((res) => {
           if (res.data.result) {
-            clearInterval(timerId);
-            //window.location.href = "/Donate";
+            console.log(res.data.result.status);
+            if(res.data.result.status=="success"){
+
+              clearInterval(timerId);
+              window.location.href = `/Donate?idol=${idol}&part=${part}`; 
+            }
+
+            // let checkResult = setInterval(()=>{
+            //   if(res.data.result.status=="success"){
+
+            //     clearInterval(checkResult);
+            //     clearInterval(timerId);
+            //     console.log("성공했졍");
+            //   }
+            // },1000);
+
+            //window.location.href = `/Donate?idol=${idol}&part=${part}`; 
           };
         });
     }, 1000);
