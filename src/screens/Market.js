@@ -1,18 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import "../style/Market.css";
-// import Market_js from "../screen_js/Market_js"; 이거 없애면 market_js 창 완성 안돼서 오류남
+import fetch from 'node-fetch';
+import MarketCard from "./MarketCard";
+
+
 const Market = () => {
+    
   return (
     <>
       <div className="medal_section">
-        <button
-          id="load_button"
-          onClick={() => {
-            // Market_js;이거 없애면 market_js 창 완성 안돼서 오류남
-          }}
-        >
-          눌러봥
-        </button>
+        <MarketCard />
         {/* 
         <div className='second'>
           <div className='rapper'>
