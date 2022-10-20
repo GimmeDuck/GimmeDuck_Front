@@ -10,9 +10,8 @@ import Buyegg from "./screens/Buyegg";
 import Custom from "./screens/Custom";
 import Donate from "./screens/Donate";
 import Custom_1 from "./screens/Custom_1";
-
-import axios from "axios";
-import { useEffect } from 'react';
+import Random from "./screens/Random";
+import RandomNFT from "./screens/RandomNFT";
 
 
 function App() {
@@ -28,10 +27,11 @@ function App() {
         <Route path="/History" element={<History />} />
         <Route path="/Market" element={<Market />} />
 
-        <Route path="/Buyegg" element={<Buyegg />} />
         <Route path="/Custom" element={<Custom />} />
         <Route path="/Custom_1" element={<Custom_1 />} />
         <Route path="/Donate" element={<Donate />} />
+        <Route path="/Random" element={<Random />} />
+        <Route path="/RandomNFT" element={<RandomNFT />} />
       </Routes>
     </Router>
   );

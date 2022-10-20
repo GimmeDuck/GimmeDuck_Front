@@ -6,11 +6,21 @@
     width : 100%;
 }
 
-.slider_div{
+.Introduction_slider_div{
     background-color: black;
     padding: 4%;
 }
 
-.slick-dots{
+.Introduction_slick-dots{
     background-color: white;
+}
+
+.Introduction_SlideImg{
+    padding-left:13%;
+   width: 80%;
+}
+
+
+.Introduction_slider_div .slick-slider {
+    width: 100%;
 }

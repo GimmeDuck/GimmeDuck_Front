@@ -3,14 +3,17 @@
     height:100vh;
 }
 .main-Div {
-    width: 80vmax;
-    height: 45vmax;
-    position: relative;
+    width: 90%;
+    height: 40vmax;
     display: flex;
     flex-direction: row;
     border-radius: 10px;
-    margin-left: 6%;
-    background-color: rgb(53,53,53);
+    
+    margin-left: 8%;
+    background-color: rgb(30, 30, 30);
+    align-items: center;
+    justify-content: center;
+    margin-bottom:2%
     
 
 }
@@ -18,26 +21,35 @@
 img {
     padding: 0px;
 }
-/* .Back {
-    position: relative;
-    margin: 4vmax;
-    width: 45%;
-    border-radius: 10px;
-} */
 
 
-#Character {
-    position: absolute;
-    margin: 4vmax;
-    width: 45%;
-    height: 80%;
-    background-color: white;
+
+
+.Character_back {
+    width: 380px;
+    height: 380px;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3%;
 }
 
-.Character-1 {
+.Character_back::after {
+    content: "";
+    padding-bottom: 100%;
+}
+
+
+.Character-1-card {
     position: absolute;
-    width: 100%;
+    width:25%
+}
+
+.Character-1-Cvs {
+    position: absolute;
+    width:8.5%;
+    margin-top: 180px;
+    margin-left: 210px;
 }
 
 .Character-1 img {
@@ -49,38 +61,33 @@ img {
 
 
 .RightPanel {
-    position: absolute;
-    width: 45%;
-    overflow-x: scroll;
-    height: 80%;
-    background-color: rgb(70, 70, 70);
+    width: 57%;
+    overflow-y: auto;
+    height: 82%;
+    background-color: rgb(37, 37, 37);
     border-radius: 10px;
     display: flex;
-    flex-direction: row-reverse;
-    margin: 10px;
-    margin-left: 43vmax;
-     margin-top: 4vmax;
-     
+    flex-direction: row;
+    margin-left:2%;
+    padding-left: 2%;
+    justify-content: center;
+    margin-bottom: 1%;
 }
 
 .SideBtnText{
-            background-Color: rgb(32, 65, 112);
-            border-Radius: 1vmax;
-            float: right;
+            background-Color: rgb(30, 30, 30);
+            border-Radius: 0.5vmax;
+            
             width: 50%;
             height: 50%;
-            font-Size:1vmax;
-    color: white;
+            font-Size:0.8vmax;
+    color: rgb(158, 158, 158);
 }
 
 .SideBtn {
    
-    right: 0;
-    margin-top: 1vmax;
-    margin-right: 4vmax;
     width: 20vmax;
     height: 11vmax;
-    position: absolute;
     border-radius: 10px;
 
 
@@ -88,28 +95,35 @@ img {
 
 
 .Card {
-    background-color: white;
+    background-color: rgb(84, 84, 84);
     border-radius: 10px;
-    width: 15vmax;
+    width: 28%;
     margin: 1vmax;
     opacity: 90%;
 }
 
 .nftBtn{
-    width: 15vmax;
+    width: 10vmax;
     border:0px;
-    height: 3vmax;
-    background-color: rgb(191,144,0);
+    height: 2.5vmax;
+    background-color: rgb(210, 181, 63);
     border-radius: 8px;
-    position: absolute;
-    margin-top: 51%;
-    margin-left: 80%;
-    color: white;
+    color: rgb(45, 45, 45);
+    font-Size:1vmax;
+    font-weight: 1000;
+    margin-left: 2%;
+    
 }
 
-
-
-
+#Custom1_combo{
+    width: 13vmax;
+    border:0px;
+    height: 2.5vmax;
+    background-color: rgb(68, 68, 68);
+    color: rgb(208, 208, 208);
+    font-size:0.8vmax;
+    border-radius: 8px;
+}
 
 
 

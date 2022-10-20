@@ -1,0 +1,60 @@
+html {
+    height:100%;
+    background-color:black;
+}
+
+.background {
+    background-color: black;
+    align-items: center;
+    padding-top: 50px;
+    display : flex;
+    flex-direction: column;
+}
+
+#randomEgg {
+    height:30vh;
+    margin-top:20px;
+}
+
+.combobox{
+    width: 300px;
+    height: 7vh;
+    background-color: rgb(131, 131, 131);
+    color: white;
+    border-radius: 10px;
+    padding : 10px
+}
+
+#randMint{
+    background-color: rgb(191,144,0);
+    color: white;
+    padding:12px;
+    border-radius: 10px;
+    width:300px;
+    height: 7vh;
+}
+
+#randMint_disabled{
+    background-color: gray;
+    color: white;
+    padding:12px;
+    border-radius: 10px;
+    width:300px;
+    height: 7vh;
+}
+
+.slick-slider {
+    width:70%;
+    padding:20px;
+}
+
+.slideItem {
+    background-color: white;
+    border-radius: 10px;
+    height:20vh;
+    border: 0px;
+}
+
+.slick-list {
+    padding-left : 45px;
+}

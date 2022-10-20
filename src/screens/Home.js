@@ -4,8 +4,8 @@ import Barcht from "../components/charts/ChartBar.js";
 import PieCht from "../components/charts/ChartPie.js";
 
 const Home = () => {
-  function buyBtn(e) {
-    window.location.href = "/Buyegg";
+  function selectNFT(e) {
+    window.location.href = "/Custom";
   }
 
   return (
@@ -17,7 +17,7 @@ const Home = () => {
       }}
     >
       <div className="text">
-        <h1 style={{ fontWeight: 700 }}>나만의 NFT 제작하고 기부하자!</h1>
+        <h1 style={{ fontWeight: 800 }}>나만의 NFT 제작하고 기부하자!</h1>
         <p>
           '덕후'로서의 나를 세상에 하나뿐인 캐릭터로 제작하고,
           <br />
@@ -29,8 +29,8 @@ const Home = () => {
           <img src="img/home.PNG" />
         </div>
       </div>
-      <button onClick={buyBtn} className="button">
-        알 구매하러 가기
+      <button onClick={selectNFT} className="button">
+        기부하러 가기
       </button>
       <div className="chartBox">
         <div style={{ display: "flex", flexDirection: "row" }}>
