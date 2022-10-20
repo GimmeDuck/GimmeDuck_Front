@@ -148,7 +148,7 @@ const Custom_1 = () => {
       let timerId = setInterval(()=>{
         // console.log(ipfsHash);
         if(myAddress!==DEFAULT_ADDRESS){
-          KlipAPI.execute_Contract(setQrvalue_execute, myAddress ,ipfsHash);
+          KlipAPI.execute_Contract(setQrvalue_execute, myAddress ,ipfsHash,idol, part);
           send_setModalIsOpen(true);
           clearInterval(timerId);
         }
@@ -159,25 +159,10 @@ const Custom_1 = () => {
 
 
   function NFTBtn(e) {
-<<<<<<< HEAD
     
     exportAsImage(exportRef.current, "test.png",idol, part);     //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠    
     //execute_func();
     //test();
-=======
-    exportAsImage(exportRef.current, "test.png", idol, part).then(()=>{
-      imgsaved=true;
-      img= localStorage.getItem("imgURL");
-      console.log("저장"+imgsaved)
-    }).then(()=>{
-      test();
-      console.log("발행"+imgsaved)
-    }) //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
-
-    //execute_func();
-      
-    
->>>>>>> 3eec5ce8095bcba13b17dd18eccb9d2ba401a58b
   }
 
   const changePart = () => {

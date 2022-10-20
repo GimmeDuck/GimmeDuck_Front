@@ -1,9 +1,11 @@
 import React, {useState} from "react";
+import { useEffect } from "react";
 import fetch from 'node-fetch';
 
 const MarketCard = () => {
     var axios = require("axios").default;
     var imgList;
+    var bool= false;
 
     var options = {
       method: "GET",
@@ -16,22 +18,37 @@ const MarketCard = () => {
       },
     };
 
-    const [image_url, setUrl] = useState("");
+    let image_url;
 
-    const getImg = (url) => {
+    let image = [];
+   let img;
 
-        fetch("https://ipfs.io/ipfs/"+url)
-        .then(res => res.json())
-        .then((out) => {
-            setUrl("https://ipfs.io/ipfs/"+out.image.substr(7));
-            console.log(image_url);
-        })
-        .catch(err => { throw err });  
-        console.log(image_url);
-        return image_url;
-
+    const getImg = async(url) => {
+        
+        const test1 = await fetch("https://ipfs.io/ipfs/"+url);
+        const test2 = await test1.json();
+        return "https://ipfs.io/ipfs/"+test2.image.substr(7);
+        // .then((out) => {
+        //     image_url = "https://ipfs.io/ipfs/"+out.image.substr(7);
+            
+        //     console.log("여기까지 실행--------------");
+        //     console.log(image_url);
+        //     return image_url;
+           
+        // })
+        // .catch(err => { throw err });  
     }
 
+   const getImageUrl = async (url) => {
+    const image_url = await getImg(url);
+    console.log(image_url)
+    image.push(<li>{image_url}</li>);
+    img = image.map(image_url => image_url.props.children);
+    // img = image.map((image_url,index) => <li key={index} >{image_url.props.children}</li>);
+    console.log(img);
+
+   };
+    
 
 //   axios
 //     .request(options)
@@ -46,12 +63,15 @@ const MarketCard = () => {
 //     console.error(error);
 //     });
 
-    imgList = ["QmWd2xfQLb9djF7chZ9P1q5dKd3L3Ut78uKJENm7NAF6NR", "QmW7XRmxWFCY2kJiyGFGwtLXvcaTeXZCh4j4c4bo9x6a1t"].map((tokenurl,index) => <li key={index}>{getImg(tokenurl)}</li>);
+    imgList = ["QmWd2xfQLb9djF7chZ9P1q5dKd3L3Ut78uKJENm7NAF6NR", "QmW7XRmxWFCY2kJiyGFGwtLXvcaTeXZCh4j4c4bo9x6a1t"].map((tokenurl,index) => <li key={index}>{getImageUrl(tokenurl)}</li>);
 
+    
   return (
     <ul className="Market_card">
         {/* <div className="Market_cardtext">Example</div> */}
-        {imgList}
+      
+			  {img}
+	
     </ul>
   );
 };
