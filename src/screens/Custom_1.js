@@ -132,7 +132,7 @@ const Custom_1 = () => {
   const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
   const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
   // const [imgsaved, SetImgsaved] = useState(false);
-  var imgsaved=false;
+  var imgsaved = false;
 
   function test() {
     let ipfsHash;
@@ -144,23 +144,25 @@ const Custom_1 = () => {
       });
       auth_setModalIsOpen(true);
 
-      
-      let timerId = setInterval(()=>{
+      let timerId = setInterval(() => {
         // console.log(ipfsHash);
-        if(myAddress!==DEFAULT_ADDRESS){
-          KlipAPI.execute_Contract(setQrvalue_execute, myAddress ,ipfsHash,idol, part);
+        if (myAddress !== DEFAULT_ADDRESS) {
+          KlipAPI.execute_Contract(
+            setQrvalue_execute,
+            myAddress,
+            ipfsHash,
+            idol,
+            part
+          );
           send_setModalIsOpen(true);
           clearInterval(timerId);
         }
-      },1000);
-
-    })
+      }, 1000);
+    });
   }
 
-
   function NFTBtn(e) {
-    
-    exportAsImage(exportRef.current, "test.png",idol, part);     //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠    
+    exportAsImage(exportRef.current, "test.png", idol, part); //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
     //execute_func();
     //test();
   }
@@ -843,7 +845,7 @@ const Custom_1 = () => {
             <QRCodeSVG className="qrcode" value={qrvalue_auth} />
             <div
               className="close"
-              onClick={()=>auth_setModalIsOpen(false)}
+              onClick={() => auth_setModalIsOpen(false)}
             ></div>
           </Modal>
           <Modal className="buyegg_popup" isOpen={send_modalIsOpen}>
