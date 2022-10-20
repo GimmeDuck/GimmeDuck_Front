@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../style/Market.css";
 import fetch from "node-fetch";
 import MarketCard from "./MarketCard";
@@ -8,44 +8,83 @@ const Market = () => {
   let imgs = [];
   let imgList = [];
   let srcList = [];
+  let nameList;
+  const [array, setArray] = useState([]);
+  let [rst, setrst] = useState([]);
   var axios = require("axios").default;
 
+  const [isLoading, setLoading] = useState(true);
+  const [done, setDone] = useState(false);
+
+  //KAS API 호출하는 부분
   var options = {
     method: "GET",
-    url: "https://th-api.klaytnapi.com/v2/contract/nft/0xe2f757796478b4ee139589a84d0f9f153f6ac9b1/token",
+    url: "https://th-api.klaytnapi.com/v2/contract/nft/0x319d5b92de3f496daa7f6ddbda9e1b4be8feff6f/token",
     headers: {
       "Content-Type": "application/json",
-      "x-chain-id": "1001",
+      "x-chain-id": "8217",
       Authorization:
         "Basic S0FTS0k4QVhDTkdPWDI5NTZSNVJFRTBEOkthcjczNmxSZnFkaHBxUGZCM1Y1dUF2N2I5QWlLWnJpYllVZndCSTA=",
     },
   };
 
+  //KAS API에서 모든 정보를 들고옴
   axios
     .request(options)
     .then(function (response) {
-      for (let i = 0; i < response.data.items.length; i++) {
-        none = imgs.concat("1");
-      }
-      // for (let i = 0; i < response.data.items.length; i++) {
-      //   imgList.concat("https://ipfs.io/ipfs/" + imgs[i].substr(7));
-      // }
-      //잘된다.
+      console.log(response.data);
     })
     .catch(function (error) {
       console.error(error);
     });
 
-  // let srcList = imgList.map((name) => <MarketCard name={name} />);
-  // console.log(srcList);
-  const names = ["갓대희", "김대희", "한대희"];
-  console.log(none);
-  console.log(names);
-  const nameList = names.map((name) => <MarketCard name={name} />);
-  console.log(nameList);
+  //들고온 정보에서 메타데이터만 골라서 배열에 넣음
+  useEffect(() => {
+    axios.request(options).then(function (response) {
+      //api에서 메타데이터를 받아옴
+      for (let i = 0; i < response.data.items.length; i++) {
+        imgs.push(
+          "https://ipfs.io/ipfs/" + response.data.items[i].tokenUri.substr(0)
+        );
+      }
+      console.log(imgs);
+      //메타데이터에서 이미지링크로 바꿈
+      for (let i = 0; i < response.data.items.length; i++) {
+        fetch(imgs[i])
+          .then((res) => res.json())
+          .then((out) => {
+            array.push("https://ipfs.io/ipfs/" + out.image.substr(7));
+          })
+          .then(() => {
+            if (i == response.data.items.length - 1) {
+              setDone(true);
+            }
+          });
+      }
+      console.log(array);
+    });
+  }, []);
+
+  //이미지 링크를 컴포넌트화함
+  useEffect(() => {
+    if (done == true) {
+      for (let i = 0; i < 9; i++) {
+        rst.push(<MarketCard name={array[i]} />);
+        console.log(rst);
+      }
+      setLoading(false);
+    }
+  }, [done]);
+
+  //KAS API에서 불러오는 시간 벌어놓기
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <div className="medal_section">
+        {rst}
         {/* <MarketCard /> */}
         {/* 
         <div className='second'>
