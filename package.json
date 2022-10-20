@@ -93,7 +93,7 @@
     "start": "node scripts/start.js",
     "test": "node scripts/test.js",
     "local": "cross-env REACT_APP_API_URL=localhost react-scripts start",
-    "build": "env-cmd -f .env.production react-scripts build"
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.production react-scripts build"
   },
   "eslintConfig": {
     "extends": [
