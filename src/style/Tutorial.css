@@ -1,7 +1,8 @@
-.container {
+.Tutorial_container {
     position: relative;
     width: 50vw;
     height:50%;
+    padding: 0%;
 }
 
 .hover {
@@ -12,7 +13,22 @@
     left:10;
 }
 
-.slider_div {
-    padding-left:10%;
-    padding-right:10%;
+.Tutorial_slider_div {
+    padding:3% 7%;
+}
+
+.Tutorial_slider_div .slick-slider{
+    width: 100%;
+}
+
+.Tutorial_slider_div .slick-slider .slick-list{
+    padding: 0%;
+}
+
+.Tutorial_hover_img{
+    width: 100%;
+}
+
+.Tutorial_page_img{
+    width: 100%;
 }
