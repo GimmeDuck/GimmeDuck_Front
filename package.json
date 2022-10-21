@@ -74,6 +74,7 @@
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.3.0",
     "semver": "^7.3.5",
+    "serve": "^14.0.1",
     "slick-carousel": "^1.8.1",
     "source-map-loader": "^3.0.0",
     "stream-http": "^3.2.0",
@@ -93,7 +94,7 @@
     "start": "node scripts/start.js",
     "test": "node scripts/test.js",
     "local": "cross-env REACT_APP_API_URL=localhost react-scripts start",
-    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 env-cmd -f .env.production react-scripts build"
+    "build": "node scripts/build.js"
   },
   "eslintConfig": {
     "extends": [
