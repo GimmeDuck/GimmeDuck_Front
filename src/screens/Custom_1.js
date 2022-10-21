@@ -162,9 +162,16 @@ const Custom_1 = () => {
   }
 
   function NFTBtn(e) {
-    exportAsImage(exportRef.current, "test.png", idol, part); //exportAsImage에 /Donate로 넘어가는 거 잠깐 막아둠
-    //execute_func();
-    //test();
+    
+    exportAsImage(exportRef.current, "test.png", idol, part).then(()=>{
+      imgsaved=true;
+      img= localStorage.getItem("imgURL");
+      console.log("저장"+imgsaved)
+    }).then(()=>{
+      test();
+      console.log("발행"+imgsaved)
+    }) 
+    
   }
 
   const changePart = () => {
