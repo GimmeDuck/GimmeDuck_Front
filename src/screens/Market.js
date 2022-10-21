@@ -4,12 +4,9 @@ import fetch from "node-fetch";
 import MarketCard from "./MarketCard";
 
 const Market = () => {
-  let none = ["0"];
   let imgs = [];
-  let imgList = [];
-  let srcList = [];
-  let nameList;
   const [array, setArray] = useState([]);
+  const [nftNum, SetnftNum] = useState("0");
   let [rst, setrst] = useState([]);
   var axios = require("axios").default;
 
@@ -32,7 +29,7 @@ const Market = () => {
   axios
     .request(options)
     .then(function (response) {
-      console.log(response.data);
+      console.log("들고온" + response.data);
     })
     .catch(function (error) {
       console.error(error);
@@ -41,14 +38,15 @@ const Market = () => {
   //들고온 정보에서 메타데이터만 골라서 배열에 넣음
   useEffect(() => {
     axios.request(options).then(function (response) {
-      //api에서 메타데이터를 받아옴
+      //api에서 토큰 URI 링크만 imgs 배열에 넣음
       for (let i = 0; i < response.data.items.length; i++) {
         imgs.push(
           "https://ipfs.io/ipfs/" + response.data.items[i].tokenUri.substr(0)
         );
+        SetnftNum(response.data.items.length);
       }
       console.log(imgs);
-      //메타데이터에서 이미지링크로 바꿈
+      //토큰 URI 링크에서 이미지링크를 따서 array 배열에 넣음
       for (let i = 0; i < response.data.items.length; i++) {
         fetch(imgs[i])
           .then((res) => res.json())
@@ -59,18 +57,21 @@ const Market = () => {
             if (i == response.data.items.length - 1) {
               setDone(true);
             }
+          })
+          .then(() => {
+            if (i == response.data.items.length - 1) {
+              console.log(array);
+            }
           });
       }
-      console.log(array);
     });
   }, []);
 
-  //이미지 링크를 컴포넌트화함
+  //array 배열의 이미지들을 컴포넌트화하기
   useEffect(() => {
     if (done == true) {
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < nftNum; i++) {
         rst.push(<MarketCard name={array[i]} />);
-        console.log(rst);
       }
       setLoading(false);
     }
