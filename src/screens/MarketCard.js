@@ -9,7 +9,7 @@ const MarketCard = (props) => {
   return (
     <ul className="Market_card">
       <div>
-        <img src={props.name} />
+        <img src={props.name} style={{ width: "100%" }} />
       </div>
     </ul>
   );
