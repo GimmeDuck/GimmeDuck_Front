@@ -15,10 +15,15 @@ import { QRCodeSVG } from "qrcode.react";
 var global = global || window;
 global.Buffer = global.Buffer || require("buffer").Buffer;
 
-let CvsImgUrl = "default";
+let CvsImgUrl = [];
+let CvsChild = [];
+let num = -1;
+let CvsSelct = "";
+let CvsUrl;
 
 export function CvsImg(url) {
-  CvsImgUrl = url;
+  CvsUrl = url;
+  num++;
 }
 
 const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
@@ -95,12 +100,6 @@ const Custom_1 = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
   //모달 열고 닫음
-  const modalClose = () => {
-    setModalOpen(!modalOpen);
-    if (modalOpen == true) {
-      setCvs(true);
-    }
-  };
 
   //Idol 기본 스타일은 Character-1-card으로
   const [IdolCvs, SetIdolCvs] = useState("Character-1-card");
@@ -119,6 +118,40 @@ const Custom_1 = () => {
   });
   const exportRef = useRef();
   const [Cvs, setCvs] = useState(false);
+
+  const handleClick = (event) => {
+    console.log(event.currentTarget.src);
+    setIdolSelect(event.currentTarget.src);
+    SetCanvasSelect(true);
+  };
+
+  useEffect(() => {
+    if (CvsUrl != undefined) {
+      CvsImgUrl.push(CvsUrl);
+      console.log(CvsImgUrl);
+      CvsChild.push(
+        <img
+          src={CvsImgUrl[num]}
+          id={num}
+          className="Card"
+          style={{
+            height: "12.5vmax",
+            width: "12.5vmax",
+          }}
+          onClick={handleClick}
+        />
+      );
+      console.log(CvsChild);
+      setCvs(true);
+    }
+  }, [CvsUrl]);
+
+  const modalClose = () => {
+    setModalOpen(!modalOpen);
+    setCvs(false);
+    if (modalOpen == true) {
+    }
+  };
 
   //민팅 실험중-----------------------------------------------------------------
 
@@ -162,16 +195,16 @@ const Custom_1 = () => {
   }
 
   function NFTBtn(e) {
-    
-    exportAsImage(exportRef.current, "test.png", idol, part).then(()=>{
-      imgsaved=true;
-      img= localStorage.getItem("imgURL");
-      console.log("저장"+imgsaved)
-    }).then(()=>{
-      test();
-      console.log("발행"+imgsaved)
-    }) 
-    
+    exportAsImage(exportRef.current, "test.png", idol, part)
+      .then(() => {
+        imgsaved = true;
+        img = localStorage.getItem("imgURL");
+        console.log("저장" + imgsaved);
+      })
+      .then(() => {
+        test();
+        console.log("발행" + imgsaved);
+      });
   }
 
   const changePart = () => {
@@ -741,17 +774,7 @@ const Custom_1 = () => {
                 }}
               />
               {/* 추가된 그림판 사진 */}
-              {Cvs && (
-                <img
-                  src={CvsImgUrl}
-                  className="Card"
-                  style={{ height: "11vmax" }}
-                  onClick={() => {
-                    setIdolSelect(CvsImgUrl);
-                    SetCanvasSelect(true);
-                  }}
-                />
-              )}
+              {Cvs && CvsChild}
               {/* 그림판 여는 곳 */}
               <img src={Idol.Idol_Plus} className="Card" onClick={modalClose} />
               {modalOpen && <CustomModal modalClose={modalClose}></CustomModal>}
