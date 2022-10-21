@@ -34,7 +34,7 @@ const Donate = () => {
     axios.post('/test', {image : img})
     .then(response => { 
       console.log(response.data);
-      ipfsHash = response.dat66666666a;
+      ipfsHash = response.data;
       KlipAPI.getAddress(setQrvalue_auth, async (address) => {
         setMyAddress(address)
       });
