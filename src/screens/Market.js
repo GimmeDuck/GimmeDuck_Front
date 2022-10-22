@@ -72,7 +72,7 @@ const Market = () => {
   useEffect(() => {
     if (done == true) {
       for (let i = 0; i < nftNum; i++) {
-        rst.push(<MarketCard name={array[i]} idkey={i} />);
+        rst.push(<MarketCard name={array[i]} tokenid={nftNum - i} />);
       }
       setLoading(false);
     }
@@ -114,7 +114,9 @@ const Market = () => {
 
       <div className="market_Nfts">
         친구들의 NFT
-        <div>{rst}</div>
+        <div style={{ display: "flex", flexWrap: "wrap", marginLeft: "5%" }}>
+          {rst}
+        </div>
       </div>
     </div>
   );
