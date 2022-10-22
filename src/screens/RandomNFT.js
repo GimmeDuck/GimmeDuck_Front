@@ -211,7 +211,7 @@ function RandomNFT() {
             ></div>
           </Modal>
 
-        <div className="Character_back" style={{ visibility:"visible"}} ref={exportRef}>
+        <div className="Character_back" style={{ visibility:"visible", position:"absolute", zIndex:"-1"}} ref={exportRef}>
           {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
             <img style={{ width: "380px" }} src={Back[getRandom(0, 4)]} alt=""/>
