@@ -25,3 +25,14 @@
 .History_img{
   width: 100%;
 }
+
+
+#History_btn{
+  background-color: rgb(209, 168, 43);
+  color: white;
+  padding:12px;
+  border-radius: 10px;
+  width:20%;
+  height: 6vh;
+  margin-left: 40%;
+}

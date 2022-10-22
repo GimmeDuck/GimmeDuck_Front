@@ -24,7 +24,11 @@ function History() {
           </div>
         </div>
       </div>
+
       <div style={{ padding: "10%", paddingTop: "2%", color: "gray" }}>
+      <a href="https://scope.klaytn.com/account/0x319d5B92DE3f496dAA7F6dDbda9E1b4BE8feff6F?tabId=txList">
+        <button id="History_btn"> 트랜잭션 내역 조회하러 가기 </button>
+      </a>
         <hr style={{ color: "white", marginBottom: "3%" }} />
         <h5 style={{ margin: "2%" }}>기관소개</h5>
         <img src="img/history1.png" class="History_img"/>
