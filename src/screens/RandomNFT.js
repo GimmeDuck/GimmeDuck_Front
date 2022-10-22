@@ -104,11 +104,12 @@ function RandomNFT() {
   const [qrvalue_execute, setQrvalue_execute] = useState(DEFAULT_QR_CODE);
   const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
   const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
+  
   var imgsaved = false;
 
   function test() {
     let ipfsHash;
-    
+
     axios.post("/test", { image: img }).then((response) => {
       console.log(response.data);
       ipfsHash = response.data;
@@ -210,10 +211,7 @@ function RandomNFT() {
             ></div>
           </Modal>
 
-
-
-
-        <div className="Character_back" style={{ visibility: "visible" }} ref={exportRef}>
+        <div className="Character_back" style={{ visibility:"visible"}} ref={exportRef}>
           {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
             <img style={{ width: "380px" }} src={Back[getRandom(0, 4)]} alt=""/>
