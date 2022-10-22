@@ -27,7 +27,7 @@ function History() {
       <div style={{ padding: "10%", paddingTop: "2%", color: "gray" }}>
         <hr style={{ color: "white", marginBottom: "3%" }} />
         <h5 style={{ margin: "2%" }}>기관소개</h5>
-        <img src="img/history1.png" />
+        <img src="img/history1.png" class="History_img"/>
       </div>
     </div>
   );

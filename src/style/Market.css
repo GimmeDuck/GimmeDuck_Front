@@ -5,8 +5,8 @@
     justify-content: space-around;
     align-items:center;
     background: radial-gradient(circle,#351C01 30%, black);
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 
@@ -49,9 +49,10 @@
 
 .Market_card {
     border: 5px solid red;
-    padding: 15px;
+    padding: 1px;
     margin-top:15px;
     color: white;
+    
 }
 
 .Market_cardtext {
