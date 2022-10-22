@@ -5,7 +5,6 @@ import MarketCard from "./MarketCard";
 
 const Market = () => {
   let imgs = [];
-  let random = [];
   const [array, setArray] = useState([]);
   const [nftNum, SetnftNum] = useState("0");
   let [rst, setrst] = useState([]);
@@ -73,7 +72,7 @@ const Market = () => {
   useEffect(() => {
     if (done == true) {
       for (let i = 0; i < nftNum; i++) {
-        rst.push(<MarketCard name={array[i]} />);
+        rst.push(<MarketCard name={array[i]} idkey={i} />);
       }
       setLoading(false);
     }
