@@ -1,27 +1,41 @@
+.market_Back{
+    width: 100%;
+    height :100%;
+    background: black;
+}
 .medal_section{
     width: 100%;
-    height :50vh;
+    height :50%;
     display: flex;
     justify-content: space-around;
-    align-items:center;
     background: radial-gradient(circle,#351C01 30%, black);
     padding-left: 10%;
     padding-right: 10%;
+
+
+    
+}
+
+.market_Nfts{
+    margin: 3%;
+    margin-left: 7%;
+    margin-right: 0%;
+    color: lightgray;
+    font-size: 2vmax;
+    font-weight: 700;
 }
 
 
 .second{
     width : 10vw;
-    height :50vh;
+    height :20%;
     display: flex;
-    align-items: center;
 }
 
 .first{
     width : 15vw;
-    height :50vh;
+    height :20%;
     display: flex;
-    align-items: center;
 }
 .rapper{
     
@@ -48,11 +62,12 @@
 
 
 .Market_card {
-    border: 5px solid red;
-    padding: 1px;
-    margin-top:15px;
+    background-color: rgb(29, 29, 29);
+    border-radius: 2%;
+    padding: 1%;
+    margin: 1.5%;
     color: white;
-    
+    width:20%;
 }
 
 .Market_cardtext {

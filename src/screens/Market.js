@@ -62,7 +62,8 @@ const Market = () => {
             if (i == response.data.items.length - 1) {
               console.log(array);
             }
-          });
+          })
+          .then(() => {});
       }
     });
   }, []);
@@ -71,7 +72,7 @@ const Market = () => {
   useEffect(() => {
     if (done == true) {
       for (let i = 0; i < nftNum; i++) {
-        rst.push(<MarketCard name={array[i]} />);
+        rst.push(<MarketCard name={array[i]} idkey={i} />);
       }
       setLoading(false);
     }
@@ -83,50 +84,39 @@ const Market = () => {
   }
 
   return (
-    <>
+    <div className="market_Back">
       <div className="medal_section">
-        {rst}
-        {/* <MarketCard /> */}
-        {/* 
-        <div className='second'>
-          <div className='rapper'>
-            <img className='medal' src = 'img/silver-medal.png'/>
-            <img className = 'img' src='img/2.png' />
-            <p className='nickname'>BTS_duck</p>
-            <p className='klay'>270 Klay</p>
-          </div>        
-        </div>
-
-        <div className='first'>
-          <div className='rapper'>
-            <img className='medal' src = 'img/gold-medal.png'/>
-            <img className = 'img' src='img/1.png'  />
-            <p className='nickname'>IVE_love</p>
-            <p className='klay'>280 Klay</p>
+        <div className="second">
+          <div className="rapper">
+            <img className="medal" src="img/silver-medal.png" />
+            <img className="img" src="img/2.png" />
+            <p className="nickname">BTS_duck</p>
+            <p className="klay">270 Klay</p>
           </div>
-          
         </div>
-
-        <div className='second'>
-          <div className='rapper'>
-            <img className='medal' src = 'img/bronze-medal.png'/>
-            <img className = 'img' src='img/3.png' />
-            <p className='nickname'>NCT_jahyun</p>
-            <p className='klay'>250 Klay</p>
+        <div className="first">
+          <div className="rapper">
+            <img className="medal" src="img/gold-medal.png" />
+            <img className="img" src="img/1.png" />
+            <p className="nickname">IVE_love</p>
+            <p className="klay">280 Klay</p>
           </div>
-        </div> */}
+        </div>
+        <div className="second">
+          <div className="rapper">
+            <img className="medal" src="img/bronze-medal.png" />
+            <img className="img" src="img/3.png" />
+            <p className="nickname">NCT_jahyun</p>
+            <p className="klay">250 Klay</p>
+          </div>
+        </div>
       </div>
 
-      {/* <div style={{ height: '70vh' }}>
-        <iframe
-          src="https://testnets.opensea.io/collection/gimmeduck-token"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div> */}
-    </>
+      <div className="market_Nfts">
+        친구들의 NFT
+        <div>{rst}</div>
+      </div>
+    </div>
   );
 };
 
