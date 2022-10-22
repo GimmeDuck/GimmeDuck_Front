@@ -16,13 +16,14 @@ html {
     margin-top:20px;
 }
 
-.combobox{
+#RandomNFT_combobox{
     width: 300px;
     height: 7vh;
     background-color: rgb(131, 131, 131);
     color: white;
     border-radius: 10px;
-    padding : 10px
+    padding : 10px;
+    margin: 10px;
 }
 
 #randMint{
