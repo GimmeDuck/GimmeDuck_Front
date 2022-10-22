@@ -36,9 +36,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover1(100)}
           onMouseOut={() => setIsHover1(0)}
         >
-          <img src="img/tut_1_.png" class="Tutorial_page_img" />
+          <img src="img/tut_1_.png" class="Tutorial_page_img" alt=""/>
           <div className="hover">
-            <img src="img/tut_1.png" class = "Tutorial_hover_img" style={{ opacity: isHover1 }} />
+            <img src="img/tut_1.png" class = "Tutorial_hover_img" style={{ opacity: isHover1 }} alt=""/>
           </div>
         </div>
 
@@ -47,9 +47,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover2(100)}
           onMouseOut={() => setIsHover2(0)}
         >
-          <img src="img/tut_2_.png" class="Tutorial_page_img" />
+          <img src="img/tut_2_.png" class="Tutorial_page_img" alt=""/>
           <div className="hover">
-            <img src="img/tut_2.png" class = "Tutorial_hover_img" style={{ opacity: isHover2 }} />
+            <img src="img/tut_2.png" class = "Tutorial_hover_img" style={{ opacity: isHover2 }} alt=""/>
           </div>
         </div>
 
@@ -58,9 +58,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover3(100)}
           onMouseOut={() => setIsHover3(0)}
         >
-          <img src="img/tut_3_.png" class="Tutorial_page_img"/>
+          <img src="img/tut_3_.png" class="Tutorial_page_img"alt=""/>
           <div className="hover">
-            <img src="img/tut_3.png" class = "Tutorial_hover_img" style={{ opacity: isHover3 }} />
+            <img src="img/tut_3.png" class = "Tutorial_hover_img" style={{ opacity: isHover3 }} alt=""/>
           </div>
         </div>
 
@@ -69,9 +69,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover4(100)}
           onMouseOut={() => setIsHover4(0)}
         >
-          <img src="img/tut_4_.png" class="Tutorial_page_img"/>
+          <img src="img/tut_4_.png" class="Tutorial_page_img" alt=""/>
           <div className="hover">
-            <img src="img/tut_4.png" class = "Tutorial_hover_img" style={{ opacity: isHover4 }} />
+            <img src="img/tut_4.png" class = "Tutorial_hover_img" style={{ opacity: isHover4 }} alt=""/>
           </div>
         </div>
 
@@ -80,9 +80,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover5(100)}
           onMouseOut={() => setIsHover5(0)}
         >
-          <img src="img/tut_5_.png" class="Tutorial_page_img" />
+          <img src="img/tut_5_.png" class="Tutorial_page_img" alt=""/>
           <div className="hover">
-            <img src="img/tut_5.png" class = "Tutorial_hover_img" style={{ opacity: isHover5 }} />
+            <img src="img/tut_5.png" class = "Tutorial_hover_img" style={{ opacity: isHover5 }} alt=""/>
           </div>
         </div>
 
@@ -91,9 +91,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover6(100)}
           onMouseOut={() => setIsHover6(0)}
         >
-          <img src="img/tut_6_.png" class="Tutorial_page_img"/>
+          <img src="img/tut_6_.png" class="Tutorial_page_img" alt=""/>
           <div className="hover">
-            <img src="img/tut_6.png" class = "Tutorial_hover_img" style={{ opacity: isHover6 }} />
+            <img src="img/tut_6.png" class = "Tutorial_hover_img" style={{ opacity: isHover6 }} alt=""/>
           </div>
         </div>
 
@@ -102,9 +102,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover7(100)}
           onMouseOut={() => setIsHover7(0)}
         >
-          <img src="img/tut_7_.png" class="Tutorial_page_img"/>
+          <img src="img/tut_7_.png" class="Tutorial_page_img" alt=""/>
           <div className="hover">
-            <img src="img/tut_7.png" class = "Tutorial_hover_img" style={{ opacity: isHover7 }} />
+            <img src="img/tut_7.png" class = "Tutorial_hover_img" style={{ opacity: isHover7 }} alt=""/>
           </div>
         </div>
 
@@ -113,9 +113,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover8(100)}
           onMouseOut={() => setIsHover8(0)}
         >
-          <img src="img/tut_8_.png" class="Tutorial_page_img"/>
+          <img src="img/tut_8_.png" class="Tutorial_page_img" alt=""/>
           <div className="hover">
-            <img src="img/tut_8.png" class = "Tutorial_hover_img" style={{ opacity: isHover8 }} />
+            <img src="img/tut_8.png" class = "Tutorial_hover_img" style={{ opacity: isHover8 }} alt=""/>
           </div>
         </div>
 
@@ -124,9 +124,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover9(100)}
           onMouseOut={() => setIsHover9(0)}
         >
-          <img src="img/tut_9_.png" class="Tutorial_page_img"/>
+          <img src="img/tut_9_.png" class="Tutorial_page_img" alt=""/>
           <div className="hover">
-            <img src="img/tut_9.png" class = "Tutorial_hover_img" style={{ opacity: isHover9 }} />
+            <img src="img/tut_9.png" class = "Tutorial_hover_img" style={{ opacity: isHover9 }} alt=""/>
           </div>
         </div>
 
@@ -135,9 +135,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover10(100)}
           onMouseOut={() => setIsHover10(0)}
         >
-          <img src="img/tut_10_.png" class="Tutorial_page_img"/>
+          <img src="img/tut_10_.png" class="Tutorial_page_img" alt=""/>
           <div className="hover">
-            <img src="img/tut_10.png" class = "Tutorial_hover_img" style={{ opacity: isHover10 }} />
+            <img src="img/tut_10.png" class = "Tutorial_hover_img" style={{ opacity: isHover10 }} alt=""/>
           </div>
         </div>
 
@@ -146,9 +146,9 @@ const Tutorial = () => {
           onMouseOver={() => setIsHover11(100)}
           onMouseOut={() => setIsHover11(0)}
         >
-          <img src="img/tut_11_.png" class="Tutorial_page_img"/>
+          <img src="img/tut_11_.png" class="Tutorial_page_img" alt=""/>
           <div className="hover">
-            <img src="img/tut_11.png" class = "Tutorial_hover_img" style={{ opacity: isHover11 }} />
+            <img src="img/tut_11.png" class = "Tutorial_hover_img" style={{ opacity: isHover11 }} alt=""/>
           </div>
         </div>
       </Slider>

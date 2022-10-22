@@ -199,11 +199,9 @@ const Custom_1 = () => {
       .then(() => {
         imgsaved = true;
         img = localStorage.getItem("imgURL");
-        console.log("저장" + imgsaved);
       })
       .then(() => {
         test();
-        console.log("발행" + imgsaved);
       });
   }
 
