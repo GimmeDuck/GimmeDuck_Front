@@ -16,20 +16,22 @@ const MarketCard = () => {
       },
     };
 
-    const [image_url, setUrl] = useState("");
+    
+    function getImg (url) {
+        var image_url="";
 
-    const getImg = (url) => {
-
-        fetch("https://ipfs.io/ipfs/"+url)
-        .then(res => res.json())
-        .then((out) => {
-            setUrl("https://ipfs.io/ipfs/"+out.image.substr(7));
-            console.log(image_url);
-        })
-        .catch(err => { throw err });  
-        console.log(image_url);
-        return image_url;
-
+        while (true) {
+            if (image_url!="") {
+                return image_url;
+            }
+            fetch("https://ipfs.io/ipfs/"+url)
+            .then(res => res.json())
+            .then((out) => {
+                image_url = "https://ipfs.io/ipfs/"+out.image.substr(7);
+                console.log(image_url);
+            })
+            .catch(err => { throw err });  
+        }
     }
 
 
