@@ -76,10 +76,10 @@ function RandomNFT() {
 
   function ActivateBtn() {
 
-    if (idol=="") {
+    if (idol==="" || part==="") {
       return (
         <button id="randMint_disabled" disabled>
-            {idol + " 팬덤의 랜덤 NFT 발행" }
+            아이돌과 기부영역을 선택해주세요
         </button>
       )
     }

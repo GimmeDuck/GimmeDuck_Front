@@ -210,6 +210,29 @@ const Custom_1 = () => {
     setPart(e.options[e.selectedIndex].text);
   };
 
+
+  // 민팅 버튼 활성화/비활성화
+  function ActivateBtn() {
+
+    if (idol==="" || part==="") {
+      return (
+        <button id="Custom1_disabled" disabled>
+            아이돌과 기부영역을 선택해주세요
+        </button>
+      )
+    }
+    else {
+      return (
+        <button id="Custom1_able"
+            onClick={() => NFTBtn()}>
+            {idol + " 팬덤의 커스텀 NFT 발행" }
+        </button>
+      )
+    }
+  }
+
+
+
   // 여기부터 시작///////////////////////////////////////////////////////
   return (
     <div
@@ -866,9 +889,8 @@ const Custom_1 = () => {
             <option value="장애인">장애인 복지</option>
             <option value="환경">환경 복지</option>
           </select>
-          <button className="nftBtn" onClick={() => NFTBtn()}>
-            NFT 발행
-          </button>
+          <ActivateBtn/>
+
           <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
             <QRCodeSVG className="qrcode" value={qrvalue_auth} />
             <div

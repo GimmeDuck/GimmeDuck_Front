@@ -115,6 +115,64 @@ img {
     
 }
 
+/* #Custom1_combo{
+    border:0px;
+    background-color: rgb(68, 68, 68);
+    color: rgb(208, 208, 208);
+    padding:12px;
+    border-radius: 10px;
+    width:300px;
+    height: 7vh;
+    margin:10px;
+} */
+
+
+
+/* #Custom1_able{
+    background-color: rgb(191,144,0);
+    color: white;
+    padding:12px;
+    border-radius: 10px;
+    width:300px;
+    height: 7vh;
+    margin:10px;
+}
+
+#Custom1_disabled{
+    background-color: gray;
+    color: white;
+    padding:12px;
+    border-radius: 10px;
+    width:300px;
+    height: 7vh;
+} */
+
+#Custom1_able{
+    width: 16vmax;
+    border:0px;
+    height: 2.5vmax;
+    background-color: rgb(210, 181, 63);
+    border-radius: 8px;
+    color: rgb(45, 45, 45);
+    font-Size:1vmax;
+    font-weight: 1000;
+    margin-left: 2%;
+    
+}
+
+#Custom1_disabled{
+    width: 16vmax;
+    border:0px;
+    height: 2.5vmax;
+    background-color: gray;
+    border-radius: 8px;
+    color: rgb(45, 45, 45);
+    font-Size:1vmax;
+    font-weight: 1000;
+    margin-left: 2%;
+    
+}
+
 #Custom1_combo{
     width: 13vmax;
     border:0px;
@@ -124,7 +182,3 @@ img {
     font-size:0.8vmax;
     border-radius: 8px;
 }
-
-
-
-
