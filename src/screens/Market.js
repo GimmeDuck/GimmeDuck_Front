@@ -72,7 +72,7 @@ const Market = () => {
   useEffect(() => {
     if (done == true) {
       for (let i = 0; i < nftNum; i++) {
-        rst.push(<MarketCard name={array[i]} tokenid={nftNum - i} />);
+        rst.push(<MarketCard name={array[i]} tokenid={i + 1} />);
       }
       setLoading(false);
     }
