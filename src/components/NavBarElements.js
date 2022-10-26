@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "../style/NavBar.css";
 import { QRCodeSVG } from "qrcode.react";
@@ -8,33 +8,30 @@ import Modal from "react-modal";
 //    <Navbar scrolling dark expand="md" fixed="top" >
 
 const NavBarElements = () => {
-
   const DEFAULT_QR_CODE = "DEFAULT";
   const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
 
   const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
   const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
   const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
-  const [duck,setDuck] = useState(0);
+  const [duck, setDuck] = useState(0);
 
   function wallet_modalOpen() {
     KlipAPI.getAddress(setQrvalue_auth, async (address) => {
-      setMyAddress(address)
+      setMyAddress(address);
     });
     auth_setModalIsOpen(true);
-   
   }
 
-    useEffect(()=>{
-      if(myAddress !== DEFAULT_ADDRESS){
-        // caver js나 klip으로 주소의 balanceOf 가져오기 
-        console.log(myAddress);
-      }
-    },[myAddress]);
-  
+  useEffect(() => {
+    if (myAddress !== DEFAULT_ADDRESS) {
+      // caver js나 klip으로 주소의 balanceOf 가져오기
+      console.log(myAddress);
+    }
+  }, [myAddress]);
 
   return (
-    <Navbar expand="md" bg="dark" variant="dark">
+    <Navbar variant="dark" style={{ backgroundColor: "black" }}>
       <Container>
         <Navbar.Brand href="/">GIMME-DUCK</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
