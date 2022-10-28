@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 export const Background = styled.div`
   position: absolute;
-  width: 30vw;
-  height: 40vh;
+  width: 20vw;
+  height: 30vh;
   background: #ffffffb7;
-  z-index: 999;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: center;
