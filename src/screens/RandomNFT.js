@@ -122,6 +122,7 @@ function RandomNFT() {
 
   function test() {
     let ipfsHash;
+    console.log("니 머하노");
 
     axios.post("/test", { image: img }).then((response) => {
       // 로딩창
@@ -129,24 +130,17 @@ function RandomNFT() {
 
       console.log(response.data);
       ipfsHash = response.data;
-      KlipAPI.getAddress(setQrvalue_auth, async (address) => {
-        myAddress = address;
-      });
-      auth_setModalIsOpen(true);
 
       let timerId = setInterval(() => {
-        // console.log(ipfsHash);
-        if (myAddress !== DEFAULT_ADDRESS) {
-          KlipAPI.execute_Contract(
-            setQrvalue_execute,
-            myAddress,
-            ipfsHash,
-            idol,
-            part
-          );
-          send_setModalIsOpen(true);
-          clearInterval(timerId);
-        }
+        KlipAPI.execute_Contract(
+          setQrvalue_execute,
+          myadd,
+          ipfsHash,
+          idol,
+          part
+        );
+        send_setModalIsOpen(true);
+        clearInterval(timerId);
       }, 1000);
     });
   }
