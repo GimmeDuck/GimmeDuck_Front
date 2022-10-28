@@ -8,27 +8,27 @@ import Modal from "react-modal";
 //    <Navbar scrolling dark expand="md" fixed="top" >
 
 const NavBarElements = () => {
-  const DEFAULT_QR_CODE = "DEFAULT";
-  const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
+  // const DEFAULT_QR_CODE = "DEFAULT";
+  // const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
 
-  const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
-  const [qrvalue_execute, setQrvalue_execute] = useState(DEFAULT_QR_CODE);
-  const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
-  const [duck, setDuck] = useState(0);
+  // const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
+  // const [qrvalue_execute, setQrvalue_execute] = useState(DEFAULT_QR_CODE);
+  // const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
+  // const [duck, setDuck] = useState(0);
 
-  function wallet_modalOpen() {
-    KlipAPI.getAddress(setQrvalue_auth, async (address) => {
-      setMyAddress(address);
-    });
-    auth_setModalIsOpen(true);
-  }
+  // function wallet_modalOpen() {
+  //   KlipAPI.getAddress(setQrvalue_auth, async (address) => {
+  //     setMyAddress(address);
+  //   });
+  //   auth_setModalIsOpen(true);
+  // }
 
-  useEffect(() => {
-    if (myAddress !== DEFAULT_ADDRESS) {
-      // caver js나 klip으로 주소의 balanceOf 가져오기
-      console.log(myAddress);
-    }
-  }, [myAddress]);
+  // useEffect(() => {
+  //   if (myAddress !== DEFAULT_ADDRESS) {
+  //     // caver js나 klip으로 주소의 balanceOf 가져오기
+  //     console.log(myAddress);
+  //   }
+  // }, [myAddress]);
 
   return (
     <Navbar variant="dark" style={{ backgroundColor: "black" }}>
@@ -46,7 +46,7 @@ const NavBarElements = () => {
         </Navbar.Collapse>
       </Container>
 
-      <div className="NavBar_box">
+      {/* <div className="NavBar_box">
         <button className="NavBar_btn" onClick={() => wallet_modalOpen()}>
           Klip 지갑연동
         </button>
@@ -58,7 +58,7 @@ const NavBarElements = () => {
           ></div>
         </Modal>
         <div className="NavBar_text">보유 기미덕 {duck} 개</div>
-      </div>
+      </div> */}
     </Navbar>
   );
 };

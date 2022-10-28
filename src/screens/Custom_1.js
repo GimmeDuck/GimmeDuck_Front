@@ -83,6 +83,13 @@ const Back_Zebra = require("../custom_Img/Back/Back_Zebra.png");
 const Back = { Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra };
 
 const Custom_1 = () => {
+
+  // 지갑주소 달고다니기
+  const search = window.location.search; // returns the URL query String
+  const params = new URLSearchParams(search); 
+  const myadd = params.get('ad'); 
+
+
   // 로딩창
   const [loading, setLoading] = useState(false);
 
@@ -169,51 +176,33 @@ const Custom_1 = () => {
   let img = localStorage.getItem("imgURL");
 
   const DEFAULT_QR_CODE = "DEFAULT";
-  const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
   const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
   const [qrvalue_execute, setQrvalue_execute] = useState(DEFAULT_QR_CODE);
-  //const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
   const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
   const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
-  // const [imgsaved, SetImgsaved] = useState(false);
   var imgsaved = false;
 
   function test() {
     let ipfsHash;
-<<<<<<< HEAD
-    console.log(myAddress);
-    // axios.post("/test", { image: img }).then((response) => {
-    //   console.log(response.data);
-    //   ipfsHash = response.data;
-    
-=======
     axios.post("/test", { image: img }).then((response) => {
       // 로딩창
       setLoading(false);
 
       console.log(response.data);
       ipfsHash = response.data;
-      KlipAPI.getAddress(setQrvalue_auth, async (address) => {
-        myAddress = address;
-      });
-      auth_setModalIsOpen(true);
->>>>>>> 02a0902c31989c4411bc0b7a05319022e4ce2236
 
-    //   let timerId = setInterval(() => {
-    //     // console.log(ipfsHash);
-    //     if (myAddress !== DEFAULT_ADDRESS) {
-    //       KlipAPI.execute_Contract(
-    //         setQrvalue_execute,
-    //         myAddress,
-    //         ipfsHash,
-    //         idol,
-    //         part
-    //       );
-    //       send_setModalIsOpen(true);
-    //       clearInterval(timerId);
-    //     }
-    //   }, 1000);
-    // });
+      let timerId = setInterval(() => {
+        KlipAPI.execute_Contract(
+          setQrvalue_execute,
+          myadd,
+          ipfsHash,
+          idol,
+          part
+        );
+        send_setModalIsOpen(true);
+        clearInterval(timerId);
+      }, 1000);
+    });
   }
 
   function NFTBtn(e) {

@@ -45,11 +45,11 @@ const Donate = () => {
   }
 
 
-    // 이전 페이지에서 선택한 아이돌, 영역 받아오기
-    const search = window.location.search; // returns the URL query String
-    const params = new URLSearchParams(search); 
-    const idol = params.get('idol'); 
-    const part = params.get('part'); 
+  // 이전 페이지에서 선택한 아이돌, 영역 받아오기
+  const search = window.location.search; // returns the URL query String
+  const params = new URLSearchParams(search); 
+  const idol = params.get('idol'); 
+  const part = params.get('part'); 
 
 
   const today = () => {

@@ -11,10 +11,6 @@ import { QRCodeSVG } from "qrcode.react";
 
 
 export const Home = () => {
-  function selectNFT(e) {
-    window.location.href = "/Custom";
-  }
-
   const DEFAULT_QR_CODE = "DEFAULT";
   const DEFAULT_ADDRESS = "0x00000000000000000000000000000"
   let myAddress = DEFAULT_ADDRESS;
@@ -26,7 +22,7 @@ export const Home = () => {
       myAddress = address;
       console.log(myAddress);
       if(myAddress!==DEFAULT_ADDRESS){
-        window.location.href = "/Custom";
+        window.location.href = `/Custom?ad=${myAddress}`;
       }
 
     });

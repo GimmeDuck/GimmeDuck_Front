@@ -10,6 +10,8 @@ import * as KlipAPI from "../screen_js/Buyegg_js";
 import Modal from "react-modal";
 import { QRCodeSVG } from "qrcode.react";
 
+//로딩창
+import Loading from './Loading';
 
 const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
 const Body_Blue = require("../custom_Img/Body/Body_Blue.png");
@@ -59,6 +61,17 @@ const Back = [ Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra ];
 
 
 function RandomNFT() {
+
+  // 지갑주소 달고다니기
+  const search = window.location.search; // returns the URL query String
+  const params = new URLSearchParams(search); 
+  const myadd = params.get('ad'); 
+  console.log(myadd);
+
+
+  // 로딩창
+  const [loading, setLoading] = useState(false);
+
   const exportRef = useRef();
   const getRandom = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
@@ -109,28 +122,25 @@ function RandomNFT() {
 
   function test() {
     let ipfsHash;
+    console.log("니 머하노");
 
     axios.post("/test", { image: img }).then((response) => {
+      // 로딩창
+      setLoading(false);
+
       console.log(response.data);
       ipfsHash = response.data;
-      KlipAPI.getAddress(setQrvalue_auth, async (address) => {
-        myAddress = address;
-      });
-      auth_setModalIsOpen(true);
 
       let timerId = setInterval(() => {
-        // console.log(ipfsHash);
-        if (myAddress !== DEFAULT_ADDRESS) {
-          KlipAPI.execute_Contract(
-            setQrvalue_execute,
-            myAddress,
-            ipfsHash,
-            idol,
-            part
-          );
-          send_setModalIsOpen(true);
-          clearInterval(timerId);
-        }
+        KlipAPI.execute_Contract(
+          setQrvalue_execute,
+          myadd,
+          ipfsHash,
+          idol,
+          part
+        );
+        send_setModalIsOpen(true);
+        clearInterval(timerId);
       }, 1000);
     });
   }
@@ -152,7 +162,8 @@ function RandomNFT() {
         }).then(result => {
           // 만약 Promise리턴을 받으면,
           if (result.isConfirmed) { 
-              //window.location.href = `/Random?idol=${idol}`;
+              // 로딩창
+              setLoading(true);
               exportAsImage(exportRef.current, "test.png", idol, part)
               .then(() => {
                 imgsaved = true;
@@ -195,6 +206,8 @@ function RandomNFT() {
             <option value="환경">환경 복지</option>
         </select>
         <ActivateBtn/>
+
+        {loading ? <Loading /> : null}
 
         <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
             <QRCodeSVG className="qrcode" value={qrvalue_auth} />
@@ -242,7 +255,7 @@ function RandomNFT() {
             <img style={{ width: "380px" }} src={Mouth[getRandom(0, 4)]} alt=""/>
           </div>
         </div>
-
+        
     </div>
   )
 }
