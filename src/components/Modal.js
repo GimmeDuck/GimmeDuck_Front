@@ -1,21 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../style/Modal.css";
 import { ReactPainter } from "react-painter";
+import HorizonLine from "./HorizonLine";
 import * as Custom from "../screens/Custom_1.js";
 const Egg_Mint = require("../custom_Img/Egg/Egg_Mint.png");
 
 var imgsrc = "blob:http://localhost:3000/15cdf288-d653-4713-842c-4a380e348bc4";
-var canvas, context;
+
 const CustomModal = ({ modalClose }) => {
   const [Cvs, setCvs] = useState(false);
+  const [IdolText, setIdolText] = useState("");
+  const [isTrue, setIsTrue] = useState(false);
 
+  useEffect(() => {
+    if (IdolText.trim().length != 0) {
+      setIsTrue(false);
+    } else {
+      setIsTrue(true);
+    }
+  }, [IdolText]);
   return (
     <div
       className="modal__container"
       style={{
         display: "flex",
         alignItems: "center",
-
         justifyContent: "center",
       }}
     >
@@ -27,6 +36,7 @@ const CustomModal = ({ modalClose }) => {
           onSave={(blob) => {
             imgsrc = URL.createObjectURL(blob);
             Custom.CvsImg(imgsrc);
+            Custom.CvsIdol(IdolText);
             modalClose();
           }}
           render={({
@@ -39,7 +49,7 @@ const CustomModal = ({ modalClose }) => {
             // 캔버스
             <div
               style={{
-                marginTop: "5%",
+                marginTop: "2%",
                 display: "flex",
                 alignItems: "center",
 
@@ -60,15 +70,9 @@ const CustomModal = ({ modalClose }) => {
               >
                 {canvas}
               </div>
+              <HorizonLine text={"색상 선택"} />
               {/* 버튼 */}
-              <div
-                style={{
-                  marginTop: "5%",
-                  backgroundColor: "gray",
-                  borderRadius: "2%",
-                  padding: "3%",
-                }}
-              >
+              <div style={{ margin: "2%" }}>
                 <button
                   className="color_Btn"
                   style={{ backgroundColor: "#cc5959" }}
@@ -101,16 +105,32 @@ const CustomModal = ({ modalClose }) => {
                   onChange={(e) => setColor(e.target.value)}
                 />
 
+                <input
+                  type="range"
+                  onChange={(e) => setLineWidth(e.target.value)}
+                />
+              </div>
+              <HorizonLine text={"팬덤입력"} />
+              <input
+                name="idolname"
+                type="text"
+                placeholder="팬덤명을 입력하세요"
+                onChange={(e) => setIdolText(e.target.value)}
+              />
+              <div style={{ margin: "1.2%", display: "flex" }}>
                 <button
-                  className="modal__button"
+                  disabled={isTrue}
+                  className={isTrue ? "modal_unactivebtn" : "modal_activebtn"}
                   onClick={() => {
                     triggerSave();
                   }}
                 >
                   Save
                 </button>
+
                 <button
-                  className="modal__button"
+                  style={{ backgroundColor: "gray" }}
+                  className="modal_activebtn"
                   onClick={() => {
                     Custom.CvsImg(undefined);
                     modalClose();
@@ -118,10 +138,6 @@ const CustomModal = ({ modalClose }) => {
                 >
                   close
                 </button>
-                <input
-                  type="range"
-                  onChange={(e) => setLineWidth(e.target.value)}
-                />
               </div>
             </div>
           )}
