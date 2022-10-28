@@ -4,6 +4,8 @@ import CustomModal from "../components/Modal";
 import exportAsImage from "../utils/exportAsImage";
 //caver
 import execute_func from "../screen_js/caver.js";
+//로딩창
+import Loading from './Loading';
 
 //민팅 실험중 ------------------------------------------------------------------
 import axios from "axios";
@@ -79,6 +81,10 @@ const Back_Zebra = require("../custom_Img/Back/Back_Zebra.png");
 const Back = { Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra };
 
 const Custom_1 = () => {
+  // 로딩창
+  const [loading, setLoading] = useState(false);
+
+
   const [idol, setIdol] = useState("");
   const [part, setPart] = useState("");
 
@@ -170,6 +176,9 @@ const Custom_1 = () => {
   function test() {
     let ipfsHash;
     axios.post("/test", { image: img }).then((response) => {
+      // 로딩창
+      setLoading(false);
+
       console.log(response.data);
       ipfsHash = response.data;
       KlipAPI.getAddress(setQrvalue_auth, async (address) => {
@@ -195,6 +204,9 @@ const Custom_1 = () => {
   }
 
   function NFTBtn(e) {
+    // 로딩창
+    setLoading(true);
+
     exportAsImage(exportRef.current, "test.png", idol, part)
       .then(() => {
         imgsaved = true;
@@ -906,7 +918,9 @@ const Custom_1 = () => {
             ></div>
           </Modal>
         </div>
+        
       </div>
+      {loading ? <Loading /> : null}
     </div>
   );
 };
