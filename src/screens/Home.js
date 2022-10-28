@@ -1,15 +1,32 @@
-import React from "react";
+import React,{ useState } from "react";
 import "../style/Home.css";
 import Barcht from "../components/charts/ChartBar.js";
 import PieCht from "../components/charts/ChartPie.js";
 
-const Home = () => {
+import * as KlipAPI from "../screen_js/Buyegg_js";
+import Modal from "react-modal";
+import { QRCodeSVG } from "qrcode.react";
 
-  // 임시
-  let myadd = "0x123456";
 
-  function selectNFT(e) {
-    window.location.href = `/Custom?ad=${myadd}`;
+
+
+export const Home = () => {
+  const DEFAULT_QR_CODE = "DEFAULT";
+  const DEFAULT_ADDRESS = "0x00000000000000000000000000000"
+  let myAddress = DEFAULT_ADDRESS;
+  const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
+  const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
+
+  function getKlipAddress(){
+    KlipAPI.getAddress(setQrvalue_auth, async (address) => {
+      myAddress = address;
+      console.log(myAddress);
+      if(myAddress!==DEFAULT_ADDRESS){
+        window.location.href = `/Custom?ad=${myAddress}`;
+      }
+
+    });
+    auth_setModalIsOpen(true);
   }
 
   return (
@@ -33,9 +50,16 @@ const Home = () => {
           <img src="img/home.PNG" />
         </div>
       </div>
-      <button onClick={selectNFT} className="button">
-        기부하러 가기
+      <button onClick={getKlipAddress} className="button">
+        지갑 연동하기
       </button>
+      <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
+        <QRCodeSVG className="qrcode" value={qrvalue_auth} />
+        <div
+          className="close"
+          onClick={() => auth_setModalIsOpen(false)}
+        ></div>
+      </Modal>
       <div className="chartBox">
         <div style={{ display: "flex", flexDirection: "row" }}>
           <p style={{ color: "gray" }}>현재 팬덤 기부 현황</p>
@@ -47,4 +71,3 @@ const Home = () => {
   );
 };
 
-export default Home;

@@ -44,6 +44,9 @@
     font-size: 50px;
     width: 10%;
 }
+.NavBar_inner{
+    background:transparent;
+}
 
 .ReactModal__Overlay--after-open{
     margin: 10% 30%;
@@ -53,5 +56,5 @@
     color: white;
     line-height:35px;
     width: 40%;
-    font-size: 15px;
+    font-size: 0.8vmax;
 }
