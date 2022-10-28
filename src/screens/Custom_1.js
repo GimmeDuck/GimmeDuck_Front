@@ -19,6 +19,7 @@ let CvsImgUrl = [];
 let CvsChild = [];
 let num = -1;
 let CvsSelct = "";
+let CvsIdolname = "default";
 let CvsUrl;
 
 export function CvsImg(url) {
@@ -26,6 +27,9 @@ export function CvsImg(url) {
   if (url != undefined) {
     num++;
   }
+}
+export function CvsIdol(idolname) {
+  CvsIdolname = idolname;
 }
 
 const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
@@ -125,13 +129,14 @@ const Custom_1 = () => {
     // console.log(event.currentTarget.src);
     setIdolSelect(event.currentTarget.src);
     SetCanvasSelect(true);
+    setIdol(CvsIdolname);
   };
 
   //그림판 그림들을 CvsChild 배열에 컴포넌트화
   useEffect(() => {
     if (CvsUrl != undefined) {
       CvsImgUrl.push(CvsUrl);
-      console.log(CvsImgUrl);
+      // console.log(CvsImgUrl);
       CvsChild.push(
         <img
           src={CvsImgUrl[num]}
@@ -144,16 +149,15 @@ const Custom_1 = () => {
           onClick={handleClick}
         />
       );
-      // console.log(CvsChild);
     }
     setCvs(true);
-    console.log("true");
+    // console.log("true");
   }, [CvsUrl]);
 
   //그림판 모달 열고 닫음
   const modalClose = () => {
     setModalOpen(!modalOpen);
-    console.log("false");
+    // console.log("false");
 
     setCvs(false);
   };
@@ -755,7 +759,7 @@ const Custom_1 = () => {
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Aespa);
                   SetCanvasSelect(false);
-                  setIdol("Aespa");
+                  setIdol("MY");
                 }}
               />
               <img
@@ -764,24 +768,54 @@ const Custom_1 = () => {
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Bts);
                   SetCanvasSelect(false);
+                  setIdol("ARMY");
                 }}
               />
-              <img
-                src={Idol.Idol_Bts}
-                className="Card"
-                onClick={() => {
-                  setIdolSelect(Idol.Idol_Bts);
-                  SetCanvasSelect(false);
-                  setIdol("BTS");
-                }}
-              />
+
               <img
                 src={Idol.Idol_Ive}
                 className="Card"
                 onClick={() => {
                   setIdolSelect(Idol.Idol_Ive);
                   SetCanvasSelect(false);
-                  setIdol("IVE");
+                  setIdol("DIVE");
+                }}
+              />
+              <img
+                src={Idol.Idol_Nct}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_Nct);
+                  SetCanvasSelect(false);
+                  setIdol("NCTzen");
+                }}
+              />
+              <img
+                src={Idol.Idol_Aespa}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_Aespa);
+                  SetCanvasSelect(false);
+                  setIdol("MY");
+                }}
+              />
+              <img
+                src={Idol.Idol_Bts}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_Bts);
+                  SetCanvasSelect(false);
+                  setIdol("ARMY");
+                }}
+              />
+
+              <img
+                src={Idol.Idol_Ive}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_Ive);
+                  SetCanvasSelect(false);
+                  setIdol("DIVE");
                 }}
               />
               <img

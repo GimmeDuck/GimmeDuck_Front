@@ -18,17 +18,26 @@
     opacity: 90%;
 }
 
-.modal__button{
+.modal_activebtn{
             position: relative;
             border-width: 0;
-            background-color: black;
+            background-color: rgb(191,144,0);
             border-radius: 3px;
-            color: lightgray;
+            color: white;
+            margin-right: 7%;
+        }
+        .modal_unactivebtn{
+            position: relative;
+            border-width: 0;
+            background-color: rgb(54, 54, 54);
+            border-radius: 3px;
+            color: white;
+            margin-right: 7%;
         }
 
 .color_Btn{
     width:15%;
-    height:50px;
+    height:30px;
     border-radius: 50%;
     border-width: 0;
     margin: 1%;
@@ -39,7 +48,7 @@
     -moz-appearance: none;
     appearance: none;
     width:15%;
-    height:50px;
+    height:30px;
     background-color: transparent;
     border-color: white;
     border-width: 3px;
