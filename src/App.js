@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import History from "./screens/History";
-import Home from "./screens/Home";
+import {Home} from "./screens/Home";
 import Introduction from "./screens/Introduction";
 import Market from "./screens/Market";
 import Tutorial from "./screens/Tutorial";
