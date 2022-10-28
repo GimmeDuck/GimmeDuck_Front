@@ -61,6 +61,14 @@ const Back = [ Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra ];
 
 
 function RandomNFT() {
+
+  // 지갑주소 달고다니기
+  const search = window.location.search; // returns the URL query String
+  const params = new URLSearchParams(search); 
+  const myadd = params.get('ad'); 
+  console.log(myadd);
+
+
   // 로딩창
   const [loading, setLoading] = useState(false);
 

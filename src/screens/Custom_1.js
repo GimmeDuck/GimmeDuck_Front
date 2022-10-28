@@ -81,6 +81,13 @@ const Back_Zebra = require("../custom_Img/Back/Back_Zebra.png");
 const Back = { Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra };
 
 const Custom_1 = () => {
+
+  // 지갑주소 달고다니기
+  const search = window.location.search; // returns the URL query String
+  const params = new URLSearchParams(search); 
+  const myadd = params.get('ad'); 
+
+
   // 로딩창
   const [loading, setLoading] = useState(false);
 

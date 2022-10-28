@@ -4,9 +4,12 @@ import Barcht from "../components/charts/ChartBar.js";
 import PieCht from "../components/charts/ChartPie.js";
 
 const Home = () => {
-  
+
+  // 임시
+  let myadd = "0x123456";
+
   function selectNFT(e) {
-    window.location.href = "/Custom";
+    window.location.href = `/Custom?ad=${myadd}`;
   }
 
   return (
