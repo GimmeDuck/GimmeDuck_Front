@@ -6,13 +6,18 @@ import Slider from 'react-slick';
 
 const Custom = () => {
 
+  // 지갑주소 달고다니기
+  const search = window.location.search; // returns the URL query String
+  const params = new URLSearchParams(search); 
+  const myadd = params.get('ad'); 
+
   const randomBtn = () => {
-    window.location.href = "/RandomNFT";
+    window.location.href = `/RandomNFT?ad=${myadd}`;
   }
 
-    const customBtn = () => {
-        window.location.href = "/Custom_1";
-    }
+  const customBtn = () => {
+      window.location.href = `/Custom_1?ad=${myadd}`;
+  }
   
     const settings = {
       dots: false,

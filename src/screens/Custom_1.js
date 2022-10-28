@@ -4,13 +4,15 @@ import CustomModal from "../components/Modal";
 import exportAsImage from "../utils/exportAsImage";
 //caver
 import execute_func from "../screen_js/caver.js";
+//로딩창
+import Loading from './Loading';
 
 //민팅 실험중 ------------------------------------------------------------------
 import axios from "axios";
-import { giveMinterRole } from "../screen_js/caver.js";
 import * as KlipAPI from "../screen_js/Buyegg_js";
 import Modal from "react-modal";
 import { QRCodeSVG } from "qrcode.react";
+import { myAddress } from "./Home";
 
 var global = global || window;
 global.Buffer = global.Buffer || require("buffer").Buffer;
@@ -85,6 +87,17 @@ const Back_Zebra = require("../custom_Img/Back/Back_Zebra.png");
 const Back = { Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra };
 
 const Custom_1 = () => {
+
+  // 지갑주소 달고다니기
+  const search = window.location.search; // returns the URL query String
+  const params = new URLSearchParams(search); 
+  const myadd = params.get('ad'); 
+
+
+  // 로딩창
+  const [loading, setLoading] = useState(false);
+
+
   const [idol, setIdol] = useState("");
   const [part, setPart] = useState("");
 
@@ -165,45 +178,41 @@ const Custom_1 = () => {
   //민팅 실험중-----------------------------------------------------------------
 
   let img = localStorage.getItem("imgURL");
-  let myAddress = "0x00000000000000000000000000000";
+
   const DEFAULT_QR_CODE = "DEFAULT";
-  const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
   const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
   const [qrvalue_execute, setQrvalue_execute] = useState(DEFAULT_QR_CODE);
-  //const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
   const [auth_modalIsOpen, auth_setModalIsOpen] = useState(false);
   const [send_modalIsOpen, send_setModalIsOpen] = useState(false);
-  // const [imgsaved, SetImgsaved] = useState(false);
   var imgsaved = false;
 
   function test() {
     let ipfsHash;
     axios.post("/test", { image: img }).then((response) => {
+      // 로딩창
+      setLoading(false);
+
       console.log(response.data);
       ipfsHash = response.data;
-      KlipAPI.getAddress(setQrvalue_auth, async (address) => {
-        myAddress = address;
-      });
-      auth_setModalIsOpen(true);
 
       let timerId = setInterval(() => {
-        // console.log(ipfsHash);
-        if (myAddress !== DEFAULT_ADDRESS) {
-          KlipAPI.execute_Contract(
-            setQrvalue_execute,
-            myAddress,
-            ipfsHash,
-            idol,
-            part
-          );
-          send_setModalIsOpen(true);
-          clearInterval(timerId);
-        }
+        KlipAPI.execute_Contract(
+          setQrvalue_execute,
+          myadd,
+          ipfsHash,
+          idol,
+          part
+        );
+        send_setModalIsOpen(true);
+        clearInterval(timerId);
       }, 1000);
     });
   }
 
   function NFTBtn(e) {
+    // 로딩창
+    setLoading(true);
+
     exportAsImage(exportRef.current, "test.png", idol, part)
       .then(() => {
         imgsaved = true;
@@ -924,13 +933,13 @@ const Custom_1 = () => {
           </select>
           <ActivateBtn />
 
-          <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
+          {/* <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
             <QRCodeSVG className="qrcode" value={qrvalue_auth} />
             <div
               className="close"
               onClick={() => auth_setModalIsOpen(false)}
             ></div>
-          </Modal>
+          </Modal> */}
           <Modal className="buyegg_popup" isOpen={send_modalIsOpen}>
             <QRCodeSVG className="qrcode" value={qrvalue_execute} />
             <div
@@ -939,7 +948,9 @@ const Custom_1 = () => {
             ></div>
           </Modal>
         </div>
+        
       </div>
+      {loading ? <Loading /> : null}
     </div>
   );
 };
