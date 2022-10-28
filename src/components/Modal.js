@@ -27,13 +27,7 @@ const CustomModal = ({ modalClose }) => {
           onSave={(blob) => {
             imgsrc = URL.createObjectURL(blob);
             Custom.CvsImg(imgsrc);
-
             modalClose();
-            if (Cvs == true) {
-              setCvs(false);
-            } else {
-              setCvs(true);
-            }
           }}
           render={({
             getCanvasProps,
@@ -115,8 +109,14 @@ const CustomModal = ({ modalClose }) => {
                 >
                   Save
                 </button>
-                <button className="modal__button" onClick={() => {}}>
-                  Restart
+                <button
+                  className="modal__button"
+                  onClick={() => {
+                    Custom.CvsImg(undefined);
+                    modalClose();
+                  }}
+                >
+                  close
                 </button>
                 <input
                   type="range"

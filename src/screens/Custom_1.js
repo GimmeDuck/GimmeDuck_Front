@@ -4,6 +4,8 @@ import CustomModal from "../components/Modal";
 import exportAsImage from "../utils/exportAsImage";
 //caver
 import execute_func from "../screen_js/caver.js";
+//로딩창
+import Loading from './Loading';
 
 //민팅 실험중 ------------------------------------------------------------------
 import axios from "axios";
@@ -23,7 +25,9 @@ let CvsUrl;
 
 export function CvsImg(url) {
   CvsUrl = url;
-  num++;
+  if (url != undefined) {
+    num++;
+  }
 }
 
 const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
@@ -79,6 +83,10 @@ const Back_Zebra = require("../custom_Img/Back/Back_Zebra.png");
 const Back = { Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra };
 
 const Custom_1 = () => {
+  // 로딩창
+  const [loading, setLoading] = useState(false);
+
+
   const [idol, setIdol] = useState("");
   const [part, setPart] = useState("");
 
@@ -120,11 +128,12 @@ const Custom_1 = () => {
   const [Cvs, setCvs] = useState(false);
 
   const handleClick = (event) => {
-    console.log(event.currentTarget.src);
+    // console.log(event.currentTarget.src);
     setIdolSelect(event.currentTarget.src);
     SetCanvasSelect(true);
   };
 
+  //그림판 그림들을 CvsChild 배열에 컴포넌트화
   useEffect(() => {
     if (CvsUrl != undefined) {
       CvsImgUrl.push(CvsUrl);
@@ -141,16 +150,18 @@ const Custom_1 = () => {
           onClick={handleClick}
         />
       );
-      console.log(CvsChild);
-      setCvs(true);
+      // console.log(CvsChild);
     }
+    setCvs(true);
+    console.log("true");
   }, [CvsUrl]);
 
+  //그림판 모달 열고 닫음
   const modalClose = () => {
     setModalOpen(!modalOpen);
+    console.log("false");
+
     setCvs(false);
-    if (modalOpen == true) {
-    }
   };
 
   //민팅 실험중-----------------------------------------------------------------
@@ -169,11 +180,24 @@ const Custom_1 = () => {
 
   function test() {
     let ipfsHash;
+<<<<<<< HEAD
     console.log(myAddress);
     // axios.post("/test", { image: img }).then((response) => {
     //   console.log(response.data);
     //   ipfsHash = response.data;
     
+=======
+    axios.post("/test", { image: img }).then((response) => {
+      // 로딩창
+      setLoading(false);
+
+      console.log(response.data);
+      ipfsHash = response.data;
+      KlipAPI.getAddress(setQrvalue_auth, async (address) => {
+        myAddress = address;
+      });
+      auth_setModalIsOpen(true);
+>>>>>>> 02a0902c31989c4411bc0b7a05319022e4ce2236
 
     //   let timerId = setInterval(() => {
     //     // console.log(ipfsHash);
@@ -193,6 +217,9 @@ const Custom_1 = () => {
   }
 
   function NFTBtn(e) {
+    // 로딩창
+    setLoading(true);
+
     exportAsImage(exportRef.current, "test.png", idol, part)
       .then(() => {
         imgsaved = true;
@@ -208,28 +235,22 @@ const Custom_1 = () => {
     setPart(e.options[e.selectedIndex].text);
   };
 
-
   // 민팅 버튼 활성화/비활성화
   function ActivateBtn() {
-
-    if (idol==="" || part==="") {
+    if (idol === "" || part === "") {
       return (
         <button id="Custom1_disabled" disabled>
-            아이돌과 기부영역을 선택해주세요
+          아이돌과 기부영역을 선택해주세요
         </button>
-      )
-    }
-    else {
+      );
+    } else {
       return (
-        <button id="Custom1_able"
-            onClick={() => NFTBtn()}>
-            {idol + " 팬덤의 커스텀 NFT 발행" }
+        <button id="Custom1_able" onClick={() => NFTBtn()}>
+          {idol + " 팬덤의 커스텀 NFT 발행"}
         </button>
-      )
+      );
     }
   }
-
-
 
   // 여기부터 시작///////////////////////////////////////////////////////
   return (
@@ -794,7 +815,7 @@ const Custom_1 = () => {
               />
               {/* 추가된 그림판 사진 */}
               {Cvs && CvsChild}
-              {/* 그림판 여는 곳 */}
+              {/* 그림판 여는 곳 + */}
               <img src={Idol.Idol_Plus} className="Card" onClick={modalClose} />
               {modalOpen && <CustomModal modalClose={modalClose}></CustomModal>}
             </div>
@@ -887,7 +908,7 @@ const Custom_1 = () => {
             <option value="장애인">장애인 복지</option>
             <option value="환경">환경 복지</option>
           </select>
-          <ActivateBtn/>
+          <ActivateBtn />
 
           {/* <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
             <QRCodeSVG className="qrcode" value={qrvalue_auth} />
@@ -904,7 +925,9 @@ const Custom_1 = () => {
             ></div>
           </Modal>
         </div>
+        
       </div>
+      {loading ? <Loading /> : null}
     </div>
   );
 };
