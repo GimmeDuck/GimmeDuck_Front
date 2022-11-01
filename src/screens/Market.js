@@ -29,10 +29,10 @@ const Market = () => {
   axios
     .request(options)
     .then(function (response) {
-      console.log("들고온" + response.data);
+      //console.log("들고온" + response.data);
     })
     .catch(function (error) {
-      console.error(error);
+      //console.error(error);
     });
 
   //들고온 정보에서 메타데이터만 골라서 배열에 넣음
@@ -60,7 +60,7 @@ const Market = () => {
           })
           .then(() => {
             if (i == response.data.items.length - 1) {
-              console.log(array);
+              //console.log(array);
             }
           })
           .then(() => {});
@@ -72,7 +72,11 @@ const Market = () => {
   useEffect(() => {
     if (done == true) {
       for (let i = 0; i < nftNum; i++) {
-        rst.push(<MarketCard name={array[i]} tokenid={i + 1} />);
+        rst.push(
+          <div className="Market_card">
+            <MarketCard name={array[i]} tokenid={i + 1} />
+            <div style={{ paddingTop: "5%" }}>{i+1}번째 Gimme-duck</div>
+          </div>);
       }
       setLoading(false);
     }
@@ -85,36 +89,10 @@ const Market = () => {
 
   return (
     <div className="market_Back">
-      <div className="medal_section">
-        <div className="second">
-          <div className="rapper">
-            <img className="medal" src="img/silver-medal.png" />
-            <img className="img" src="img/2.png" />
-            <p className="nickname">BTS_duck</p>
-            <p className="klay">270 Klay</p>
-          </div>
-        </div>
-        <div className="first">
-          <div className="rapper">
-            <img className="medal" src="img/gold-medal.png" />
-            <img className="img" src="img/1.png" />
-            <p className="nickname">IVE_love</p>
-            <p className="klay">280 Klay</p>
-          </div>
-        </div>
-        <div className="second">
-          <div className="rapper">
-            <img className="medal" src="img/bronze-medal.png" />
-            <img className="img" src="img/3.png" />
-            <p className="nickname">NCT_jahyun</p>
-            <p className="klay">250 Klay</p>
-          </div>
-        </div>
-      </div>
 
       <div className="market_Nfts">
-        친구들의 NFT
-        <div style={{ display: "flex", flexWrap: "wrap", marginLeft: "5%" }}>
+        GimmeDuck Collection
+        <div style={{ display: "flex", flexWrap: "wrap"}}>
           {rst}
         </div>
       </div>
