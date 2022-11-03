@@ -19,34 +19,34 @@
 
 
 
-.button {
-    width:20%;
+.Home_button {
+    width:48%;
     height:50px;
     cursor:pointer;
     color:#fff;
-    margin: auto;
     border:3px solid transparent;
     border-radius:50px;
     text-align:center;
-    font-size:2vmin;
-    
+    font-size:1.5vmin;
+    margin-top: 2%;
     background:
-      url(https://img.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg) padding-box fixed,
+      url(https://images.squarespace-cdn.com/content/v1/5ce82c4c9b7a770001a047f1/1559525114195-OY6KT62J22WHZ7IIBGS1/malaysia-ringgit-banknotes-falls-on-black-background-4k-clip-normal-speed_n1glvblm-l__F0000.png?format=2500w) padding-box fixed,
       linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
   }
-  .button:hover {
+  .Home_button:hover {
     background:
     linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
 
   }
 .chartBox{
-    background-color: rgb(37, 37, 36);
-    margin:20%;
+    background-color: rgb(2, 2, 2);
+    margin: 15%;
     margin-top: 15px;
     margin-bottom: 0px;
-    width: 60%;
-    height: 600px;
-    padding: 5%;
-    padding-top: 2%;
+    width: 70%;
+    height: 800px;
+    padding: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 
 }
