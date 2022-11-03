@@ -42,7 +42,11 @@ export const Home = () => {
             <br />
           </p>
           <button onClick={getKlipAddress} className="Home_button">
-            지갑 연동하기
+            <img
+              src="img/Klip.png"
+              style={{ width: "8%", marginRight: "2%" }}
+            />
+            NFT 제작하러 가기
           </button>
           <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
             <QRCodeSVG className="qrcode" value={qrvalue_auth} />
