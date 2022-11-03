@@ -38,7 +38,7 @@
     margin-top:20px;
 }
 
-.Custom_button{
+/* .Custom_button{
     background-color: rgb(191,144,0);
     color: white;
     padding:5px 20px 5px 20px;
@@ -49,6 +49,28 @@
     bottom:0;
     right:0;
     margin:15px;
-}
+} */
+
+
+
+.Custom_button {
+    color:#fff;
+    border:3px solid transparent;
+    border-radius:50px;
+    font-size: 15px;
+    padding:5px 20px 5px 20px;
+    margin:15px;
+    position: absolute;
+    right: 0;
+    bottom:0;
+    background:
+      url(https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png) padding-box fixed,
+      linear-gradient(-45deg, #ffbf00 0%, #987301 100%) border-box;
+  }
+  .Custom_button:hover {
+    background:
+    linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
+
+  }
 
 
