@@ -4,19 +4,72 @@
     font-family: 'NanumSquare', sans-serif;
 }
 
+.Home_back{
+    width:100%;
+    background-color: black;
+}
+
+.Home_main{
+    position: relative;
+    color: white;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: row;
+    height: 42vmax;
+
+}
+.Home_mainText{
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    justify-content: center;
+    padding-left: 10%;
+}
+.Home_img_Circle{
+    width:70%;
+    position: absolute;
+    right: 0%;
+    top:-15%;
+}
+
+.Home_img_Coin{
+    width: 45%;
+    position: absolute;
+    right: 6%;
+    top:7%;
+
+}
+@keyframes motion{
+    0%{margin-top: 0px;
+    
+    }
+    100%{margin-top: 10px;
+    }
+}
+.Home_img_Card{
+    width: 42%;
+    position: absolute;
+    right: 8%;
+    top:1%;
+    animation: motion 1s linear 0s infinite alternate; margin-top: 0;
+}
 .text{
     text-align: center;
     color: white;
     line-height:35px;
 }
 
-.img{
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    padding: 20px;
+.Home_downDiv{
+    position: relative;
+    color: white;
+    padding-top: 2%;
 }
 
+.Home_img_Blur{
+    position: absolute;
+    width:60%;
+    left: -15%;
+}
 
 
 .Home_button {
@@ -39,12 +92,12 @@
 
   }
 .chartBox{
-    background-color: rgb(2, 2, 2);
+
+    background-color: rgb(13, 13, 13);
     margin: 15%;
-    margin-top: 15px;
-    margin-bottom: 0px;
+    margin-top: 8%;
     width: 70%;
-    height: 800px;
+    height: 900px;
     padding: 10%;
     padding-top: 5%;
     padding-bottom: 5%;

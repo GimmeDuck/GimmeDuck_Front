@@ -26,39 +26,18 @@ export const Home = () => {
   }
 
   return (
-    <div>
-      <img
-        src="img/Home_back.png"
-        style={{ width: "100%", position: "absolute" }}
-      />
+    <div className="Home_back">
       {/* 위패널 */}
-      <div
-        style={{
-          position: "relative",
-          color: "white",
-          paddingTop: "2%",
-          display: "flex",
-          flexDirection: "row",
-          height: "42vmax",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "50%",
-            justifyContent: "center",
-            paddingLeft: "10%",
-          }}
-        >
+      <div className="Home_main">
+        <div className="Home_mainText">
           <h1 style={{ fontWeight: 800, fontSize: "4vmax" }}>
             나만의 NFT 제작하고 <br /> 기부하자!
           </h1>
           <p style={{ fontSize: "0.8vmax", color: "#AFABAB" }}>
             <br />
-            '덕후'로서의 나를 세상에 하나뿐인 캐릭터로 제작하고,
+            '덕후' 로서의 나를 세상에 하나뿐인 캐릭터로 제작하고,
             <br />
-            '팬덤'이름으로 믿음직한 기부도 하고, <br />
+            '팬덤' 이름으로 믿음직한 기부도 하고, <br />
             블록체인에 나의 기부 내역을 남깁니다
             <br />
           </p>
@@ -74,38 +53,14 @@ export const Home = () => {
           </Modal>
         </div>
         <div style={{}}>
-          <img
-            style={{
-              width: "70%",
-              position: "absolute",
-              right: "-10%",
-              top: "-15%",
-            }}
-            src="img/Home_circle.png"
-          />
-          <img
-            style={{
-              width: "40%",
-              position: "absolute",
-              right: "10%",
-              top: "-3%",
-            }}
-            src="img/Home_coin.png"
-          />
-          <img
-            style={{ width: "35%", position: "absolute", right: "10%" }}
-            src="img/Home_card.png"
-          />
+          <img className="Home_img_Circle" src="img/Home_circle.png" />
+          <img className="Home_img_Coin" src="img/Home_coin.png" />
+          <img className="Home_img_Card" src="img/Home_card.png" />
         </div>
       </div>
       {/* 아래패널 */}
-      <div
-        style={{
-          position: "relative",
-          color: "white",
-          paddingTop: "2%",
-        }}
-      >
+      <div className="Home_downDiv">
+        <img src="img/Home_blur.png" className="Home_img_Blur" />
         <div className="chartBox">
           <div style={{ display: "flex", flexDirection: "row" }}>
             <p style={{ color: "gray" }}>현재 팬덤 기부 현황</p>
@@ -114,33 +69,6 @@ export const Home = () => {
           <PieCht />
         </div>
       </div>
-      {/* <div className="text">
-        <h1 style={{ fontWeight: 800 }}>나만의 NFT 제작하고 기부하자!</h1>
-        <p>
-          '덕후'로서의 나를 세상에 하나뿐인 캐릭터로 제작하고,
-          <br />
-          '팬덤'이름으로 믿음직한 기부도 하고, <br />
-          블록체인에 나의 기부 내역을 남깁니다
-          <br />
-        </p>
-        <div className="img">
-          <img src="img/home.PNG" />
-        </div>
-      </div>
-      <button onClick={getKlipAddress} className="button">
-        지갑 연동하기
-      </button>
-      <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
-        <QRCodeSVG className="qrcode" value={qrvalue_auth} />
-        <div className="close" onClick={() => auth_setModalIsOpen(false)}></div>
-      </Modal>
-      <div className="chartBox">
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <p style={{ color: "gray" }}>현재 팬덤 기부 현황</p>
-        </div>
-        <Barcht />
-        <PieCht />
-      </div> */}
     </div>
   );
 };
