@@ -30,18 +30,24 @@ html {
     background-color: rgb(191,144,0);
     color: white;
     padding:12px;
-    border-radius: 10px;
+    border-radius:50px;
     width:300px;
     height: 7vh;
+    background:
+    linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
+
 }
 
 #randMint_disabled{
     background-color: gray;
     color: white;
     padding:12px;
-    border-radius: 10px;
+    border-radius:50px;
     width:300px;
     height: 7vh;
+    background:
+    linear-gradient(-45deg, #777777 0%, #383838 100%) border-box;
+
 }
 
 .slick-slider {
@@ -59,3 +65,25 @@ html {
 .slick-list {
     padding-left : 45px;
 }
+
+
+.button {
+    width:20%;
+    height:50px;
+    cursor:pointer;
+    color:#fff;
+    margin: auto;
+    border:3px solid transparent;
+    border-radius:50px;
+    text-align:center;
+    font-size:2vmin;
+    
+    background:
+      url(https://img.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg) padding-box fixed,
+      linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
+  }
+  .button:hover {
+    background:
+    linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
+
+  }

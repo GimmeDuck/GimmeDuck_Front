@@ -17,20 +17,28 @@
     padding: 20px;
 }
 
-.button{
-    background-color: rgb(191,144,0);
-    color: white;
-    padding:12px;
-    margin-left: 37%;
-    margin-right: 37%;
-    margin-top: 40px;
-    font-size: 15px;
-    border-radius: 8px;
-
-   
-}
 
 
+.button {
+    width:20%;
+    height:50px;
+    cursor:pointer;
+    color:#fff;
+    margin: auto;
+    border:3px solid transparent;
+    border-radius:50px;
+    text-align:center;
+    font-size:2vmin;
+    
+    background:
+      url(https://img.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg) padding-box fixed,
+      linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
+  }
+  .button:hover {
+    background:
+    linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
+
+  }
 .chartBox{
     background-color: rgb(37, 37, 36);
     margin:20%;
