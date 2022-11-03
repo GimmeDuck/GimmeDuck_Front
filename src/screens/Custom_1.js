@@ -915,7 +915,7 @@ const Custom_1 = () => {
           id="하단 버튼"
           style={{
             marginLeft: "56%",
-            marginTop: "36%",
+            marginTop: "44%",
             position: "absolute",
             display: "flex",
             flexDirection: "row",
