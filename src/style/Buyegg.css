@@ -80,7 +80,22 @@
 }
 
 .buyegg_popup{
+    
     height: 100%;
+    animation: up 1s  0s;
+}
+@keyframes up{
+    0%{
+        opacity: 0%;
+        transform: translate3d(0, 100%, 0);
+    }
+    70%{
+        opacity: 10%;
+    }
+    100%{
+        opacity: 100%;
+        transform: translateZ(0);
+    }
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

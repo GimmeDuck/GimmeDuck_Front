@@ -5,7 +5,7 @@ const data = [
   { name: "모금액", value: 700 },
   { name: "부족액", value: 300 },
 ];
-const COLORS = ["#FFBB28", "#696969"];
+const COLORS = ["#C79301", "#696969"];
 
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
@@ -104,8 +104,8 @@ export default class Example extends PureComponent {
             data={data}
             cx="52%"
             cy="55%"
-            innerRadius={60}
-            outerRadius={90}
+            innerRadius={80}
+            outerRadius={140}
             fill="#8884d8"
             dataKey="value"
             onMouseEnter={this.onPieEnter}
