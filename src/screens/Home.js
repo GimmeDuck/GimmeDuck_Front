@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../style/Home.css";
 import Barcht from "../components/charts/ChartBar.js";
 import PieCht from "../components/charts/ChartPie.js";
-
 import * as KlipAPI from "../screen_js/Buyegg_js";
 import Modal from "react-modal";
 import { QRCodeSVG } from "qrcode.react";
