@@ -82,6 +82,10 @@
 .buyegg_popup{
     
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10%;
     animation: up 1s  0s;
 }
 @keyframes up{
@@ -96,10 +100,7 @@
         opacity: 100%;
         transform: translateZ(0);
     }
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 10%;
+    
 }
 
 .popup_comment{

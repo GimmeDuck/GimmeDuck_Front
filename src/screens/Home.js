@@ -53,6 +53,7 @@ export const Home = () => {
               className="close"
               onClick={() => auth_setModalIsOpen(false)}
             ></div>
+            <div className="popup_comment">나의 Klip 지갑 연결</div>
           </Modal>
         </div>
         <div style={{}}>
@@ -61,22 +62,6 @@ export const Home = () => {
           <img className="Home_img_Card" src="img/Home_card.png" />
         </div>
       </div>
-<<<<<<< HEAD
-      <button onClick={getKlipAddress} className="button">
-        지갑 연동하기
-      </button>
-      <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
-        <QRCodeSVG className="qrcode" value={qrvalue_auth} />
-        <div
-          className="close"
-          onClick={() => auth_setModalIsOpen(false)}
-        ></div>
-        <div className="popup_comment">나의 Klip 지갑 연결</div>
-      </Modal>
-      <div className="chartBox">
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <p style={{ color: "gray" }}>현재 팬덤 기부 현황</p>
-=======
       {/* 아래패널 */}
       <div className="Home_downDiv">
         <img src="img/Home_blur.png" className="Home_img_Blur" />
@@ -86,7 +71,6 @@ export const Home = () => {
           </div>
           <Barcht />
           <PieCht />
->>>>>>> 8d7a85bacc9592fbbe8c3d69a3aa048b486a3952
         </div>
       </div>
     </div>
