@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../style/Home.css";
 import Barcht from "../components/charts/ChartBar.js";
 import PieCht from "../components/charts/ChartPie.js";
-
 import * as KlipAPI from "../screen_js/Buyegg_js";
 import Modal from "react-modal";
 import { QRCodeSVG } from "qrcode.react";
@@ -42,7 +41,11 @@ export const Home = () => {
             <br />
           </p>
           <button onClick={getKlipAddress} className="Home_button">
-            지갑 연동하기
+            <img
+              src="img/Klip.png"
+              style={{ width: "8%", marginRight: "2%" }}
+            />
+            NFT 제작하러 가기
           </button>
           <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
             <QRCodeSVG className="qrcode" value={qrvalue_auth} />

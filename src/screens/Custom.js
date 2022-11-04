@@ -32,7 +32,10 @@ const Custom = () => {
 
   return (
     <div id="Custom_background">
-      <Slider {...settings}>
+      <Slider
+        style={{ backgroundColor: "rgb(30, 30, 30)", width: "100%" }}
+        {...settings}
+      >
         <div>
           <img src="img/1.png" className="slideItem" />
         </div>
@@ -49,32 +52,32 @@ const Custom = () => {
           <img src="img/5.png" className="slideItem" />
         </div>
       </Slider>
-
-      <div id="Custom_container1">
-        <div className="Custom_title"> 랜덤으로 발행 </div>
-        <div className="Custom_box">
-          직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
-          <br />
-          <span style={{ color: "lightgoldenrodyellow" }}>
-            # 희소성이 높은 아이템이 포함될 수 있습니다!
-          </span>
-          <button className="Custom_button" onClick={randomBtn}>
-            랜덤으로 발행
-          </button>
+      <div className="Custom_downDiv">
+        <div className="Custom_Select1Div">
+          <div className="Custom_title"> 랜덤으로 발행 </div>
+          <div className="Custom_box">
+            직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
+            <br />
+            <span style={{ color: "lightgoldenrodyellow" }}>
+              # 희소성이 높은 아이템이 포함될 수 있습니다!
+            </span>
+            <button className="Custom_button" onClick={randomBtn}>
+              랜덤으로 발행
+            </button>
+          </div>
         </div>
-      </div>
-
-      <div id="Custom_container2">
-        <div className="Custom_title">커스터마이징하여 발행</div>
-        <div className="Custom_box">
-          직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
-          <br />
-          <span style={{ color: "lightgoldenrodyellow" }}>
-            # 희소성이 높은 아이템이 포함될 수 있습니다!
-          </span>
-          <button className="Custom_button" onClick={customBtn}>
-            나만의 NFT 발행
-          </button>
+        <div className="Custom_Select2Div">
+          <div className="Custom_title">커스터마이징하여 발행</div>
+          <div className="Custom_box">
+            직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
+            <br />
+            <span style={{ color: "lightgoldenrodyellow" }}>
+              # 희소성이 높은 아이템이 포함될 수 있습니다!
+            </span>
+            <button className="Custom_button" onClick={customBtn}>
+              나만의 NFT 발행
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -82,3 +85,33 @@ const Custom = () => {
 };
 
 export default Custom;
+
+{
+  /* <div id="Custom_container1">
+<div className="Custom_title"> 랜덤으로 발행 </div>
+<div className="Custom_box">
+  직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
+  <br />
+  <span style={{ color: "lightgoldenrodyellow" }}>
+    # 희소성이 높은 아이템이 포함될 수 있습니다!
+  </span>
+  <button className="Custom_button" onClick={randomBtn}>
+    랜덤으로 발행
+  </button>
+</div>
+</div>
+
+<div id="Custom_container2">
+<div className="Custom_title">커스터마이징하여 발행</div>
+<div className="Custom_box">
+  직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
+  <br />
+  <span style={{ color: "lightgoldenrodyellow" }}>
+    # 희소성이 높은 아이템이 포함될 수 있습니다!
+  </span>
+  <button className="Custom_button" onClick={customBtn}>
+    나만의 NFT 발행
+  </button>
+</div>
+</div> */
+}
