@@ -59,6 +59,7 @@ export const Home = () => {
           className="close"
           onClick={() => auth_setModalIsOpen(false)}
         ></div>
+        <div className="popup_comment">나의 Klip 지갑 연결</div>
       </Modal>
       <div className="chartBox">
         <div style={{ display: "flex", flexDirection: "row" }}>
