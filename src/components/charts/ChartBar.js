@@ -57,13 +57,13 @@ const data = [
 ];
 
 const COLORS = [
-  "#0088FE",
-  "#00C49F",
-  "#FFBB28",
-  "#FF8042",
-  "#0088FE",
-  "#00C49F",
-  "#FFBB28",
+  "#FED154",
+  "#FEBF0E",
+  "#E1A601",
+  "#C79301",
+  "#A77C01",
+  "#8D6801",
+  "#705300",
 ];
 
 export default class Barcht extends PureComponent {

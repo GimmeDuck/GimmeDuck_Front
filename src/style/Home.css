@@ -4,41 +4,121 @@
     font-family: 'NanumSquare', sans-serif;
 }
 
+.Home_back{
+    width:100%;
+    background-color: black;
+}
+
+.Home_main{
+    position: relative;
+    color: white;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: row;
+    height: 42vmax;
+
+}
+.Home_mainText{
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    justify-content: center;
+    padding-left: 10%;
+    animation: Text 1s linear 0s ;
+}
+@keyframes Text{
+    0%{
+opacity: 0%;
+margin-left: -2%;
+    }
+    100%{
+opacity: 100%;
+margin-left: 0%;
+    }
+}
+.Home_img_Circle{
+    width:70%;
+    position: absolute;
+    right: 0%;
+    top:-15%;
+}
+
+.Home_img_Coin{
+    width: 43%;
+    position: absolute;
+    right: 6%;
+    top:7%;
+    animation: coin 1s 0s  infinite alternate;
+}
+@keyframes coin{
+    0%{
+opacity: 60%;
+    }
+    100%{
+opacity: 100%;
+    }
+}
+@keyframes motion{
+    0%{margin-top: 0px;
+    
+    }
+    100%{margin-top: 0.3%;
+    }
+}
+.Home_img_Card{
+    width: 42%;
+    position: absolute;
+    right: 8%;
+    top:1%;
+    animation: motion 0.8s linear 0s infinite alternate; margin-top: 0;
+}
 .text{
     text-align: center;
     color: white;
     line-height:35px;
 }
 
-.img{
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    padding: 20px;
-}
-
-.button{
-    background-color: rgb(191,144,0);
+.Home_downDiv{
+    position: relative;
     color: white;
-    padding:12px;
-    margin-left: 37%;
-    margin-right: 37%;
-    margin-top: 40px;
-    font-size: 15px;
-    border-radius: 8px;
+    padding-top: 2%;
+}
 
-   
+.Home_img_Blur{
+    position: absolute;
+    width:60%;
+    left: -15%;
 }
 
 
+.Home_button {
+    width:48%;
+    height:50px;
+    cursor:pointer;
+    color:#fff;
+    border:3px solid transparent;
+    border-radius:50px;
+    text-align:center;
+    font-size:1.5vmin;
+    margin-top: 2%;
+    background:
+      url(https://images.squarespace-cdn.com/content/v1/5ce82c4c9b7a770001a047f1/1559525114195-OY6KT62J22WHZ7IIBGS1/malaysia-ringgit-banknotes-falls-on-black-background-4k-clip-normal-speed_n1glvblm-l__F0000.png?format=2500w) padding-box fixed,
+      linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
+  }
+  .Home_button:hover {
+    background:
+    linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
+
+  }
 .chartBox{
-    background-color: rgb(37, 37, 36);
-    margin:20%;
-    margin-top: 15px;
-    margin-bottom: 0px;
-    width: 60%;
-    height: 600px;
-    padding: 5%;
-    padding-top: 2%;
+
+    background-color: rgb(13, 13, 13);
+    margin: 15%;
+    margin-top: 8%;
+    width: 70%;
+    height: 900px;
+    padding: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 
 }
