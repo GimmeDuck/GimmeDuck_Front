@@ -16,24 +16,25 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 5%;
 }
 .Custom_Select1Div{
-    background-color: rgb(73, 73, 73);
+    background-color: rgb(41, 41, 41);
     width:50%;
     height: 50%;
     padding-left: 3%;height: 67.2vh;
 }
 .Custom_Select1Div:hover{
-    background-color: rgb(53, 53, 53)
+    background-color: rgb(57, 57, 57)
 }
 .Custom_Select2Div{
-    background-color: rgb(161, 113, 0);
+    background-color: rgb(108, 98, 53);
     width:50%;
     height: 67.2vh;
     padding-left: 3%;
 }
 .Custom_Select2Div:hover{
-    background-color: rgb(115, 80, 0);
+    background-color: rgb(114, 107, 72);
 }
 
 #Custom_container1 {
@@ -52,7 +53,8 @@
     font-weight: 800;
     font-size: 1.8vmax;
     z-index: 1;
-    padding: 25px;
+    margin-left: 25px;
+    margin-top: 5%;
 }
 
 .Custom_box{
@@ -60,7 +62,6 @@
     line-height:30px;
     padding: 25px;
     border-radius: 15px;
-    margin-top:20px;
     display: flex;
     flex-direction: column;
 }
@@ -74,10 +75,10 @@
     border-radius:50px;
     font-size: 15px;
     padding:5px 20px 5px 20px;
-    width:50%;
+    width:200px;
     margin-top: 3%;
     background:
-      url(https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png) padding-box fixed,
+      url(https://images.squarespace-cdn.com/content/v1/5ce82c4c9b7a770001a047f1/1559525114195-OY6KT62J22WHZ7IIBGS1/malaysia-ringgit-banknotes-falls-on-black-background-4k-clip-normal-speed_n1glvblm-l__F0000.png?format=2500w) padding-box fixed,
       linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
   }
   .Custom_button:hover {
@@ -85,5 +86,3 @@
     linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
 
   }
-
-
