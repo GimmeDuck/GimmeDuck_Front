@@ -21,7 +21,7 @@ const Custom = () => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
@@ -33,9 +33,24 @@ const Custom = () => {
   return (
     <div id="Custom_background">
       <Slider
-        style={{ backgroundColor: "rgb(30, 30, 30)", width: "100%" }}
+        style={{ backgroundColor: "black", width: "100%", paddingTop:"5%" }}
         {...settings}
       >
+        <div>
+          <img src="img/1.png" className="slideItem" />
+        </div>
+        <div>
+          <img src="img/2.png" className="slideItem" />
+        </div>
+        <div>
+          <img src="img/3.png" className="slideItem" />
+        </div>
+        <div>
+          <img src="img/4.png" className="slideItem" />
+        </div>
+        <div>
+          <img src="img/5.png" className="slideItem" />
+        </div>
         <div>
           <img src="img/1.png" className="slideItem" />
         </div>
