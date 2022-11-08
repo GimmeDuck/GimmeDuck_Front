@@ -12,7 +12,6 @@ const MarketCard = (props) => {
       imgList;
   };
 
-
   const [img_, setImg_] = useState(
     <img
         src={props.name}
