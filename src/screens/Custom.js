@@ -52,6 +52,12 @@ const Custom = () => {
           <img src="img/5.png" className="slideItem" />
         </div>
         <div>
+          <img src="img/6.png" className="slideItem" />
+        </div>
+        <div>
+          <img src="img/7.png" className="slideItem" />
+        </div>
+        <div>
           <img src="img/1.png" className="slideItem" />
         </div>
         <div>
@@ -65,6 +71,12 @@ const Custom = () => {
         </div>
         <div>
           <img src="img/5.png" className="slideItem" />
+        </div>
+        <div>
+          <img src="img/6.png" className="slideItem" />
+        </div>
+        <div>
+          <img src="img/7.png" className="slideItem" />
         </div>
       </Slider>
       <div className="Custom_downDiv">

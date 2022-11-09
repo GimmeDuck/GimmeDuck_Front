@@ -410,7 +410,7 @@ const Custom_1 = () => {
       {/* ㅣㅣㅣㅣ오른쪽 버튼ㅣㅣㅣㅣㅣㅣㅣ */}
       <div
         class="btn-group-vertical"
-        style={{ width: "10%", height: "35vmax" }}
+        style={{ width: "10%", height: "35vmax", marginTop: "7%" }}
       >
         <button
           className="SideBtnText"

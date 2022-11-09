@@ -44,10 +44,10 @@ margin-left: 0%;
 }
 
 .Home_img_Coin{
-    width: 43%;
+    width: 40%;
     position: absolute;
     right: 6%;
-    top:7%;
+    top:12%;
     animation: coin 1s 0s  infinite alternate;
 }
 @keyframes coin{
