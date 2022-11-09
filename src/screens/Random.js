@@ -16,7 +16,7 @@ const body_angel = require("../custom_Img/Body/body_angel.png");
 const Body_Yellow = require("../custom_Img/Body/body_yellow.png");
 const Body_Blue = require("../custom_Img/Body/body_blue.png");
 const Body_White = require("../custom_Img/Body/body_white.png");
-const Body = {
+const Body = [
   Body_Yellow,
   Body_Blue,
   Body_White,
@@ -32,7 +32,7 @@ const Body = {
   body_dalma,
   body_cruella,
   body_angel,
-};
+];
 const hair_yellow = require("../custom_Img/Hair/hair_yellow.png");
 const hair_veret = require("../custom_Img/Hair/hair_veret.png");
 const hair_tie = require("../custom_Img/Hair/hair_tie.png");
@@ -49,7 +49,7 @@ const hair_angel = require("../custom_Img/Hair/hair_angel.png");
 const hair_airpod = require("../custom_Img/Hair/hair_airpod.png");
 const hair_winter = require("../custom_Img/Hair/hair_winter.png");
 
-const Hair = {
+const Hair = [
   hair_yellow,
   hair_veret,
   hair_tie,
@@ -65,7 +65,7 @@ const Hair = {
   hair_angel,
   hair_airpod,
   hair_winter,
-};
+];
 const eye_alien = require("../custom_Img/Eye/eye_alien.png");
 const eye_big = require("../custom_Img/Eye/eye_big.png");
 const eye_dot = require("../custom_Img/Eye/eye_dot.png");
@@ -82,7 +82,7 @@ const eye_sparkle = require("../custom_Img/Eye/eye_sparkle.png");
 const eye_tears = require("../custom_Img/Eye/eye_tears.png");
 const eye_uni = require("../custom_Img/Eye/eye_uni.png");
 
-const Eye = {
+const Eye = [
   eye_alien,
   eye_big,
   eye_dot,
@@ -98,7 +98,7 @@ const Eye = {
   eye_sparkle,
   eye_tears,
   eye_uni,
-};
+];
 
 const egg_white = require("../custom_Img/Egg/egg_white.png");
 const egg_skyblue = require("../custom_Img/Egg/egg_skyblue.png");
@@ -115,7 +115,7 @@ const egg_hotpink = require("../custom_Img/Egg/egg_hotpink.png");
 const egg_mint = require("../custom_Img/Egg/egg_mint.png");
 const egg_orange = require("../custom_Img/Egg/egg_orange.png");
 const egg_red = require("../custom_Img/Egg/egg_red.png");
-const Egg = {
+const Egg = [
   egg_white,
   egg_skyblue,
   egg_yellow,
@@ -131,7 +131,7 @@ const Egg = {
   egg_mint,
   egg_orange,
   egg_red,
-};
+];
 
 const Idol_Aespa = require("../custom_Img/Idol/Idol_Aespa.png");
 const Idol_BTS = require("../custom_Img/Idol/Idol_Bts.png");
@@ -151,7 +151,7 @@ const back_pinkgreen = require("../custom_Img/Back/back_pinkgreen.png");
 const back_pinkyellow = require("../custom_Img/Back/back_pinkyellow.png");
 const back_white = require("../custom_Img/Back/back_white.png");
 
-const Back = {
+const Back = [
   back_black,
   back_blue,
   back_bluepurple,
@@ -164,7 +164,7 @@ const Back = {
   back_pinkgreen,
   back_pinkyellow,
   back_white,
-};
+];
 
 const mouth_black = require("../custom_Img/Mouth/mouth_black.png");
 const mouth_blue = require("../custom_Img/Mouth/mouth_blue.png");
@@ -182,7 +182,7 @@ const mouth_tongue = require("../custom_Img/Mouth/mouth_tongue.png");
 const mouth_white = require("../custom_Img/Mouth/mouth_white.png");
 const mouth_yellow = require("../custom_Img/Mouth/mouth_yellow.png");
 
-const Mouth = {
+const Mouth = [
   mouth_black,
   mouth_blue,
   mouth_cheek,
@@ -198,7 +198,7 @@ const Mouth = {
   mouth_tongue,
   mouth_white,
   mouth_yellow,
-};
+];
 
 const Random = () => {
   const getRandom = (min, max) => Math.floor(Math.random() * (max - min) + min);
@@ -213,27 +213,27 @@ const Random = () => {
       <div id="Character">
         {/* ㅣㅣㅣㅣbackㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">
-          <img src={Back[getRandom(0, 4)]} />
+          <img src={Back[getRandom(0, 11)]} />
         </div>
         {/* ㅣㅣㅣㅣBodyㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">
-          <img src={Body[getRandom(0, 5)]} />
+          <img src={Body[getRandom(0, 14)]} />
         </div>
         {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">
-          <img src={Hair[getRandom(0, 5)]} />
+          <img src={Hair[getRandom(0, 14)]} />
         </div>
         {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">
-          <img src={Eye[getRandom(0, 5)]} />
+          <img src={Eye[getRandom(0, 14)]} />
         </div>
         {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">
-          <img src={Egg[getRandom(0, 4)]} />
+          <img src={Egg[getRandom(0, 14)]} />
         </div>
         {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">
-          <img src={Mouth[getRandom(0, 4)]} />
+          <img src={Mouth[getRandom(0, 14)]} />
         </div>
         {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1">

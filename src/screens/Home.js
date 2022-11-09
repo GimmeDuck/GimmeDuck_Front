@@ -32,7 +32,7 @@ export const Home = () => {
           <h1 style={{ fontWeight: 800, fontSize: "4vmax" }}>
             나만의 NFT 제작하고 <br /> 기부하자!
           </h1>
-          <p style={{ fontSize: "0.8vmax", color: "#AFABAB" }}>
+          <p style={{ fontSize: "1vmax", color: "#AFABAB" }}>
             <br />
             '덕후' 로서의 나를 세상에 하나뿐인 캐릭터로 제작하고,
             <br />
