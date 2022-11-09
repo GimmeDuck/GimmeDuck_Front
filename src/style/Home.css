@@ -44,10 +44,10 @@ margin-left: 0%;
 }
 
 .Home_img_Coin{
-    width: 43%;
+    width: 40%;
     position: absolute;
     right: 6%;
-    top:7%;
+    top:12%;
     animation: coin 1s 0s  infinite alternate;
 }
 @keyframes coin{
@@ -66,10 +66,10 @@ opacity: 100%;
     }
 }
 .Home_img_Card{
-    width: 42%;
+    width: 50%;
     position: absolute;
-    right: 8%;
-    top:1%;
+    right: 2%;
+    top:2%;
     animation: motion 0.8s linear 0s infinite alternate; margin-top: 0;
 }
 .text{
@@ -99,7 +99,7 @@ opacity: 100%;
     border:3px solid transparent;
     border-radius:50px;
     text-align:center;
-    font-size:1.5vmin;
+    font-size:2vmin;
     margin-top: 2%;
     background:
       url(https://images.squarespace-cdn.com/content/v1/5ce82c4c9b7a770001a047f1/1559525114195-OY6KT62J22WHZ7IIBGS1/malaysia-ringgit-banknotes-falls-on-black-background-4k-clip-normal-speed_n1glvblm-l__F0000.png?format=2500w) padding-box fixed,

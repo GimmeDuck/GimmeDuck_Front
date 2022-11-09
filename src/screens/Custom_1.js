@@ -34,44 +34,174 @@ export function CvsIdol(idolname) {
   CvsIdolname = idolname;
 }
 
-const Body_Yellow = require("../custom_Img/Body/Body_Yellow.png");
-const Body_Blue = require("../custom_Img/Body/Body_Blue.png");
-const Body_Red = require("../custom_Img/Body/Body_Red.png");
-const Body_White = require("../custom_Img/Body/Body_White.png");
-const Body_Black = require("../custom_Img/Body/Body_black.png");
-const Body = { Body_Yellow, Body_Blue, Body_Red, Body_White, Body_Black };
+const body_snowman = require("../custom_Img/Body/body_snowman.png");
+const body_ribbon = require("../custom_Img/Body/body_ribbon.png");
+const body_pink = require("../custom_Img/Body/body_pink.png");
+const body_green = require("../custom_Img/Body/body_green.png");
+const body_mummy = require("../custom_Img/Body/body_mummy.png");
+const body_gradation = require("../custom_Img/Body/body_gradation.png");
+const body_fur = require("../custom_Img/Body/body_fur.png");
+const body_egg = require("../custom_Img/Body/body_egg.png");
+const body_dynamic = require("../custom_Img/Body/body_dynamic.png");
+const body_dalma = require("../custom_Img/Body/body_dalma.png");
+const body_cruella = require("../custom_Img/Body/body_cruella.png");
+const body_angel = require("../custom_Img/Body/body_angel.png");
+const Body_Yellow = require("../custom_Img/Body/body_yellow.png");
+const Body_Blue = require("../custom_Img/Body/body_blue.png");
+const Body_White = require("../custom_Img/Body/body_white.png");
 
-const Hair_Long = require("../custom_Img/Hair/Hair_Long.png");
-const Hair_Puka = require("../custom_Img/Hair/Hair_Puka.png");
-const Hair_Short_green = require("../custom_Img/Hair/Hair_Short_Green.png");
-const Hair_Short = require("../custom_Img/Hair/Hair_Short.png");
-const Hair_Blue = require("../custom_Img/Hair/Hair_Blue.png");
-const Hair = { Hair_Long, Hair_Puka, Hair_Short_green, Hair_Short, Hair_Blue };
-
-const Eye_Arch = require("../custom_Img/Eye/Eye_Arch.png");
-const Eye_Circle = require("../custom_Img/Eye/Eye_Circle.png");
-const Eye_Circle_Green = require("../custom_Img/Eye/Eye_Circle_Green.png");
-const Eye_Triangle = require("../custom_Img/Eye/Eye_Triangle.png");
-const Eye_Glasses = require("../custom_Img/Eye/Eye_Glasses.png");
-const Eye = {
-  Eye_Arch,
-  Eye_Circle,
-  Eye_Circle_Green,
-  Eye_Triangle,
-  Eye_Glasses,
+const Body = {
+  Body_Yellow,
+  Body_Blue,
+  Body_White,
+  body_snowman,
+  body_ribbon,
+  body_pink,
+  body_mummy,
+  body_gradation,
+  body_fur,
+  body_egg,
+  body_green,
+  body_dynamic,
+  body_dalma,
+  body_cruella,
+  body_angel,
 };
 
-const Mouth_Blue = require("../custom_Img/Mouth/Mouth_Blue.png");
-const Mouth_Red = require("../custom_Img/Mouth/Mouth_Red.png");
-const Mouth_Pink = require("../custom_Img/Mouth/Mouth_Pink.png");
-const Mouth_Yellow = require("../custom_Img/Mouth/Mouth_Yellow.png");
-const Mouth = { Mouth_Blue, Mouth_Pink, Mouth_Red, Mouth_Yellow };
+const hair_yellow = require("../custom_Img/Hair/hair_yellow.png");
+const hair_veret = require("../custom_Img/Hair/hair_veret.png");
+const hair_tie = require("../custom_Img/Hair/hair_tie.png");
+const hair_horn = require("../custom_Img/Hair/hair_horn.png");
+const hair_flower = require("../custom_Img/Hair/hair_flower.png");
+const hair_crown = require("../custom_Img/Hair/hair_crown.png");
+const hair_cowboy = require("../custom_Img/Hair/hair_cowboy.png");
+const hair_construct = require("../custom_Img/Hair/hair_construct.png");
+const hair_cap = require("../custom_Img/Hair/hair_cap.png");
+const hair_bucket = require("../custom_Img/Hair/hair_bucket.png");
+const hair_bluehat = require("../custom_Img/Hair/hair_bluehat.png");
+const hair_blackhat = require("../custom_Img/Hair/hair_blackhat.png");
+const hair_angel = require("../custom_Img/Hair/hair_angel.png");
+const hair_airpod = require("../custom_Img/Hair/hair_airpod.png");
+const hair_winter = require("../custom_Img/Hair/hair_winter.png");
 
-var Egg_Mint = require("../custom_Img/Egg/Egg_Mint.png");
-const Egg_Pink = require("../custom_Img/Egg/Egg_Pink.png");
-const Egg_PurPle = require("../custom_Img/Egg/Egg_Purple.png");
-const Egg_White = require("../custom_Img/Egg/Egg_White.png");
-const Egg = { Egg_Mint, Egg_Pink, Egg_PurPle, Egg_White };
+const Hair = {
+  hair_yellow,
+  hair_veret,
+  hair_tie,
+  hair_horn,
+  hair_flower,
+  hair_crown,
+  hair_cowboy,
+  hair_construct,
+  hair_cap,
+  hair_bucket,
+  hair_bluehat,
+  hair_blackhat,
+  hair_angel,
+  hair_airpod,
+  hair_winter,
+};
+
+const mouth_black = require("../custom_Img/Mouth/mouth_black.png");
+const mouth_blue = require("../custom_Img/Mouth/mouth_blue.png");
+const mouth_cheek = require("../custom_Img/Mouth/mouth_cheek.png");
+const mouth_cigaratte = require("../custom_Img/Mouth/mouth_cigaratte.png");
+const mouth_dalma = require("../custom_Img/Mouth/mouth_dalma.png");
+const mouth_green = require("../custom_Img/Mouth/mouth_green.png");
+const mouth_mask = require("../custom_Img/Mouth/mouth_mask.png");
+const mouth_mic = require("../custom_Img/Mouth/mouth_mic.png");
+const mouth_piercing = require("../custom_Img/Mouth/mouth_piercing.png");
+const mouth_pink = require("../custom_Img/Mouth/mouth_pink.png");
+const mouth_red = require("../custom_Img/Mouth/mouth_red.png");
+const mouth_rose = require("../custom_Img/Mouth/mouth_rose.png");
+const mouth_tongue = require("../custom_Img/Mouth/mouth_tongue.png");
+const mouth_white = require("../custom_Img/Mouth/mouth_white.png");
+const mouth_yellow = require("../custom_Img/Mouth/mouth_yellow.png");
+
+const Mouth = {
+  mouth_black,
+  mouth_blue,
+  mouth_cheek,
+  mouth_cigaratte,
+  mouth_dalma,
+  mouth_green,
+  mouth_mask,
+  mouth_mic,
+  mouth_piercing,
+  mouth_pink,
+  mouth_red,
+  mouth_rose,
+  mouth_tongue,
+  mouth_white,
+  mouth_yellow,
+};
+
+const eye_alien = require("../custom_Img/Eye/eye_alien.png");
+const eye_big = require("../custom_Img/Eye/eye_big.png");
+const eye_dot = require("../custom_Img/Eye/eye_dot.png");
+const eye_glasses = require("../custom_Img/Eye/eye_glasses.png");
+const eye_goegle = require("../custom_Img/Eye/eye_goegle.png");
+const eye_goong = require("../custom_Img/Eye/eye_goong.png");
+const eye_heart = require("../custom_Img/Eye/eye_heart.png");
+const eye_lash = require("../custom_Img/Eye/eye_lash.png");
+const eye_line = require("../custom_Img/Eye/eye_line.png");
+const eye_movie = require("../custom_Img/Eye/eye_movie.png");
+const eye_normal = require("../custom_Img/Eye/eye_normal.png");
+const eye_patch = require("../custom_Img/Eye/eye_patch.png");
+const eye_sparkle = require("../custom_Img/Eye/eye_sparkle.png");
+const eye_tears = require("../custom_Img/Eye/eye_tears.png");
+const eye_uni = require("../custom_Img/Eye/eye_uni.png");
+
+const Eye = {
+  eye_alien,
+  eye_big,
+  eye_dot,
+  eye_glasses,
+  eye_goegle,
+  eye_goong,
+  eye_heart,
+  eye_lash,
+  eye_line,
+  eye_movie,
+  eye_normal,
+  eye_patch,
+  eye_sparkle,
+  eye_tears,
+  eye_uni,
+};
+
+const egg_white = require("../custom_Img/Egg/egg_white.png");
+const egg_skyblue = require("../custom_Img/Egg/egg_skyblue.png");
+const egg_yellow = require("../custom_Img/Egg/egg_yellow.png");
+const egg_pink = require("../custom_Img/Egg/egg_pink.png");
+const egg_purple = require("../custom_Img/Egg/egg_purple.png");
+const egg_beige = require("../custom_Img/Egg/egg_beige.png");
+const egg_black = require("../custom_Img/Egg/egg_black.png");
+const egg_blue = require("../custom_Img/Egg/egg_blue.png");
+const egg_deepblue = require("../custom_Img/Egg/egg_deepblue.png");
+const egg_green = require("../custom_Img/Egg/egg_green.png");
+const egg_brown = require("../custom_Img/Egg/egg_brown.png");
+const egg_hotpink = require("../custom_Img/Egg/egg_hotpink.png");
+const egg_mint = require("../custom_Img/Egg/egg_mint.png");
+const egg_orange = require("../custom_Img/Egg/egg_orange.png");
+const egg_red = require("../custom_Img/Egg/egg_red.png");
+const Egg = {
+  egg_white,
+  egg_skyblue,
+  egg_yellow,
+  egg_pink,
+  egg_purple,
+  egg_beige,
+  egg_black,
+  egg_blue,
+  egg_deepblue,
+  egg_green,
+  egg_brown,
+  egg_hotpink,
+  egg_mint,
+  egg_orange,
+  egg_red,
+};
 
 const Idol_Aespa = require("../custom_Img/Idol/Idol_Aespa.png");
 const Idol_Bts = require("../custom_Img/Idol/Idol_Bts.png");
@@ -80,11 +210,33 @@ const Idol_Nct = require("../custom_Img/Idol/Idol_Nct.png");
 const Idol_Plus = require("../custom_Img/Idol/Idol_Plus.png");
 const Idol = { Idol_Aespa, Idol_Bts, Idol_Ive, Idol_Nct, Idol_Plus };
 
-const Back_Mint = require("../custom_Img/Back/Back_Mint.png");
-const Back_Pink = require("../custom_Img/Back/Back_Pink.png");
-const Back_Rainbow = require("../custom_Img/Back/Back_Rainbow.png");
-const Back_Zebra = require("../custom_Img/Back/Back_Zebra.png");
-const Back = { Back_Mint, Back_Pink, Back_Rainbow, Back_Zebra };
+const back_black = require("../custom_Img/Back/back_black.png");
+const back_blue = require("../custom_Img/Back/back_blue.png");
+const back_bluepurple = require("../custom_Img/Back/back_bluepurple.png");
+const back_blueyellow = require("../custom_Img/Back/back_blueyellow.png");
+const back_fullYellow = require("../custom_Img/Back/back_fullYellow.png");
+const back_green = require("../custom_Img/Back/back_green.png");
+const back_whiteyellow = require("../custom_Img/Back/back_whiteyellow.png");
+const back_hotpink = require("../custom_Img/Back/back_hotpink.png");
+const back_pink = require("../custom_Img/Back/back_pink.png");
+const back_pinkgreen = require("../custom_Img/Back/back_pinkgreen.png");
+const back_pinkyellow = require("../custom_Img/Back/back_pinkyellow.png");
+const back_white = require("../custom_Img/Back/back_white.png");
+
+const Back = {
+  back_black,
+  back_blue,
+  back_bluepurple,
+  back_blueyellow,
+  back_fullYellow,
+  back_green,
+  back_whiteyellow,
+  back_hotpink,
+  back_pink,
+  back_pinkgreen,
+  back_pinkyellow,
+  back_white,
+};
 
 const Custom_1 = () => {
   // 지갑주소 달고다니기
@@ -258,7 +410,7 @@ const Custom_1 = () => {
       {/* ㅣㅣㅣㅣ오른쪽 버튼ㅣㅣㅣㅣㅣㅣㅣ */}
       <div
         class="btn-group-vertical"
-        style={{ width: "10%", height: "35vmax" }}
+        style={{ width: "10%", height: "35vmax", marginTop: "7%" }}
       >
         <button
           className="SideBtnText"
@@ -315,6 +467,7 @@ const Custom_1 = () => {
             setEggVisible(false);
             setIdolVisible(false);
             setBackVisible(false);
+            console.log(MouthVisible);
           }}
         >
           Mouth
@@ -377,26 +530,25 @@ const Custom_1 = () => {
           <div className="Character-1-card">
             <img style={{ width: "380px" }} src={BodySelect} />
           </div>
-          {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
+          {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
-            <img style={{ width: "380px" }} src={HairSelect} />
-          </div>
+            <img style={{ width: "380px" }} src={MouthSelect} />
+          </div>{" "}
           {/* ㅣㅣㅣㅣEyeㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
             <img style={{ width: "380px" }} src={EyeSelect} />
+          </div>
+          {/* ㅣㅣㅣㅣHairㅣㅣㅣㅣㅣㅣㅣ */}
+          <div className="Character-1-card">
+            <img style={{ width: "380px" }} src={HairSelect} />
           </div>
           {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
           <div className="Character-1-card">
             <img style={{ width: "380px" }} src={EggSelect} />
           </div>
-
           {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
           <div className={IdolCvs}>
             <img style={{ width: IdolCvsSize }} src={IdolSelect} />
-          </div>
-          {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
-          <div className="Character-1-card">
-            <img style={{ width: "380px" }} src={MouthSelect} />
           </div>
         </div>
 
@@ -405,27 +557,6 @@ const Custom_1 = () => {
         {BodyVisible && (
           <div className="RightPanel">
             <div>
-              <img
-                src={Body.Body_Black}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_Black);
-                }}
-              />
-              <img
-                src={Body.Body_White}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_White);
-                }}
-              />
-              <img
-                src={Body.Body_Blue}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_Blue);
-                }}
-              />
               <img
                 src={Body.Body_Yellow}
                 className="Card"
@@ -441,20 +572,6 @@ const Custom_1 = () => {
                 }}
               />
               <img
-                src={Body.Body_Black}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_Black);
-                }}
-              />
-              <img
-                src={Body.Body_White}
-                className="Card"
-                onClick={() => {
-                  setBodySelect(Body.Body_White);
-                }}
-              />
-              <img
                 src={Body.Body_Blue}
                 className="Card"
                 onClick={() => {
@@ -462,10 +579,87 @@ const Custom_1 = () => {
                 }}
               />
               <img
-                src={Body.Body_Black}
+                src={Body.body_snowman}
                 className="Card"
                 onClick={() => {
-                  setBodySelect(Body.Body_Black);
+                  setBodySelect(Body.body_snowman);
+                }}
+              />
+              <img
+                src={Body.body_ribbon}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_ribbon);
+                }}
+              />
+              <img
+                src={Body.body_pink}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_pink);
+                }}
+              />
+              <img
+                src={Body.body_mummy}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_mummy);
+                }}
+              />
+              <img
+                src={Body.body_green}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_green);
+                }}
+              />
+              <img
+                src={Body.body_gradation}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_gradation);
+                }}
+              />
+              <img
+                src={Body.body_fur}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_fur);
+                }}
+              />
+              <img
+                src={Body.body_egg}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_egg);
+                }}
+              />
+              <img
+                src={Body.body_dynamic}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_dynamic);
+                }}
+              />
+              <img
+                src={Body.body_dalma}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_dalma);
+                }}
+              />
+              <img
+                src={Body.body_cruella}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_cruella);
+                }}
+              />
+              <img
+                src={Body.body_angel}
+                className="Card"
+                onClick={() => {
+                  setBodySelect(Body.body_angel);
                 }}
               />
             </div>
@@ -477,67 +671,109 @@ const Custom_1 = () => {
           <div className="RightPanel">
             <div>
               <img
-                src={Hair.Hair_Blue}
+                src={Hair.hair_yellow}
                 className="Card"
                 onClick={() => {
-                  setHairSelect(Hair.Hair_Blue);
+                  setHairSelect(Hair.hair_yellow);
                 }}
               />
               <img
-                src={Hair.Hair_Puka}
+                src={Hair.hair_veret}
                 className="Card"
                 onClick={() => {
-                  setHairSelect(Hair.Hair_Puka);
+                  setHairSelect(Hair.hair_veret);
                 }}
               />
               <img
-                src={Hair.Hair_Blue}
+                src={Hair.hair_tie}
                 className="Card"
                 onClick={() => {
-                  setHairSelect(Hair.Hair_Blue);
+                  setHairSelect(Hair.hair_tie);
                 }}
               />
               <img
-                src={Hair.Hair_Short}
+                src={Hair.hair_horn}
                 className="Card"
                 onClick={() => {
-                  setHairSelect(Hair.Hair_Short);
+                  setHairSelect(Hair.hair_horn);
                 }}
               />
 
               <img
-                src={Hair.Hair_Short_green}
+                src={Hair.hair_flower}
                 className="Card"
                 onClick={() => {
-                  setHairSelect(Hair.Hair_Short_green);
+                  setHairSelect(Hair.hair_flower);
                 }}
               />
               <img
-                src={Hair.Hair_Puka}
+                src={Hair.hair_crown}
                 className="Card"
                 onClick={() => {
-                  setHairSelect(Hair.Hair_Puka);
+                  setHairSelect(Hair.hair_crown);
                 }}
               />
               <img
-                src={Hair.Hair_Puka}
+                src={Hair.hair_cowboy}
                 className="Card"
                 onClick={() => {
-                  setHairSelect(Hair.Hair_Puka);
+                  setHairSelect(Hair.hair_cowboy);
                 }}
               />
               <img
-                src={Hair.Hair_Blue}
+                src={Hair.hair_construct}
                 className="Card"
                 onClick={() => {
-                  setHairSelect(Hair.Hair_Blue);
+                  setHairSelect(Hair.hair_construct);
                 }}
               />
               <img
-                src={Hair.Hair_Short}
+                src={Hair.hair_cap}
                 className="Card"
                 onClick={() => {
-                  setHairSelect(Hair.Hair_Short);
+                  setHairSelect(Hair.hair_cap);
+                }}
+              />
+              <img
+                src={Hair.hair_bucket}
+                className="Card"
+                onClick={() => {
+                  setHairSelect(Hair.hair_bucket);
+                }}
+              />
+              <img
+                src={Hair.hair_bluehat}
+                className="Card"
+                onClick={() => {
+                  setHairSelect(Hair.hair_bluehat);
+                }}
+              />
+              <img
+                src={Hair.hair_blackhat}
+                className="Card"
+                onClick={() => {
+                  setHairSelect(Hair.hair_blackhat);
+                }}
+              />
+              <img
+                src={Hair.hair_angel}
+                className="Card"
+                onClick={() => {
+                  setHairSelect(Hair.hair_angel);
+                }}
+              />
+              <img
+                src={Hair.hair_airpod}
+                className="Card"
+                onClick={() => {
+                  setHairSelect(Hair.hair_airpod);
+                }}
+              />
+              <img
+                src={Hair.hair_winter}
+                className="Card"
+                onClick={() => {
+                  setHairSelect(Hair.hair_winter);
                 }}
               />
             </div>
@@ -549,66 +785,108 @@ const Custom_1 = () => {
           <div className="RightPanel">
             <div>
               <img
-                src={Eye.Eye_Arch}
+                src={Eye.eye_alien}
                 className="Card"
                 onClick={() => {
-                  setEyeSelect(Eye.Eye_Arch);
+                  setEyeSelect(Eye.eye_alien);
                 }}
               />
               <img
-                src={Eye.Eye_Circle}
+                src={Eye.eye_big}
                 className="Card"
                 onClick={() => {
-                  setEyeSelect(Eye.Eye_Circle);
+                  setEyeSelect(Eye.eye_big);
                 }}
               />
               <img
-                src={Eye.Eye_Glasses}
+                src={Eye.eye_dot}
                 className="Card"
                 onClick={() => {
-                  setEyeSelect(Eye.Eye_Glasses);
+                  setEyeSelect(Eye.eye_dot);
                 }}
               />
               <img
-                src={Eye.Eye_Triangle}
+                src={Eye.eye_glasses}
                 className="Card"
                 onClick={() => {
-                  setEyeSelect(Eye.Eye_Triangle);
+                  setEyeSelect(Eye.eye_glasses);
                 }}
               />
               <img
-                src={Eye.Eye_Arch}
+                src={Eye.eye_goegle}
                 className="Card"
                 onClick={() => {
-                  setEyeSelect(Eye.Eye_Arch);
+                  setEyeSelect(Eye.eye_goegle);
                 }}
               />
               <img
-                src={Eye.Eye_Circle}
+                src={Eye.eye_goong}
                 className="Card"
                 onClick={() => {
-                  setEyeSelect(Eye.Eye_Circle);
+                  setEyeSelect(Eye.eye_goong);
                 }}
               />
               <img
-                src={Eye.Eye_Glasses}
+                src={Eye.eye_heart}
                 className="Card"
                 onClick={() => {
-                  setEyeSelect(Eye.Eye_Glasses);
+                  setEyeSelect(Eye.eye_heart);
                 }}
               />
               <img
-                src={Eye.Eye_Triangle}
+                src={Eye.eye_lash}
                 className="Card"
                 onClick={() => {
-                  setEyeSelect(Eye.Eye_Triangle);
+                  setEyeSelect(Eye.eye_lash);
                 }}
               />
               <img
-                src={Eye.Eye_Triangle}
+                src={Eye.eye_line}
                 className="Card"
                 onClick={() => {
-                  setEyeSelect(Eye.Eye_Triangle);
+                  setEyeSelect(Eye.eye_line);
+                }}
+              />
+              <img
+                src={Eye.eye_movie}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.eye_movie);
+                }}
+              />
+              <img
+                src={Eye.eye_normal}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.eye_normal);
+                }}
+              />
+              <img
+                src={Eye.eye_patch}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.eye_patch);
+                }}
+              />
+              <img
+                src={Eye.eye_sparkle}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.eye_sparkle);
+                }}
+              />
+              <img
+                src={Eye.eye_tears}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.eye_tears);
+                }}
+              />
+              <img
+                src={Eye.eye_uni}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(Eye.eye_uni);
                 }}
               />
             </div>
@@ -620,66 +898,108 @@ const Custom_1 = () => {
           <div className="RightPanel">
             <div>
               <img
-                src={Mouth.Mouth_Blue}
+                src={Mouth.mouth_black}
                 className="Card"
                 onClick={() => {
-                  setMouthSelect(Mouth.Mouth_Blue);
+                  setMouthSelect(Mouth.mouth_black);
                 }}
               />
               <img
-                src={Mouth.Mouth_Yellow}
+                src={Mouth.mouth_blue}
                 className="Card"
                 onClick={() => {
-                  setMouthSelect(Mouth.Mouth_Yellow);
+                  setMouthSelect(Mouth.mouth_blue);
                 }}
               />
               <img
-                src={Mouth.Mouth_Pink}
+                src={Mouth.mouth_cheek}
                 className="Card"
                 onClick={() => {
-                  setMouthSelect(Mouth.Mouth_Pink);
+                  setMouthSelect(Mouth.mouth_cheek);
                 }}
               />
               <img
-                src={Mouth.Mouth_Red}
+                src={Mouth.mouth_cigaratte}
                 className="Card"
                 onClick={() => {
-                  setMouthSelect(Mouth.Mouth_Red);
+                  setMouthSelect(Mouth.mouth_cigaratte);
                 }}
               />
               <img
-                src={Mouth.Mouth_Blue}
+                src={Mouth.mouth_dalma}
                 className="Card"
                 onClick={() => {
-                  setMouthSelect(Mouth.Mouth_Blue);
+                  setMouthSelect(Mouth.mouth_dalma);
                 }}
               />
               <img
-                src={Mouth.Mouth_Yellow}
+                src={Mouth.mouth_green}
                 className="Card"
                 onClick={() => {
-                  setMouthSelect(Mouth.Mouth_Yellow);
+                  setMouthSelect(Mouth.mouth_green);
                 }}
               />
               <img
-                src={Mouth.Mouth_Pink}
+                src={Mouth.mouth_mask}
                 className="Card"
                 onClick={() => {
-                  setMouthSelect(Mouth.Mouth_Pink);
+                  setMouthSelect(Mouth.mouth_mask);
                 }}
               />
               <img
-                src={Mouth.Mouth_Red}
+                src={Mouth.mouth_mic}
                 className="Card"
                 onClick={() => {
-                  setMouthSelect(Mouth.Mouth_Red);
+                  setMouthSelect(Mouth.mouth_mic);
                 }}
               />
               <img
-                src={Mouth.Mouth_Red}
+                src={Mouth.mouth_piercing}
                 className="Card"
                 onClick={() => {
-                  setMouthSelect(Mouth.Mouth_Red);
+                  setMouthSelect(Mouth.mouth_piercing);
+                }}
+              />
+              <img
+                src={Mouth.mouth_pink}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.mouth_pink);
+                }}
+              />
+              <img
+                src={Mouth.mouth_red}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.mouth_red);
+                }}
+              />
+              <img
+                src={Mouth.mouth_rose}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.mouth_rose);
+                }}
+              />
+              <img
+                src={Mouth.mouth_tongue}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.mouth_tongue);
+                }}
+              />
+              <img
+                src={Mouth.mouth_white}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.mouth_white);
+                }}
+              />
+              <img
+                src={Mouth.mouth_yellow}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(Mouth.mouth_yellow);
                 }}
               />
             </div>
@@ -690,66 +1010,108 @@ const Custom_1 = () => {
           <div className="RightPanel">
             <div>
               <img
-                src={Egg.Egg_Mint}
+                src={Egg.egg_white}
                 className="Card"
                 onClick={() => {
-                  setEggSelect(Egg.Egg_Mint);
+                  setEggSelect(Egg.egg_white);
                 }}
               />
               <img
-                src={Egg.Egg_Pink}
+                src={Egg.egg_skyblue}
                 className="Card"
                 onClick={() => {
-                  setEggSelect(Egg.Egg_Pink);
+                  setEggSelect(Egg.egg_skyblue);
                 }}
               />
               <img
-                src={Egg.Egg_PurPle}
+                src={Egg.egg_yellow}
                 className="Card"
                 onClick={() => {
-                  setEggSelect(Egg.Egg_PurPle);
+                  setEggSelect(Egg.egg_yellow);
                 }}
               />
               <img
-                src={Egg.Egg_White}
+                src={Egg.egg_pink}
                 className="Card"
                 onClick={() => {
-                  setEggSelect(Egg.Egg_White);
+                  setEggSelect(Egg.egg_pink);
                 }}
               />
               <img
-                src={Egg.Egg_Mint}
+                src={Egg.egg_purple}
                 className="Card"
                 onClick={() => {
-                  setEggSelect(Egg.Egg_Mint);
+                  setEggSelect(Egg.egg_purple);
                 }}
               />
               <img
-                src={Egg.Egg_Pink}
+                src={Egg.egg_beige}
                 className="Card"
                 onClick={() => {
-                  setEggSelect(Egg.Egg_Pink);
+                  setEggSelect(Egg.egg_beige);
                 }}
               />
               <img
-                src={Egg.Egg_PurPle}
+                src={Egg.egg_black}
                 className="Card"
                 onClick={() => {
-                  setEggSelect(Egg.Egg_PurPle);
+                  setEggSelect(Egg.egg_black);
                 }}
               />
               <img
-                src={Egg.Egg_White}
+                src={Egg.egg_blue}
                 className="Card"
                 onClick={() => {
-                  setEggSelect(Egg.Egg_White);
+                  setEggSelect(Egg.egg_blue);
                 }}
               />
               <img
-                src={Egg.Egg_White}
+                src={Egg.egg_deepblue}
                 className="Card"
                 onClick={() => {
-                  setEggSelect(Egg.Egg_White);
+                  setEggSelect(Egg.egg_deepblue);
+                }}
+              />
+              <img
+                src={Egg.egg_green}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.egg_green);
+                }}
+              />{" "}
+              <img
+                src={Egg.egg_brown}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.egg_brown);
+                }}
+              />{" "}
+              <img
+                src={Egg.egg_hotpink}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.egg_hotpink);
+                }}
+              />{" "}
+              <img
+                src={Egg.egg_mint}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.egg_mint);
+                }}
+              />{" "}
+              <img
+                src={Egg.egg_orange}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.egg_orange);
+                }}
+              />{" "}
+              <img
+                src={Egg.egg_red}
+                className="Card"
+                onClick={() => {
+                  setEggSelect(Egg.egg_red);
                 }}
               />
             </div>
@@ -846,66 +1208,87 @@ const Custom_1 = () => {
           <div className="RightPanel">
             <div>
               <img
-                src={Back.Back_Mint}
+                src={Back.back_black}
                 className="Card"
                 onClick={() => {
-                  setBackSelect(Back.Back_Mint);
+                  setBackSelect(Back.back_black);
                 }}
               />
               <img
-                src={Back.Back_Pink}
+                src={Back.back_blue}
                 className="Card"
                 onClick={() => {
-                  setBackSelect(Back.Back_Pink);
+                  setBackSelect(Back.back_blue);
                 }}
               />
               <img
-                src={Back.Back_Rainbow}
+                src={Back.back_bluepurple}
                 className="Card"
                 onClick={() => {
-                  setBackSelect(Back.Back_Rainbow);
+                  setBackSelect(Back.back_bluepurple);
                 }}
               />
               <img
-                src={Back.Back_Zebra}
+                src={Back.back_blueyellow}
                 className="Card"
                 onClick={() => {
-                  setBackSelect(Back.Back_Zebra);
+                  setBackSelect(Back.back_blueyellow);
                 }}
               />
               <img
-                src={Back.Back_Mint}
+                src={Back.back_fullYellow}
                 className="Card"
                 onClick={() => {
-                  setBackSelect(Back.Back_Mint);
+                  setBackSelect(Back.back_fullYellow);
                 }}
               />
               <img
-                src={Back.Back_Pink}
+                src={Back.back_green}
                 className="Card"
                 onClick={() => {
-                  setBackSelect(Back.Back_Pink);
+                  setBackSelect(Back.back_green);
                 }}
               />
               <img
-                src={Back.Back_Rainbow}
+                src={Back.back_hotpink}
                 className="Card"
                 onClick={() => {
-                  setBackSelect(Back.Back_Rainbow);
+                  setBackSelect(Back.back_hotpink);
                 }}
               />
               <img
-                src={Back.Back_Zebra}
+                src={Back.back_pink}
                 className="Card"
                 onClick={() => {
-                  setBackSelect(Back.Back_Zebra);
+                  setBackSelect(Back.back_pink);
                 }}
               />
               <img
-                src={Back.Back_Rainbow}
+                src={Back.back_pinkgreen}
                 className="Card"
                 onClick={() => {
-                  setBackSelect(Back.Back_Rainbow);
+                  setBackSelect(Back.back_pinkgreen);
+                }}
+              />
+              <img
+                src={Back.back_pinkyellow}
+                className="Card"
+                onClick={() => {
+                  setBackSelect(Back.back_pinkyellow);
+                }}
+              />
+              <img
+                src={Back.back_white}
+                className="Card"
+                onClick={() => {
+                  setBackSelect(Back.back_white);
+                }}
+              />
+              <img
+                src={Back.back_whiteyellow}
+                className="Card"
+                onClick={() => {
+                  setBackSelect(Back.back_whiteyellow);
                 }}
               />
             </div>

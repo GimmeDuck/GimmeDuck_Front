@@ -21,8 +21,8 @@
 .Custom_Select1Div{
     background-color: rgb(41, 41, 41);
     width:50%;
-    height: 50%;
-    padding-left: 3%;height: 67.2vh;
+    height: 44vh;
+    padding-left: 3%;
 }
 .Custom_Select1Div:hover{
     background-color: rgb(57, 57, 57)
@@ -30,7 +30,7 @@
 .Custom_Select2Div{
     background-color: rgb(108, 98, 53);
     width:50%;
-    height: 67.2vh;
+    height: 44vh;
     padding-left: 3%;
 }
 .Custom_Select2Div:hover{
@@ -48,10 +48,17 @@
     width:85%;
 }
 
-.Custom_title{
-    color:lightgoldenrodyellow;
+.Custom_title1{
+    color:#ededed;
     font-weight: 800;
-    font-size: 1.8vmax;
+    font-size: 3vw;
+    z-index: 1;
+    padding: 25px;
+}
+.Custom_title2{
+    color:#292929;
+    font-weight: 800;
+    font-size: 3vw;
     z-index: 1;
     margin-left: 25px;
     margin-top: 5%;
@@ -82,7 +89,5 @@
       linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
   }
   .Custom_button:hover {
-    background:
-    linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
-
+   background-color: #be8e00;
   }

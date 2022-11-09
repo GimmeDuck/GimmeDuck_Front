@@ -33,7 +33,7 @@ const Custom = () => {
   return (
     <div id="Custom_background">
       <Slider
-        style={{ backgroundColor: "black", width: "100%", paddingTop:"5%" }}
+        style={{ backgroundColor: "black", width: "100%", paddingTop: "5%" }}
         {...settings}
       >
         <div>
@@ -52,6 +52,12 @@ const Custom = () => {
           <img src="img/5.png" className="slideItem" />
         </div>
         <div>
+          <img src="img/6.png" className="slideItem" />
+        </div>
+        <div>
+          <img src="img/7.png" className="slideItem" />
+        </div>
+        <div>
           <img src="img/1.png" className="slideItem" />
         </div>
         <div>
@@ -66,31 +72,37 @@ const Custom = () => {
         <div>
           <img src="img/5.png" className="slideItem" />
         </div>
+        <div>
+          <img src="img/6.png" className="slideItem" />
+        </div>
+        <div>
+          <img src="img/7.png" className="slideItem" />
+        </div>
       </Slider>
       <div className="Custom_downDiv">
         <div className="Custom_Select1Div">
-          <div className="Custom_title"> 랜덤으로 발행 </div>
+          <div className="Custom_title1"> 랜덤으로 발행 </div>
           <div className="Custom_box">
             직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
             <br />
-            <span style={{ color: "lightgoldenrodyellow" }}>
+            <span style={{ color: "#be8e00" }}>
               # 희소성이 높은 아이템이 포함될 수 있습니다!
             </span>
             <button className="Custom_button" onClick={randomBtn}>
-              랜덤으로 발행
+              랜덤 발행
             </button>
           </div>
         </div>
         <div className="Custom_Select2Div">
-          <div className="Custom_title">커스터마이징하여 발행</div>
+          <div className="Custom_title2">커스터마이징하여 발행</div>
           <div className="Custom_box">
-            직접 커스터마이징 하지 않고, 랜덤 아이템으로 내 캐릭터를 만듭니다.
+            내가 원하는 아이템으로 나만의 캐릭터를 만듭니다.
             <br />
             <span style={{ color: "lightgoldenrodyellow" }}>
-              # 희소성이 높은 아이템이 포함될 수 있습니다!
+              # 다양한 아이템들을 고를 수 있습니다!
             </span>
             <button className="Custom_button" onClick={customBtn}>
-              나만의 NFT 발행
+              커스터마이징 발행
             </button>
           </div>
         </div>

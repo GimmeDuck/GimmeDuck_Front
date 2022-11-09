@@ -52,6 +52,7 @@ const Market = () => {
           .then((res) => res.json())
           .then((out) => {
             array.push("https://ipfs.io/ipfs/" + out.image.substr(7));
+            console.log(array);
           })
           .then(() => {
             if (i == response.data.items.length - 1) {
@@ -60,7 +61,7 @@ const Market = () => {
           })
           .then(() => {
             if (i == response.data.items.length - 1) {
-              //console.log(array);
+              console.log("array 끝");
             }
           })
           .then(() => {});
@@ -75,8 +76,9 @@ const Market = () => {
         rst.push(
           <div className="Market_card">
             <MarketCard name={array[i]} tokenid={i + 1} />
-            <div style={{ paddingTop: "5%" }}>{i+1}번째 Gimme-duck</div>
-          </div>);
+            <div style={{ paddingTop: "5%" }}>{i + 1}번째 Gimme-duck</div>
+          </div>
+        );
       }
       setLoading(false);
     }
@@ -89,12 +91,9 @@ const Market = () => {
 
   return (
     <div className="market_Back">
-
       <div className="market_Nfts">
         GimmeDuck Collection
-        <div style={{ display: "flex", flexWrap: "wrap"}}>
-          {rst}
-        </div>
+        <div style={{ display: "flex", flexWrap: "wrap" }}>{rst}</div>
       </div>
     </div>
   );
