@@ -3,7 +3,7 @@ import "../style/Modal.css";
 import { ReactPainter } from "react-painter";
 import HorizonLine from "./HorizonLine";
 import * as Custom from "../screens/Custom_1.js";
-const Egg_Mint = require("../custom_Img/Egg/Egg_Mint.png");
+const egg_mint = require("../custom_Img/Egg/egg_mint.png");
 
 var imgsrc = "blob:http://localhost:3000/15cdf288-d653-4713-842c-4a380e348bc4";
 
