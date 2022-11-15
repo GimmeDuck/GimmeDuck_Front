@@ -1326,6 +1326,7 @@ const Custom_1 = () => {
               className="close"
               onClick={() => send_setModalIsOpen(false)}
             ></div>
+            <div className="popup_comment">Klip 지갑으로 기부하기</div>
           </Modal>
         </div>
       </div>

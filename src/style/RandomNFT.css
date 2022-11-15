@@ -6,7 +6,7 @@ html {
 .background {
     background-color: black;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 150px;
     display : flex;
     flex-direction: column;
 }
@@ -18,12 +18,12 @@ html {
 
 #RandomNFT_combobox{
     width: 300px;
-    height: 7vh;
+    height: 6vh;
     background-color: rgb(131, 131, 131);
     color: white;
     border-radius: 10px;
     padding : 10px;
-    margin: 10px;
+    margin: 15px;
 }
 
 #randMint{
@@ -32,10 +32,10 @@ html {
     padding:12px;
     border-radius:50px;
     width:300px;
-    height: 7vh;
+    height: 6vh;
     background:
     linear-gradient(-45deg, #ffc003 0%, #775900 100%) border-box;
-
+    margin: 15px;
 }
 
 #randMint_disabled{
@@ -44,7 +44,7 @@ html {
     padding:12px;
     border-radius:50px;
     width:300px;
-    height: 7vh;
+    height: 6vh;
     background:
     linear-gradient(-45deg, #777777 0%, #383838 100%) border-box;
 

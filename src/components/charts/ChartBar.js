@@ -11,49 +11,51 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+
+var idol_list = [
+  {"name":"Blink", "count":5},
+  {"name":"ARMY", "count":4},
+  {"name":"MY", "count":2},
+  {"name":"NCTzen", "count":3},
+  {"name":"DIVE", "count":4}
+];
+
+
+export function makeBar(idol) {
+  // idol_list에 idol 을 찾아
+  // count 값을 증가시켜
+}
+
+/*
+만약 안되면 또다른 방법 :
+- idol이름만 냅다 배열 내에 추가한다 (구현 쉬워짐)
+- 배열 속에 있는 idol 이름을 중복되지 않게 다른 자료구조에 옮긴다
+- 배열 속에 있는 각 idol 이름을 count해서 따로 저장한다 
+- 해당 이름과 count를 아래 data에 써먹는다
+*/
+
+
 const data = [
   {
-    name: "Blink",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: idol_list[0].name,
+    uv: idol_list[0].count,
   },
   {
-    name: "Dive",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: idol_list[1].name,
+    uv: idol_list[1].count,
   },
   {
-    name: "MY",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: idol_list[2].name,
+    uv: idol_list[2].count,
   },
   {
-    name: "ARMY",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    name: idol_list[3].name,
+    uv: idol_list[3].count,
   },
   {
-    name: "SOWON",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "SWEET",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "UAENA",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
+    name: idol_list[4].name,
+    uv: idol_list[4].count,
+  }
 ];
 
 const COLORS = [
@@ -73,7 +75,7 @@ export default class Barcht extends PureComponent {
     return (
       <ResponsiveContainer width="100%" height="45%">
         <BarChart width={10} height={40} data={data}>
-          <Bar dataKey="uv" fill="#8884d8">
+          <Bar name="기부 수" dataKey="uv" fill="#8884d8">
             {data.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
