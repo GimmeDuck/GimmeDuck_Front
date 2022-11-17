@@ -53,7 +53,7 @@ const NavBarElements = () => {
         <Nav className="me-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/Introduction">Introduction</Nav.Link>
-          <Nav.Link href="/Tutorial">Tutorial</Nav.Link>
+          {/* <Nav.Link href="/Tutorial">Tutorial</Nav.Link> */}
           <Nav.Link href="/History">History</Nav.Link>
           <Nav.Link href="/Market">Market</Nav.Link>
         </Nav>
