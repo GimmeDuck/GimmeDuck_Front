@@ -5,6 +5,7 @@ import PieCht from "../components/charts/ChartPie.js";
 import * as KlipAPI from "../screen_js/Buyegg_js";
 import Modal from "react-modal";
 import { QRCodeSVG } from "qrcode.react";
+import "../style/Buyegg.css";
 
 export const Home = () => {
   const DEFAULT_QR_CODE = "DEFAULT";
