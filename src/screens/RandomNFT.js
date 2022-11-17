@@ -207,7 +207,6 @@ const Mouth = [
   mouth_yellow,
 ];
 
-
 const Idol_IGOT7 = require("../custom_Img/Idol/갓세븐.png");
 const Idol_Bunnies = require("../custom_Img/Idol/뉴진스.png");
 const Idol_THEB = require("../custom_Img/Idol/더보이즈.png");
@@ -243,16 +242,41 @@ const Idol_FIX = require("../custom_Img/Idol/cix.png");
 
 const Idol_Plus = require("../custom_Img/Idol/Idol_Plus.png");
 
-const Idol = { 
-  Idol_IGOT7, Idol_Bunnies, Idol_THEB, Idol_MyDay, Idol_ReVeluv,Idol_FEARNOT,  
-  Idol_MONBEBE, Idol_ARMY, Idol_BLINK, Idol_CARAT, Idol_STAY, Idol_SWITH, Idol_AROHA, Idol_NEVERLAND, 
-  Idol_DIVE, Idol_MY, Idol_ATINY, Idol_NSWER, Idol_NCTzen, Idol_ENGENE, Idol_NCTzen2, Idol_Miracle, Idol_UJUNG, Idol_TOMOON, 
-  Idol_RUi, Idol_MIDZY, Idol_Kep1ian, Idol_LUVITY, Idol_MOA, Idol_tripleS, Idol_ONCE, Idol_FIX,
-  Idol_Plus 
+const Idol = {
+  Idol_IGOT7,
+  Idol_Bunnies,
+  Idol_THEB,
+  Idol_MyDay,
+  Idol_ReVeluv,
+  Idol_FEARNOT,
+  Idol_MONBEBE,
+  Idol_ARMY,
+  Idol_BLINK,
+  Idol_CARAT,
+  Idol_STAY,
+  Idol_SWITH,
+  Idol_AROHA,
+  Idol_NEVERLAND,
+  Idol_DIVE,
+  Idol_MY,
+  Idol_ATINY,
+  Idol_NSWER,
+  Idol_NCTzen,
+  Idol_ENGENE,
+  Idol_NCTzen2,
+  Idol_Miracle,
+  Idol_UJUNG,
+  Idol_TOMOON,
+  Idol_RUi,
+  Idol_MIDZY,
+  Idol_Kep1ian,
+  Idol_LUVITY,
+  Idol_MOA,
+  Idol_tripleS,
+  Idol_ONCE,
+  Idol_FIX,
+  Idol_Plus,
 };
-
-
-
 
 function RandomNFT() {
   // 지갑주소 달고다니기
@@ -379,107 +403,264 @@ function RandomNFT() {
         <option value="장애인">장애인 복지</option>
         <option value="환경">환경 복지</option>
       </select>
-      
+
       <Slider {...settings}>
-        
-        <div className="RandomNFT_item" onClick={() => {setIdol("ARMY"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("ARMY");
+          }}
+        >
           <img src={Idol.Idol_ARMY} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("AROHA"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("AROHA");
+          }}
+        >
           <img src={Idol.Idol_AROHA} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("ATINY"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("ATINY");
+          }}
+        >
           <img src={Idol.Idol_ATINY} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("BLINK"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("BLINK");
+          }}
+        >
           <img src={Idol.Idol_BLINK} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("Bunnies"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("Bunnies");
+          }}
+        >
           <img src={Idol.Idol_Bunnies} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("CARAT"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("CARAT");
+          }}
+        >
           <img src={Idol.Idol_CARAT} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("DIVE"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("DIVE");
+          }}
+        >
           <img src={Idol.Idol_DIVE} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("ENGENE"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("ENGENE");
+          }}
+        >
           <img src={Idol.Idol_ENGENE} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("FEARNOT"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("FEARNOT");
+          }}
+        >
           <img src={Idol.Idol_FEARNOT} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("FIX"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("FIX");
+          }}
+        >
           <img src={Idol.Idol_FIX} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("IGOT7"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("IGOT7");
+          }}
+        >
           <img src={Idol.Idol_IGOT7} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("Kep1ian"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("Kep1ian");
+          }}
+        >
           <img src={Idol.Idol_Kep1ian} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("LUVITY"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("LUVITY");
+          }}
+        >
           <img src={Idol.Idol_LUVITY} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("MIDZY"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("MIDZY");
+          }}
+        >
           <img src={Idol.Idol_MIDZY} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("MOA"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("MOA");
+          }}
+        >
           <img src={Idol.Idol_MOA} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("MONBEBE"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("MONBEBE");
+          }}
+        >
           <img src={Idol.Idol_MONBEBE} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("MY"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("MY");
+          }}
+        >
           <img src={Idol.Idol_MY} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("Miracle"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("Miracle");
+          }}
+        >
           <img src={Idol.Idol_Miracle} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("MyDay"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("MyDay");
+          }}
+        >
           <img src={Idol.Idol_MyDay} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("NCTzen"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("NCTzen");
+          }}
+        >
           <img src={Idol.Idol_NCTzen} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("NCTzen"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("NCTzen");
+          }}
+        >
           <img src={Idol.Idol_NCTzen2} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("NEVERLAND"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("NEVERLAND");
+          }}
+        >
           <img src={Idol.Idol_NEVERLAND} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("NSWER"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("NSWER");
+          }}
+        >
           <img src={Idol.Idol_NSWER} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("ONCE"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("ONCE");
+          }}
+        >
           <img src={Idol.Idol_ONCE} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("RUi"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("RUi");
+          }}
+        >
           <img src={Idol.Idol_RUi} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("ReVeluv"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("ReVeluv");
+          }}
+        >
           <img src={Idol.Idol_ReVeluv} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("STAY"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("STAY");
+          }}
+        >
           <img src={Idol.Idol_STAY} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("SWITH"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("SWITH");
+          }}
+        >
           <img src={Idol.Idol_SWITH} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("THEB"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("THEB");
+          }}
+        >
           <img src={Idol.Idol_THEB} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("TOMOON"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("TOMOON");
+          }}
+        >
           <img src={Idol.Idol_TOMOON} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("UJUNG"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("UJUNG");
+          }}
+        >
           <img src={Idol.Idol_UJUNG} className="slideItem" alt="" />
         </div>
-        <div className="RandomNFT_item" onClick={() => {setIdol("tripleS"); }}>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("tripleS");
+          }}
+        >
           <img src={Idol.Idol_tripleS} className="slideItem" alt="" />
         </div>
-
-        
       </Slider>
 
       <ActivateBtn />
@@ -493,6 +674,7 @@ function RandomNFT() {
       <Modal className="buyegg_popup" isOpen={send_modalIsOpen}>
         <QRCodeSVG className="qrcode" value={qrvalue_execute} />
         <div className="close" onClick={() => send_setModalIsOpen(false)}></div>
+        <div className="popup_comment">Klip 지갑으로 기부하기</div>
       </Modal>
 
       <div
@@ -516,19 +698,6 @@ function RandomNFT() {
         <div className="Character-1-card">
           <img style={{ width: "380px" }} src={Eye[getRandom(0, 14)]} alt="" />
         </div>
-        {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1-card">
-          <img style={{ width: "380px" }} src={Egg[getRandom(0, 14)]} alt="" />
-        </div>
-
-        {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
-        <div className="Character-1-card">
-          <img
-            style={{ width: "380px" }}
-            src={"img/Idol_" + idol + ".png"}
-            alt=""
-          />
-        </div>
         {/* ㅣㅣㅣㅣMouthㅣㅣㅣㅣㅣㅣㅣ */}
         <div className="Character-1-card">
           <img
@@ -537,9 +706,21 @@ function RandomNFT() {
             alt=""
           />
         </div>
+
+        {/* ㅣㅣㅣㅣEggㅣㅣㅣㅣㅣㅣㅣ */}
+        <div className="Character-1-card">
+          <img style={{ width: "380px" }} src={Egg[getRandom(0, 14)]} alt="" />
+        </div>
+
+        {/* ㅣㅣㅣㅣIdolㅣㅣㅣㅣㅣㅣㅣ */}
+        <div className="Character-1-card">
+          <img style={{ width: "380px" }} src={Idol["Idol_" + idol]} alt="" />
+        </div>
       </div>
     </div>
   );
 }
+
+//"img/Idol_" + idol + ".png"
 
 export default RandomNFT;
