@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "../style/NavBar.css";
-import { QRCodeSVG } from "qrcode.react";
-import * as KlipAPI from "../screen_js/Buyegg_js";
-import Modal from "react-modal";
+
 
 //    <Navbar scrolling dark expand="md" fixed="top" >
 
+
 const NavBarElements = () => {
+
   // const DEFAULT_QR_CODE = "DEFAULT";
   // const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
 
@@ -29,6 +29,7 @@ const NavBarElements = () => {
   //     console.log(myAddress);
   //   }
   // }, [myAddress]);
+
 
   return (
     <Navbar

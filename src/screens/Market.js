@@ -45,14 +45,12 @@ const Market = () => {
         );
         SetnftNum(response.data.items.length);
       }
-      console.log(imgs);
       //토큰 URI 링크에서 이미지링크를 따서 array 배열에 넣음
       for (let i = 0; i < response.data.items.length; i++) {
         fetch(imgs[i])
           .then((res) => res.json())
           .then((out) => {
             array.push("https://ipfs.io/ipfs/" + out.image.substr(7));
-            console.log(array);
           })
           .then(() => {
             if (i == response.data.items.length - 1) {
@@ -61,7 +59,6 @@ const Market = () => {
           })
           .then(() => {
             if (i == response.data.items.length - 1) {
-              console.log("array 끝");
             }
           })
           .then(() => {});

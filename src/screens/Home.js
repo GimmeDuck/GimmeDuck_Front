@@ -6,6 +6,8 @@ import * as KlipAPI from "../screen_js/Buyegg_js";
 import Modal from "react-modal";
 import { QRCodeSVG } from "qrcode.react";
 
+import * as NavBar from "../components/NavBarElements.js";
+
 export const Home = () => {
   const DEFAULT_QR_CODE = "DEFAULT";
   const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
@@ -47,6 +49,7 @@ export const Home = () => {
             />
             NFT 제작하러 가기
           </button>
+
           <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
             <QRCodeSVG className="qrcode" value={qrvalue_auth} />
             <div
