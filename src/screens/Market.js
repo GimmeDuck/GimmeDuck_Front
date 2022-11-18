@@ -29,7 +29,7 @@ const Market = () => {
   axios
     .request(options)
     .then(function (response) {
-      //console.log("들고온" + response.data);
+      console.log(response.data);
     })
     .catch(function (error) {
       //console.error(error);
@@ -72,8 +72,8 @@ const Market = () => {
       for (let i = 0; i < nftNum; i++) {
         rst.push(
           <div className="Market_card">
-            <MarketCard name={array[i]} tokenid={i + 1} />
-            <div style={{ paddingTop: "5%" }}>{i + 1}번째 Gimme-duck</div>
+            <MarketCard name={array[i]} tokenid={nftNum - i} />
+            <div style={{ paddingTop: "5%" }}>{nftNum - i}번째 Gimme-duck</div>
           </div>
         );
       }
