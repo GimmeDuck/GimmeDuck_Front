@@ -52,6 +52,23 @@ const Donate = () => {
   const part = params.get('part'); 
 
 
+  // // 승희의 뻘짓 - count 세기...
+  // const counting = 
+  //   localStorage.getItem("count"); // 이거 대신 local get 하기 
+  // if (counting === null) {
+  //   counting = {};
+  // }
+  // if (Object.keys(counting).includes(idol)) {
+  //   counting.idol++; //count 늘려주고
+  // }
+  // else {  //없다면
+  //   counting.idol = 1;
+  // }
+  // // 다시 local set 하기
+  // localStorage.setItem("count", counting);
+
+
+
   const today = () => {
     let now = new Date();
     let year = now.getFullYear();

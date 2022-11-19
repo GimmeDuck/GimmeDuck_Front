@@ -14,7 +14,6 @@ import RandomNFT from "./screens/RandomNFT";
 
 function App() {
 
-
   return (
     <Router>
       <NavBarElements />
