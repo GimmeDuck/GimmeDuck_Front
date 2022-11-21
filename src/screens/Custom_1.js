@@ -204,7 +204,6 @@ const Egg = {
   egg_red,
 };
 
-
 const Idol_IGOT7 = require("../custom_Img/Idol/갓세븐.png");
 const Idol_Bunnies = require("../custom_Img/Idol/뉴진스.png");
 const Idol_THEB = require("../custom_Img/Idol/더보이즈.png");
@@ -237,19 +236,46 @@ const Idol_MOA = require("../custom_Img/Idol/투바투.png");
 const Idol_tripleS = require("../custom_Img/Idol/트리플에스.png");
 const Idol_ONCE = require("../custom_Img/Idol/트와이스.png");
 const Idol_FIX = require("../custom_Img/Idol/cix.png");
+const Idol_Shinee = require("../custom_Img/Idol/샤이니.png");
 
 const Idol_Plus = require("../custom_Img/Idol/Idol_Plus.png");
 
-const Idol = { 
-  Idol_IGOT7, Idol_Bunnies, Idol_THEB, Idol_MyDay, Idol_ReVeluv,Idol_FEARNOT,  
-  Idol_MONBEBE, Idol_ARMY, Idol_BLINK, Idol_CARAT, Idol_STAY, Idol_SWITH, Idol_AROHA, Idol_NEVERLAND, 
-  Idol_DIVE, Idol_MY, Idol_ATINY, Idol_NSWER, Idol_NCTzen, Idol_ENGENE, Idol_NCTzen2, Idol_Miracle, Idol_UJUNG, Idol_TOMOON, 
-  Idol_RUi, Idol_MIDZY, Idol_Kep1ian, Idol_LUVITY, Idol_MOA, Idol_tripleS, Idol_ONCE, Idol_FIX,
-  Idol_Plus 
+const Idol = {
+  Idol_IGOT7,
+  Idol_Bunnies,
+  Idol_THEB,
+  Idol_MyDay,
+  Idol_ReVeluv,
+  Idol_FEARNOT,
+  Idol_MONBEBE,
+  Idol_ARMY,
+  Idol_BLINK,
+  Idol_CARAT,
+  Idol_STAY,
+  Idol_SWITH,
+  Idol_AROHA,
+  Idol_NEVERLAND,
+  Idol_DIVE,
+  Idol_MY,
+  Idol_ATINY,
+  Idol_NSWER,
+  Idol_NCTzen,
+  Idol_ENGENE,
+  Idol_NCTzen2,
+  Idol_Miracle,
+  Idol_UJUNG,
+  Idol_TOMOON,
+  Idol_RUi,
+  Idol_MIDZY,
+  Idol_Kep1ian,
+  Idol_LUVITY,
+  Idol_MOA,
+  Idol_tripleS,
+  Idol_ONCE,
+  Idol_FIX,
+  Idol_Plus,
+  Idol_Shinee,
 };
-
-
-
 
 const back_black = require("../custom_Img/Back/back_black.png");
 const back_blue = require("../custom_Img/Back/back_blue.png");
@@ -1183,72 +1209,303 @@ const Custom_1 = () => {
         {IdolVisible && (
           <div className="RightPanel">
             <div>
-              <img src={Idol.Idol_ARMY} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_ARMY); SetCanvasSelect(false); setIdol("ARMY");}} />
-              <img src={Idol.Idol_AROHA} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_AROHA); SetCanvasSelect(false); setIdol("AROHA");}} />
-              <img src={Idol.Idol_ATINY} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_ATINY); SetCanvasSelect(false); setIdol("ATINY");}} />
-              <img src={Idol.Idol_BLINK} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_BLINK); SetCanvasSelect(false); setIdol("BLINK");}} />
-              <img src={Idol.Idol_Bunnies} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_Bunnies); SetCanvasSelect(false); setIdol("Bunnies");}} />
-              <img src={Idol.Idol_CARAT} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_CARAT); SetCanvasSelect(false); setIdol("CARAT");}} />
-              <img src={Idol.Idol_DIVE} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_DIVE); SetCanvasSelect(false); setIdol("DIVE");}} />
-              <img src={Idol.Idol_ENGENE} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_ENGENE); SetCanvasSelect(false); setIdol("ENGENE");}} />
-              <img src={Idol.Idol_FEARNOT} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_FEARNOT); SetCanvasSelect(false); setIdol("FEARNOT");}} />
-              <img src={Idol.Idol_FIX} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_FIX); SetCanvasSelect(false); setIdol("FIX");}} />
-              <img src={Idol.Idol_IGOT7} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_IGOT7); SetCanvasSelect(false); setIdol("IGOT7");}} />
-              <img src={Idol.Idol_Kep1ian} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_Kep1ian); SetCanvasSelect(false); setIdol("Kep1ian");}} />
-              <img src={Idol.Idol_LUVITY} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_LUVITY); SetCanvasSelect(false); setIdol("LUVITY");}} />
-              <img src={Idol.Idol_MIDZY} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_MIDZY); SetCanvasSelect(false); setIdol("MIDZY");}} />
-              <img src={Idol.Idol_MOA} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_MOA); SetCanvasSelect(false); setIdol("MOA");}} />
-              <img src={Idol.Idol_MONBEBE} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_MONBEBE); SetCanvasSelect(false); setIdol("MONBEBE");}} />
-              <img src={Idol.Idol_MY} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_MY); SetCanvasSelect(false); setIdol("MY");}} />
-              <img src={Idol.Idol_Miracle} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_Miracle); SetCanvasSelect(false); setIdol("Miracle");}} />
-              <img src={Idol.Idol_MyDay} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_MyDay); SetCanvasSelect(false); setIdol("MyDay");}} />
-              <img src={Idol.Idol_NCTzen} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_NCTzen); SetCanvasSelect(false); setIdol("NCTzen");}} />
-              <img src={Idol.Idol_NCTzen2} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_NCTzen2); SetCanvasSelect(false); setIdol("NCTzen");}} />
-              <img src={Idol.Idol_NEVERLAND} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_NEVERLAND); SetCanvasSelect(false); setIdol("NEVERLAND");}} />
-              <img src={Idol.Idol_NSWER} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_NSWER); SetCanvasSelect(false); setIdol("NSWER");}} />
-              <img src={Idol.Idol_ONCE} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_ONCE); SetCanvasSelect(false); setIdol("ONCE");}} />
-              <img src={Idol.Idol_RUi} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_RUi); SetCanvasSelect(false); setIdol("RUi");}} />
-              <img src={Idol.Idol_ReVeluv} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_ReVeluv); SetCanvasSelect(false); setIdol("ReVeluv");}} />
-              <img src={Idol.Idol_STAY} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_STAY); SetCanvasSelect(false); setIdol("STAY");}} />
-              <img src={Idol.Idol_SWITH} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_SWITH); SetCanvasSelect(false); setIdol("SWITH");}} />
-              <img src={Idol.Idol_THEB} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_THEB); SetCanvasSelect(false); setIdol("THEB");}} />
-              <img src={Idol.Idol_TOMOON} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_TOMOON); SetCanvasSelect(false); setIdol("TOMOON");}} />
-              <img src={Idol.Idol_UJUNG} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_UJUNG); SetCanvasSelect(false); setIdol("UJUNG");}} />
-              <img src={Idol.Idol_tripleS} className="Card" onClick={() => {
-                  setIdolSelect(Idol.Idol_tripleS); SetCanvasSelect(false); setIdol("tripleS");}} />
-
-
+              <img
+                src={Idol.Idol_ARMY}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_ARMY);
+                  SetCanvasSelect(false);
+                  setIdol("ARMY");
+                }}
+              />
+              <img
+                src={Idol.Idol_AROHA}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_AROHA);
+                  SetCanvasSelect(false);
+                  setIdol("AROHA");
+                }}
+              />
+              <img
+                src={Idol.Idol_ATINY}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_ATINY);
+                  SetCanvasSelect(false);
+                  setIdol("ATINY");
+                }}
+              />
+              <img
+                src={Idol.Idol_BLINK}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_BLINK);
+                  SetCanvasSelect(false);
+                  setIdol("BLINK");
+                }}
+              />
+              <img
+                src={Idol.Idol_Bunnies}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_Bunnies);
+                  SetCanvasSelect(false);
+                  setIdol("Bunnies");
+                }}
+              />
+              <img
+                src={Idol.Idol_CARAT}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_CARAT);
+                  SetCanvasSelect(false);
+                  setIdol("CARAT");
+                }}
+              />
+              <img
+                src={Idol.Idol_DIVE}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_DIVE);
+                  SetCanvasSelect(false);
+                  setIdol("DIVE");
+                }}
+              />
+              <img
+                src={Idol.Idol_ENGENE}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_ENGENE);
+                  SetCanvasSelect(false);
+                  setIdol("ENGENE");
+                }}
+              />
+              <img
+                src={Idol.Idol_FEARNOT}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_FEARNOT);
+                  SetCanvasSelect(false);
+                  setIdol("FEARNOT");
+                }}
+              />
+              <img
+                src={Idol.Idol_FIX}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_FIX);
+                  SetCanvasSelect(false);
+                  setIdol("FIX");
+                }}
+              />
+              <img
+                src={Idol.Idol_IGOT7}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_IGOT7);
+                  SetCanvasSelect(false);
+                  setIdol("IGOT7");
+                }}
+              />
+              <img
+                src={Idol.Idol_Kep1ian}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_Kep1ian);
+                  SetCanvasSelect(false);
+                  setIdol("Kep1ian");
+                }}
+              />
+              <img
+                src={Idol.Idol_LUVITY}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_LUVITY);
+                  SetCanvasSelect(false);
+                  setIdol("LUVITY");
+                }}
+              />
+              <img
+                src={Idol.Idol_MIDZY}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_MIDZY);
+                  SetCanvasSelect(false);
+                  setIdol("MIDZY");
+                }}
+              />
+              <img
+                src={Idol.Idol_MOA}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_MOA);
+                  SetCanvasSelect(false);
+                  setIdol("MOA");
+                }}
+              />
+              <img
+                src={Idol.Idol_MONBEBE}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_MONBEBE);
+                  SetCanvasSelect(false);
+                  setIdol("MONBEBE");
+                }}
+              />
+              <img
+                src={Idol.Idol_MY}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_MY);
+                  SetCanvasSelect(false);
+                  setIdol("MY");
+                }}
+              />
+              <img
+                src={Idol.Idol_Miracle}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_Miracle);
+                  SetCanvasSelect(false);
+                  setIdol("Miracle");
+                }}
+              />
+              <img
+                src={Idol.Idol_MyDay}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_MyDay);
+                  SetCanvasSelect(false);
+                  setIdol("MyDay");
+                }}
+              />
+              <img
+                src={Idol.Idol_NCTzen}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_NCTzen);
+                  SetCanvasSelect(false);
+                  setIdol("NCTzen");
+                }}
+              />
+              <img
+                src={Idol.Idol_NCTzen2}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_NCTzen2);
+                  SetCanvasSelect(false);
+                  setIdol("NCTzen");
+                }}
+              />
+              <img
+                src={Idol.Idol_NEVERLAND}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_NEVERLAND);
+                  SetCanvasSelect(false);
+                  setIdol("NEVERLAND");
+                }}
+              />
+              <img
+                src={Idol.Idol_NSWER}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_NSWER);
+                  SetCanvasSelect(false);
+                  setIdol("NSWER");
+                }}
+              />
+              <img
+                src={Idol.Idol_ONCE}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_ONCE);
+                  SetCanvasSelect(false);
+                  setIdol("ONCE");
+                }}
+              />
+              <img
+                src={Idol.Idol_RUi}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_RUi);
+                  SetCanvasSelect(false);
+                  setIdol("RUi");
+                }}
+              />
+              <img
+                src={Idol.Idol_ReVeluv}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_ReVeluv);
+                  SetCanvasSelect(false);
+                  setIdol("ReVeluv");
+                }}
+              />
+              <img
+                src={Idol.Idol_STAY}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_STAY);
+                  SetCanvasSelect(false);
+                  setIdol("STAY");
+                }}
+              />
+              <img
+                src={Idol.Idol_SWITH}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_SWITH);
+                  SetCanvasSelect(false);
+                  setIdol("SWITH");
+                }}
+              />
+              <img
+                src={Idol.Idol_THEB}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_THEB);
+                  SetCanvasSelect(false);
+                  setIdol("THEB");
+                }}
+              />
+              <img
+                src={Idol.Idol_TOMOON}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_TOMOON);
+                  SetCanvasSelect(false);
+                  setIdol("TOMOON");
+                }}
+              />
+              <img
+                src={Idol.Idol_UJUNG}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_UJUNG);
+                  SetCanvasSelect(false);
+                  setIdol("UJUNG");
+                }}
+              />
+              <img
+                src={Idol.Idol_tripleS}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_tripleS);
+                  SetCanvasSelect(false);
+                  setIdol("tripleS");
+                }}
+              />
+              <img
+                src={Idol.Idol_Shinee}
+                className="Card"
+                onClick={() => {
+                  setIdolSelect(Idol.Idol_Shinee);
+                  SetCanvasSelect(false);
+                  setIdol("Shinee");
+                }}
+              />
 
               {/* 추가된 그림판 사진 */}
               {Cvs && CvsChild}

@@ -239,7 +239,7 @@ const Idol_MOA = require("../custom_Img/Idol/투바투.png");
 const Idol_tripleS = require("../custom_Img/Idol/트리플에스.png");
 const Idol_ONCE = require("../custom_Img/Idol/트와이스.png");
 const Idol_FIX = require("../custom_Img/Idol/cix.png");
-
+const Idol_Shinee = require("../custom_Img/Idol/샤이니.png");
 const Idol_Plus = require("../custom_Img/Idol/Idol_Plus.png");
 
 const Idol = {
@@ -276,6 +276,7 @@ const Idol = {
   Idol_ONCE,
   Idol_FIX,
   Idol_Plus,
+  Idol_Shinee,
 };
 
 function RandomNFT() {
@@ -660,6 +661,14 @@ function RandomNFT() {
           }}
         >
           <img src={Idol.Idol_tripleS} className="slideItem" alt="" />
+        </div>
+        <div
+          className="RandomNFT_item"
+          onClick={() => {
+            setIdol("Shinee");
+          }}
+        >
+          <img src={Idol.Idol_Shinee} className="slideItem" alt="" />
         </div>
       </Slider>
 
