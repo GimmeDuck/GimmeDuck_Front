@@ -12,6 +12,7 @@ import { QRCodeSVG } from "qrcode.react";
 
 //로딩창
 import Loading from "./Loading";
+import Waiting from "./Waiting";
 
 const body_snowman = require("../custom_Img/Body/body_snowman.png");
 const body_ribbon = require("../custom_Img/Body/body_ribbon.png");
@@ -287,6 +288,7 @@ function RandomNFT() {
 
   // 로딩창
   const [loading, setLoading] = useState(false);
+  const [waiting, setWaiting] = useState(false);
 
   const exportRef = useRef();
   const getRandom = (min, max) => Math.floor(Math.random() * (max - min) + min);
@@ -345,6 +347,8 @@ function RandomNFT() {
       let timerId = setInterval(() => {
         KlipAPI.execute_Contract(
           setQrvalue_execute,
+          setWaiting,
+          send_setModalIsOpen,
           myadd,
           ipfsHash,
           idol,
@@ -666,6 +670,7 @@ function RandomNFT() {
       <ActivateBtn />
 
       {loading ? <Loading /> : null}
+      {waiting ? <Waiting /> : null}
 
       <Modal className="buyegg_popup" isOpen={auth_modalIsOpen}>
         <QRCodeSVG className="qrcode" value={qrvalue_auth} />
