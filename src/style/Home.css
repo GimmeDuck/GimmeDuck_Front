@@ -4,6 +4,15 @@
     font-family: 'NanumSquare', sans-serif;
 }
 
+
+body {
+    -ms-overflow-style: none;
+}
+ 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .Home_back{
     width:100%;
     background-color: black;
@@ -121,4 +130,10 @@ opacity: 100%;
     padding-top: 5%;
     padding-bottom: 5%;
 
+}
+
+
+
+.mobile_Home_img_Card{
+    height: 30vh;
 }

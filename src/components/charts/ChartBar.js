@@ -20,21 +20,6 @@ var idol_list = [
   {"name":"DIVE", "count":4}
 ];
 
-
-export function makeBar(idol) {
-  // idol_list에 idol 을 찾아
-  // count 값을 증가시켜
-}
-
-/*
-만약 안되면 또다른 방법 :
-- idol이름만 냅다 배열 내에 추가한다 (구현 쉬워짐)
-- 배열 속에 있는 idol 이름을 중복되지 않게 다른 자료구조에 옮긴다
-- 배열 속에 있는 각 idol 이름을 count해서 따로 저장한다 
-- 해당 이름과 count를 아래 data에 써먹는다
-*/
-
-
 const data = [
   {
     name: idol_list[0].name,
@@ -57,6 +42,29 @@ const data = [
     uv: idol_list[4].count,
   }
 ];
+
+
+// // 승희의 뻘짓 counting... 
+// //const counting = {"ex1":1, "ex2":2};
+// var counting = localStorage.getItem("count");
+// if (counting === null) {
+//   counting = {
+//     "Blink":5,
+//     "ARMY":4,
+//     "MY":2
+//   };
+//   localStorage.setItem("count", counting)
+// }
+// // counting  local get 하기
+// // key 모음
+// for (var key in counting) {
+//   console.log(key);
+//   data.push( {
+//     name: key,
+//     uv: counting[key]
+//   })
+// }
+
 
 const COLORS = [
   "#FED154",
