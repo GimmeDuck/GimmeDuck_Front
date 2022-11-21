@@ -74,7 +74,7 @@
     "resolve-url-loader": "^4.0.0",
     "sass-loader": "^12.3.0",
     "semver": "^7.3.5",
-    "serve": "^14.0.1",
+    "serve": "^14.1.1",
     "slick-carousel": "^1.8.1",
     "source-map-loader": "^3.0.0",
     "stream-http": "^3.2.0",
