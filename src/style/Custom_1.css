@@ -115,7 +115,7 @@ img {
 }
 
 #Custom1_able{
-    width: 16vmax;
+    width: 18vmax;
     border:0px;
     height: 2.5vmax;
     background-color: rgb(210, 181, 63);
@@ -128,7 +128,7 @@ img {
 }
 
 #Custom1_disabled{
-    width: 16vmax;
+    width: 18vmax;
     border:0px;
     height: 2.5vmax;
     background-color: gray;
