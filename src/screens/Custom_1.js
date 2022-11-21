@@ -35,6 +35,7 @@ export function CvsIdol(idolname) {
   CvsIdolname = idolname;
 }
 
+const empty = require("../custom_Img/empty.png");
 const body_snowman = require("../custom_Img/Body/body_snowman.png");
 const body_ribbon = require("../custom_Img/Body/body_ribbon.png");
 const body_pink = require("../custom_Img/Body/body_pink.png");
@@ -712,6 +713,13 @@ const Custom_1 = () => {
           <div className="RightPanel">
             <div>
               <img
+                src={empty}
+                className="Card"
+                onClick={() => {
+                  setHairSelect(empty);
+                }}
+              />
+              <img
                 src={Hair.hair_yellow}
                 className="Card"
                 onClick={() => {
@@ -826,6 +834,13 @@ const Custom_1 = () => {
           <div className="RightPanel">
             <div>
               <img
+                src={empty}
+                className="Card"
+                onClick={() => {
+                  setEyeSelect(empty);
+                }}
+              />
+              <img
                 src={Eye.eye_alien}
                 className="Card"
                 onClick={() => {
@@ -938,6 +953,13 @@ const Custom_1 = () => {
         {MouthVisible && (
           <div className="RightPanel">
             <div>
+              <img
+                src={empty}
+                className="Card"
+                onClick={() => {
+                  setMouthSelect(empty);
+                }}
+              />
               <img
                 src={Mouth.mouth_black}
                 className="Card"
@@ -1241,6 +1263,13 @@ const Custom_1 = () => {
         {BackVisible && (
           <div className="RightPanel">
             <div>
+              <img
+                src={empty}
+                className="Card"
+                onClick={() => {
+                  setBackSelect(empty);
+                }}
+              />
               <img
                 src={Back.back_black}
                 className="Card"
