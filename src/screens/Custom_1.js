@@ -6,6 +6,7 @@ import exportAsImage from "../utils/exportAsImage";
 import execute_func from "../screen_js/caver.js";
 //로딩창
 import Loading from "./Loading";
+import Waiting from "./Waiting";
 
 //민팅 실험중 ------------------------------------------------------------------
 import axios from "axios";
