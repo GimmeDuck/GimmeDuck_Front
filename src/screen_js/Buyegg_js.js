@@ -80,7 +80,7 @@ export const getAddress = (setQrvalue, callback) => {
 
 
 //컨트랙 실행
-export const execute_Contract = (setQrvalue, user, baseURI,idol,part) => {
+export const execute_Contract = (setQrvalue, setWaiting, send_setModalIsOpen, user, baseURI,idol,part) => {
   axios
   .post(A2P_API_PREPARE_URL , {
     bapp : {
@@ -105,9 +105,11 @@ export const execute_Contract = (setQrvalue, user, baseURI,idol,part) => {
         )
         .then((res) => {
           if (res.data.result) {
+            send_setModalIsOpen(false);
+            setWaiting(true);
             console.log(res.data.result.status);
             if(res.data.result.status=="success"){
-
+              setWaiting(false);
               clearInterval(timerId);
               window.location.href = `/Donate?idol=${idol}&part=${part}`; 
             }

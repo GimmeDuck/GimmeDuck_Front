@@ -6,6 +6,7 @@ import exportAsImage from "../utils/exportAsImage";
 import execute_func from "../screen_js/caver.js";
 //로딩창
 import Loading from "./Loading";
+import Waiting from "./Waiting";
 
 //민팅 실험중 ------------------------------------------------------------------
 import axios from "axios";
@@ -313,6 +314,7 @@ const Custom_1 = () => {
 
   // 로딩창
   const [loading, setLoading] = useState(false);
+  const [waiting, setWaiting] = useState(false);
 
   const [idol, setIdol] = useState("");
   const [part, setPart] = useState("");
@@ -407,13 +409,14 @@ const Custom_1 = () => {
     axios.post("/test", { image: img }).then((response) => {
       // 로딩창
       setLoading(false);
-
       console.log(response.data);
       ipfsHash = response.data;
 
       let timerId = setInterval(() => {
         KlipAPI.execute_Contract(
           setQrvalue_execute,
+          setWaiting,
+          send_setModalIsOpen,
           myadd,
           ipfsHash,
           idol,
@@ -1650,6 +1653,7 @@ const Custom_1 = () => {
         </div>
       </div>
       {loading ? <Loading /> : null}
+      {waiting ? <Waiting /> : null}
     </div>
   );
 };
